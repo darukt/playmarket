@@ -1,6 +1,8 @@
 param(
     [ValidateSet('start', 'stop', 'status')]
-    [string]$Action = 'start'
+    [string]$Action = 'start',
+    # Stable browser-facing origin when this tunnel is a reverse-proxy backend.
+    [string]$PublicUrl = ''
 )
 
 $ErrorActionPreference = 'Stop'
@@ -133,7 +135,8 @@ try {
     Save-State $state
 
     $oldPublicUrl = $env:PUBLIC_URL
-    $env:PUBLIC_URL = $state.url
+    $browserOrigin = if ($PublicUrl) { $PublicUrl.TrimEnd('/') } else { $state.url }
+    $env:PUBLIC_URL = $browserOrigin
     Push-Location $projectRoot
     try {
         & $npm run build
@@ -146,7 +149,8 @@ try {
         PM_DATA_DIR = $dataPath
         PM_SEED = Join-Path $projectRoot 'backend\data\seed.json'
         PM_STUB = Join-Path $projectRoot 'backend\assets\PlayMarket-Setup.exe'
-        PM_PUBLIC_URL = $state.url
+        PM_PUBLIC_URL = $browserOrigin
+        PM_ALLOWED_ORIGINS = (@($state.url, $env:PM_ALLOWED_ORIGINS) | Where-Object { $_ }) -join ','
         PM_TRUST_PROXY = 'true'
         PM_TCP_ADDR = ''
     }

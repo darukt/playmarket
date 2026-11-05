@@ -25,8 +25,5 @@ func (s *Service) Submit(slug, id, name string, score int64) (int, bool, error) 
 	if id == "" {
 		return 0, false, ErrBadName
 	}
-	if slug != "snake" && slug != "2048" && slug != "razlom" {
-		return 0, false, ErrUnknownGame
-	}
 	return s.Board.Submit(slug, id, name, score)
 }

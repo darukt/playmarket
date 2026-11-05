@@ -213,7 +213,7 @@ func (s *server) adminAddGame(w http.ResponseWriter, r *http.Request) {
 	e := catalog.Entry{
 		ID:         id,
 		Name:       name,
-		Developer:  orDefault(get("developer"), "Play Market Studio"),
+		Developer:  orDefault(get("developer"), "Витрина Studio"),
 		Genre:      orDefault(get("genre"), "Игра"),
 		Category:   orDefault(get("category"), "games"),
 		Rating:     rate,

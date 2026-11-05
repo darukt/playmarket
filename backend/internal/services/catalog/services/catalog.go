@@ -10,6 +10,7 @@ import (
 
 type Entry = repo.Entry
 type Detail = repo.Detail
+type DownloadSource = repo.DownloadSource
 type Query = repo.Query
 type Stats = repo.Stats
 
@@ -18,6 +19,7 @@ const KindWeb = repo.KindWeb
 
 var ErrNotFound = repo.ErrNotFound
 var ErrNotCustom = repo.ErrNotCustom
+var ValidateDownloads = repo.ValidateDownloads
 
 type Service struct{ *repo.Store }
 
@@ -35,11 +37,19 @@ func (s *Service) List() []Entry {
 	return rows
 }
 func (s *Service) AddCustom(e Entry) (Entry, error) {
+	e.Kind = strings.ToLower(strings.TrimSpace(e.Kind))
 	if strings.TrimSpace(e.Name) == "" || len(e.Name) > 300 || len(e.Detail.Description) > 100000 {
 		return Entry{}, fmt.Errorf("invalid catalog entry")
 	}
-	if e.Kind == KindWeb && (e.Game == nil || (*e.Game != "snake" && *e.Game != "2048" && *e.Game != "razlom")) {
-		return Entry{}, fmt.Errorf("unsupported game")
+	if e.Kind == KindWeb {
+		if e.Game == nil {
+			return Entry{}, fmt.Errorf("unsupported game")
+		}
+		switch *e.Game {
+		case "snake", "2048", "razlom", "memory", "pong", "reaction", "minesweeper", "tic-tac-toe", "connect-four", "simon", "whack-a-mole", "lights-out", "sliding-puzzle", "sudoku", "word-scramble":
+		default:
+			return Entry{}, fmt.Errorf("unsupported game")
+		}
 	}
 	return s.Store.AddCustom(e)
 }

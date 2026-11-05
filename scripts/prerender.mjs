@@ -8,8 +8,10 @@ const BASE_URL = (process.env.PUBLIC_URL || "http://localhost:8088").replace(/\/
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const DIST = join(ROOT, "dist");
 
-const base = JSON.parse(await readFile(join(ROOT, "scripts", "base.json"), "utf8"));
-const details = JSON.parse(await readFile(join(ROOT, "src", "data", "details.json"), "utf8"));
+// Build-time SEO snapshot uses the same import source as SQLite. Runtime data always comes from the API.
+const catalog = JSON.parse(await readFile(join(ROOT, "backend", "data", "seed.json"), "utf8"));
+const base = catalog.filter(app => app.kind !== "web");
+const details = Object.fromEntries(catalog.map(app => [app.id, app.detail]));
 const schemaCategory = new Map([
   ["social", "SocialNetworkingApplication"],
   ["video", "MultimediaApplication"],
@@ -70,32 +72,7 @@ const escape = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-const WEB_GAMES = [
-  {
-    id: "web.snake",
-    slug: "snake",
-    name: "Змейка",
-    genre: "Аркада",
-    rating: 4.8,
-    controls: "Стрелки или WASD — направление, пробел — пауза, R — заново. На телефоне — свайп или экранная крестовина.",
-  },
-  {
-    id: "web.2048",
-    slug: "2048",
-    name: "2048",
-    genre: "Головоломка",
-    rating: 4.7,
-    controls: "Стрелки или WASD — сдвиг поля, R — новая партия. На телефоне — свайп.",
-  },
-  {
-    id: "web.razlom",
-    slug: "razlom",
-    name: "Разлом",
-    genre: "Аркада",
-    rating: 4.6,
-    controls: "Мышь или A/D / стрелки — платформа, пробел — запуск мяча, R — заново. На телефоне — ведите пальцем по полю.",
-  },
-];
+const WEB_GAMES = catalog.filter(app => app.kind === "web" && app.game).map(app => ({ ...app, slug: app.game, controls: "Клавиатура, мышь или экранные кнопки. Подсказки по управлению доступны в игре." }));
 
 for (const game of WEB_GAMES) {
   const d = details[game.id] ?? {};
@@ -104,7 +81,7 @@ for (const game of WEB_GAMES) {
   const fullHtml = descBlocks(fullDesc)
     .map((b) => (b.startsWith("## ") ? `<h3>${escape(b.slice(3).trim())}</h3>` : `<p>${escape(b)}</p>`))
     .join("\n");
-  const title = `${game.name} — мгновенная игра | Play Market`;
+  const title = `${game.name} — мгновенная игра | Витрина`;
   const description = desc || `${game.name} — игра, которая работает прямо в браузере.`;
   const mediaDir = `/media/${game.id}`;
   const html = `<!doctype html>
@@ -128,8 +105,7 @@ for (const game of WEB_GAMES) {
       description,
       gamePlatform: ["Web browser"],
       applicationCategory: "GameApplication",
-      author: { "@type": "Organization", name: "Play Market Studio" },
-      aggregateRating: { "@type": "AggregateRating", ratingValue: String(game.rating), ratingCount: "1000" },
+      author: { "@type": "Organization", name: "Витрина Studio" },
       offers: { "@type": "Offer", price: "0", priceCurrency: "KZT" },
     }).replace(/</g, "\\u003c")}</script>
     <link rel="stylesheet" href="${cssHref}" />
@@ -152,7 +128,7 @@ for (const game of WEB_GAMES) {
                 <div class="detail-hero-main">
                   <div class="feature-kicker" style="color: var(--accent)">МГНОВЕННАЯ ИГРА · 0 МБ</div>
                   <h1>${escape(game.name)}</h1>
-                  <p class="detail-dev">PLAY MARKET STUDIO · ${escape(game.genre.toUpperCase())}</p>
+                  <p class="detail-dev">ВИТРИНА STUDIO · ${escape(game.genre.toUpperCase())}</p>
                   <p class="detail-lead">${escape(description)}</p>
                   <div class="detail-actions">
                     <a class="btn" href="/games/${game.slug}">Играть в браузере</a>
@@ -169,7 +145,7 @@ for (const game of WEB_GAMES) {
               </section>
             </div>
             <footer class="colophon">
-              <div><strong>PLAY MARKET</strong>Каталог приложений и игр,<br />сделанный вручную</div>
+              <div><strong>ВИТРИНА</strong>Каталог приложений и игр,<br />сделанный вручную</div>
               <ul>
                 <li>Игра работает локально, загрузка — один раз</li>
                 <li>Предмет: ${escape(game.name)} · веб-игра</li>
@@ -209,10 +185,10 @@ for (const game of WEB_GAMES) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#f4f1e8" />
-    <title>Мгновенные игры — Play Market</title>
-    <meta name="description" content="Змейка, 2048 и Разлом: игры, которые работают локально в браузере. Ноль скачивания, ноль мегабайт." />
-    <meta property="og:title" content="Мгновенные игры — Play Market" />
-    <meta property="og:description" content="Змейка, 2048 и Разлом: игры, которые работают локально в браузере." />
+    <title>Мгновенные игры — Витрина</title>
+    <meta name="description" content="Аркады, головоломки и игры на реакцию прямо в браузере. Ноль скачивания, ноль мегабайт." />
+    <meta property="og:title" content="Мгновенные игры — Витрина" />
+    <meta property="og:description" content="Аркады, головоломки и игры на реакцию прямо в браузере." />
     <meta property="og:image" content="${BASE_URL}/media/web.snake/icon.webp" />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="${BASE_URL}/games" />
@@ -226,7 +202,7 @@ for (const game of WEB_GAMES) {
             <section class="section" style="margin-top: 12px" aria-labelledby="games-h">
               <div class="standfirst" style="padding-bottom: 18px">
                 <h1 id="games-h">Мгновенные игры</h1>
-                <div class="issue"><b>БЕЗ СКАЧИВАНИЯ</b>3 игры в браузере<br />ноль мегабайт на диске</div>
+                <div class="issue"><b>БЕЗ СКАЧИВАНИЯ</b>${WEB_GAMES.length} игр в браузере<br />ноль мегабайт на диске</div>
               </div>
               <div class="games-index">
 ${cards}
@@ -283,7 +259,7 @@ ${videoBlock ? videoBlock + "\n" : ""}${screens}
 </section>`
     : "";
 
-  const title = `${app.name} — ${app.developer} | Play Market`;
+  const title = `${app.name} — ${app.developer} | Витрина`;
   const desc = String(d.itempropDescription || d.description || `${app.name} для Android.`)
     .replace(/\s+/g, " ")
     .trim()
@@ -300,7 +276,7 @@ ${videoBlock ? videoBlock + "\n" : ""}${screens}
     applicationCategory: schemaCategory.get(app.category) ?? "UtilitiesApplication",
     operatingSystem: "Android",
     author: { "@type": "Organization", name: app.developer },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: String(app.rating), ratingCount: String(parseCount(app.ratings) ?? 100000) },
+    ...(app.rating > 0 && parseCount(app.ratings) ? { aggregateRating: { "@type": "AggregateRating", ratingValue: String(app.rating), ratingCount: String(parseCount(app.ratings)) } } : {}),
     offers: { "@type": "Offer", price: "0", priceCurrency: "KZT" },
   };
 
@@ -385,7 +361,7 @@ ${descHtml}                </div>
               ${moreDevHtml}
             </div>
             <footer class="colophon">
-              <div><strong>PLAY MARKET</strong>Каталог приложений и игр,<br />сделанный вручную</div>
+              <div><strong>ВИТРИНА</strong>Каталог приложений и игр,<br />сделанный вручную</div>
               <ul>
                 <li>Оценки и версии сверены с Play Store</li>
                 <li>Предмет: ${esc(app.name)} · ${esc(app.genre)}</li>
@@ -410,9 +386,7 @@ const urls = [
   { loc: `${BASE_URL}/`, changefreq: "daily", priority: "1.0" },
   { loc: `${BASE_URL}/chart`, changefreq: "daily", priority: "0.9" },
   { loc: `${BASE_URL}/games`, changefreq: "daily", priority: "0.8" },
-  { loc: `${BASE_URL}/games/snake`, changefreq: "weekly", priority: "0.6" },
-  { loc: `${BASE_URL}/games/2048`, changefreq: "weekly", priority: "0.6" },
-  { loc: `${BASE_URL}/games/razlom`, changefreq: "weekly", priority: "0.6" },
+  ...WEB_GAMES.map(game => ({ loc: `${BASE_URL}/games/${game.slug}`, changefreq: "weekly", priority: "0.6" })),
   ...base.map((a) => ({ loc: `${BASE_URL}/apps/${encodeURIComponent(a.id)}`, changefreq: "weekly", priority: "0.7" })),
 ];
 

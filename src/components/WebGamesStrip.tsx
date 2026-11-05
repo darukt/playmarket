@@ -1,7 +1,6 @@
-import { Gamepad2, ArrowRight } from "lucide-react";
+import { Play } from "lucide-react";
 import { AppLink } from "./AppLink";
-import AppIcon from "./AppIcon";
-import { formatRating } from "../data/apps";
+import GameArtwork from "./GameArtwork";
 import { useCatalog } from "../hooks/useCatalog";
 
 /** Полоса мгновенных веб-игр: работают прямо в браузере, 0 МБ. */
@@ -11,24 +10,22 @@ export default function WebGamesStrip() {
 
   return (
     <div className="web-games">
-      {webGames.map((game) => (
+      {webGames.slice(0, 3).map((game) => (
         <AppLink
           key={game.id}
           to={{ name: "game", slug: game.game! }}
-          className="web-game-card"
+          className={`web-game-card arcade-card arcade-card-${game.game}`}
           ariaLabel={`Играть в ${game.name}`}
         >
-          <AppIcon app={game} size="md" />
+          <div className="web-game-art"><GameArtwork slug={game.game!} /></div>
           <span className="web-game-body">
             <span className="web-game-name">{game.name}</span>
             <span className="web-game-cap">
-              {game.genre} · {formatRating(game.rating)} · в браузере
+              {game.game === "snake" ? "Поймай ритм. Не свой хвост." : game.game === "2048" ? "Один ход до красивого решения." : "Разбей всё. Начни ещё раз."}
             </span>
           </span>
           <span className="web-game-cta">
-            <Gamepad2 size={18} aria-hidden="true" />
-            <span className="web-game-play">Играть</span>
-            <ArrowRight size={14} aria-hidden="true" />
+            <Play size={18} fill="currentColor" aria-hidden="true" />
           </span>
         </AppLink>
       ))}

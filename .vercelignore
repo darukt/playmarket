@@ -1,0 +1,15 @@
+.git
+.runtime
+.vercel
+node_modules
+dist
+backend/*
+!backend/data/
+backend/data/*
+!backend/data/seed.json
+docs
+tests
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,3991 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-11-05",
+  "baselineAppIds": [
+    "com.whatsapp",
+    "com.google.android.youtube",
+    "com.zhiliaoapp.musically",
+    "com.facebook.lite",
+    "com.android.chrome",
+    "com.instagram.android",
+    "com.facebook.orca",
+    "com.google.android.gm",
+    "org.telegram.messenger",
+    "com.lemon.lvoverseas",
+    "com.snapchat.android",
+    "com.google.android.apps.messaging",
+    "com.microsoft.teams",
+    "com.discord",
+    "com.waze",
+    "com.sofascore.results",
+    "com.crunchyroll.crunchyroid",
+    "com.microsoft.office.outlook",
+    "com.pubg.newstate",
+    "org.mozilla.firefox",
+    "us.zoom.videomeetings",
+    "com.google.android.apps.tachyon",
+    "kz.kaspi.mobile",
+    "kz.kkb.homebank",
+    "com.spotify.music",
+    "com.google.android.apps.photos",
+    "com.roblox.client",
+    "com.supercell.brawlstars"
+  ],
+  "fdroid": {
+    "repository": "https://f-droid.org/repo",
+    "documentation": "https://f-droid.org/en/docs/All_our_APIs/",
+    "entryUrl": "https://f-droid.org/repo/entry.json",
+    "indexUrl": "https://f-droid.org/repo/index-v2.json",
+    "indexSha256": "e3698e28adbdad3cf3dde4883ac962871b276b0adf1b8263bccb16441ae4ba4e",
+    "indexTimestamp": 1793762637383,
+    "importedIds": [
+      "org.fdroid.fdroid",
+      "org.videolan.vlc",
+      "de.danoeh.antennapod",
+      "app.organicmaps",
+      "net.osmand.plus",
+      "com.fsck.k9",
+      "eu.faircode.email",
+      "net.thunderbird.android",
+      "org.fossify.calendar",
+      "org.fossify.contacts",
+      "org.fossify.filemanager",
+      "org.fossify.gallery",
+      "org.fossify.musicplayer",
+      "org.fossify.messages",
+      "org.fossify.phone",
+      "org.kde.kdeconnect_tp",
+      "com.github.catfriend1.syncthingfork",
+      "com.kunzisoft.keepass.libre",
+      "com.beemdevelopment.aegis",
+      "org.schabi.newpipe",
+      "com.nononsenseapps.feeder",
+      "me.ash.reader",
+      "net.sourceforge.opencamera",
+      "net.gsantner.markor",
+      "com.nextcloud.client",
+      "com.keylesspalace.tusky",
+      "io.element.android.x",
+      "org.briarproject.briar.android",
+      "eu.siacs.conversations",
+      "cx.ring",
+      "org.mozilla.fennec_fdroid",
+      "com.looker.droidify",
+      "com.machiav3lli.fdroid",
+      "org.documentfoundation.libreoffice",
+      "at.bitfire.davdroid",
+      "org.tasks",
+      "ws.xsoh.etar",
+      "net.cozic.joplin",
+      "com.termux",
+      "me.zhanghai.android.files",
+      "com.amaze.filemanager",
+      "de.dennisguse.opentracks",
+      "com.foobnix.pro.pdf.reader",
+      "org.koreader.launcher.fdroid",
+      "org.isoron.uhabits",
+      "com.ichi2.anki",
+      "de.westnordost.streetcomplete",
+      "com.google.android.stardroid",
+      "de.rwth_aachen.phyphox",
+      "de.tadris.fitness",
+      "nodomain.freeyourgadget.gadgetbridge",
+      "org.y20k.transistor",
+      "org.oxycblt.auxio",
+      "de.ph1b.audiobook",
+      "me.blog.korn123.easydiary",
+      "org.breezyweather",
+      "de.markusfisch.android.binaryeye",
+      "eu.faircode.netguard",
+      "net.kollnig.missioncontrol.fdroid",
+      "com.celzero.bravedns",
+      "org.sufficientlysecure.keychain",
+      "com.unicornsonlsd.finamp",
+      "com.vrem.wifianalyzer",
+      "com.foxdebug.acode",
+      "org.connectbot",
+      "helium314.keyboard",
+      "com.menny.android.anysoftkeyboard",
+      "rkr.simplekeyboard.inputmethod",
+      "com.adilhanney.saber",
+      "com.blacksquircle.ui",
+      "com.gitlab.mudlej.MjPdfReader",
+      "ru.tech.imageresizershrinker",
+      "org.catrobat.paintroid",
+      "dev.leonlatsch.photok",
+      "com.kylecorry.trail_sense",
+      "org.wikipedia",
+      "fr.gouv.etalab.mastodon",
+      "com.jerboa",
+      "com.capyreader.app",
+      "com.github.libretube",
+      "io.ente.auth",
+      "org.totschnig.myexpenses",
+      "it.feio.android.omninotes.foss",
+      "it.niedermann.owncloud.notes",
+      "org.fairscan.app",
+      "org.y20k.voxscribe",
+      "dev.imranr.obtainium.fdroid",
+      "proton.android.authenticator.fdroid",
+      "de.salomax.currencies",
+      "com.artifex.mupdf.viewer.app",
+      "com.unciv.app",
+      "io.anuke.mindustry",
+      "com.shatteredpixel.shatteredpixeldungeon",
+      "org.secuso.privacyfriendlysudoku",
+      "org.moire.opensudoku",
+      "org.secuso.privacyfriendly2048",
+      "org.lichess.mobileV2",
+      "com.agateau.tinywheels.android",
+      "org.afrikalan.tuxmath",
+      "dev.lucanlm.antimine"
+    ],
+    "packages": [
+      {
+        "id": "org.fdroid.fdroid",
+        "name": "F-Droid",
+        "packagePage": "https://f-droid.org/packages/org.fdroid.fdroid/",
+        "sourceCode": "https://gitlab.com/fdroid/fdroidclient",
+        "license": "GPL-3.0-or-later",
+        "version": "1.23.2",
+        "versionCode": 1023052,
+        "apkUrl": "https://f-droid.org/repo/org.fdroid.fdroid_1023052.apk",
+        "apkSha256": "985f5181d48bb6bafd54083a048b391271e0ab28385881cc41294fb01a222762",
+        "size": 12426276,
+        "signerSha256": [
+          "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fdroid.fdroid/en-US/icon_0slNR8J9edqDZDoyWABFZrqQONU9EyiNVwM6B3Jui_Q=.png",
+        "iconSha256": "d2c94d47c27d79da83643a3258004566ba9038d53d13288d57033a07726e8bf4",
+        "localIcon": "/media/org.fdroid.fdroid/icon.png"
+      },
+      {
+        "id": "org.videolan.vlc",
+        "name": "VLC",
+        "packagePage": "https://f-droid.org/packages/org.videolan.vlc/",
+        "sourceCode": "https://code.videolan.org/videolan/vlc-android",
+        "license": "GPL-3.0-only",
+        "version": "3.7.2",
+        "versionCode": 13070206,
+        "apkUrl": "https://f-droid.org/repo/org.videolan.vlc_13070206.apk",
+        "apkSha256": "e748c3e0bb9ec447f3e49f71d5c73e0b48c2c0309faa7fb79806d3afb5601b66",
+        "size": 49645764,
+        "signerSha256": [
+          "80535be61eedb9a03b0476a6f493d496c3498770404339ea7a8000f5e61d22c0"
+        ],
+        "minSdkVersion": 17,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.videolan.vlc/en-US/icon_yAfSvPRJukZzMMfUzvbYqwaD1XmHXNtiPBtuPVHW-6s=.png",
+        "iconSha256": "c807d2bcf449ba467330c7d4cef6d8ab0683d579875cdb623c1b6e3d51d6fbab",
+        "localIcon": "/media/org.videolan.vlc/icon.png"
+      },
+      {
+        "id": "de.danoeh.antennapod",
+        "name": "AntennaPod",
+        "packagePage": "https://f-droid.org/packages/de.danoeh.antennapod/",
+        "sourceCode": "https://github.com/AntennaPod/AntennaPod",
+        "license": "GPL-3.0-only",
+        "version": "3.12.3",
+        "versionCode": 3120395,
+        "apkUrl": "https://f-droid.org/repo/de.danoeh.antennapod_3120395.apk",
+        "apkSha256": "6e79f28f69cef1a8b2e4f5f88c9c3cf3c3d7c51356f01394ac23b0dc5d56a00b",
+        "size": 17758020,
+        "signerSha256": [
+          "179430565a4a04bfe7827483243099bd10870410800cd7c4c7b48d8d3226df55"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.danoeh.antennapod/en-US/icon_w44b41PyuNt3pI7Gh8zYHJrWgu__3HT7YSWZtttfenk=.png",
+        "iconSha256": "c38e1be353f2b8db77a48ec687ccd81c9ad682efffdc74fb612599b6db5f7a79",
+        "localIcon": "/media/de.danoeh.antennapod/icon.png"
+      },
+      {
+        "id": "app.organicmaps",
+        "name": "Organic Maps: GPS карты офлайн",
+        "packagePage": "https://f-droid.org/packages/app.organicmaps/",
+        "sourceCode": "https://github.com/organicmaps/organicmaps",
+        "license": "Apache-2.0",
+        "version": "2026.09.29-32-FDroid",
+        "versionCode": 26092932,
+        "apkUrl": "https://f-droid.org/repo/app.organicmaps_26092932.apk",
+        "apkSha256": "654a736d43317084f13560281fe7013f869800610e9d6036b6789d9c9e07f8bc",
+        "size": 63797784,
+        "signerSha256": [
+          "e216fc386c327ec88d056026f1dea27be2bc3f9d7ee956e4361c4b64ec459fe9"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "NonFreeAssets"
+        ],
+        "iconUrl": "https://f-droid.org/repo/app.organicmaps/en-US/icon_dE7f4P95-uKZwu7cI89Q0xSi_-gvU4DD-XnLoDG9RLg=.png",
+        "iconSha256": "744edfe0ff79fae299c2eedc23cf50d314a2ffe82f5380c3f979cba031bd44b8",
+        "localIcon": "/media/app.organicmaps/icon.png"
+      },
+      {
+        "id": "net.osmand.plus",
+        "name": "OsmAnd~",
+        "packagePage": "https://f-droid.org/packages/net.osmand.plus/",
+        "sourceCode": "https://github.com/osmandapp/Osmand",
+        "license": "GPL-3.0-only",
+        "version": "5.4.10",
+        "versionCode": 541003,
+        "apkUrl": "https://f-droid.org/repo/net.osmand.plus_541003.apk",
+        "apkSha256": "ca05d8f4ec364f84bde1946738e898abfb392234905eef1dc0ec597d4580b112",
+        "size": 161855613,
+        "signerSha256": [
+          "38294eaac95c3bb5a994692cd7758f8bcdbffb40819af6e806eb7fe482324dcd"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [
+          "NonFreeAssets",
+          "NonFreeNet",
+          "Tracking"
+        ],
+        "iconUrl": "https://f-droid.org/repo/net.osmand.plus/en-US/icon_R5cswkpVpZLwTsPD855ukLX_czuOczFwZLn7pCxaB-k=.png",
+        "iconSha256": "47972cc24a55a592f04ec3c3f39e6e90b5ff733b8e73317064b9fba42c5a07e9",
+        "localIcon": "/media/net.osmand.plus/icon.png"
+      },
+      {
+        "id": "com.fsck.k9",
+        "name": "Почта K-9",
+        "packagePage": "https://f-droid.org/packages/com.fsck.k9/",
+        "sourceCode": "https://github.com/thunderbird/thunderbird-android",
+        "license": "Apache-2.0",
+        "version": "24.0",
+        "versionCode": 39046,
+        "apkUrl": "https://f-droid.org/repo/com.fsck.k9_39046.apk",
+        "apkSha256": "0f9dd57fbd06dddfd8bcf7de6106d27fa0f0297793193828c4eac904518b1e05",
+        "size": 10895265,
+        "signerSha256": [
+          "c430665e3662253b2078dcda350c2c6ce44d915a3d8a147b63ced619bb9e8576"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.fsck.k9/en-US/icon_-2bZW0ZnkKqPVher2SxQK8hXGGSjgaBHoa8x6vW0v8w=.png",
+        "iconSha256": "fb66d95b466790aa8f5617abd92c502bc8571864a381a047a1af31eaf5b4bfcc",
+        "localIcon": "/media/com.fsck.k9/icon.png"
+      },
+      {
+        "id": "eu.faircode.email",
+        "name": "FairEmail",
+        "packagePage": "https://f-droid.org/packages/eu.faircode.email/",
+        "sourceCode": "https://github.com/M66B/FairEmail",
+        "license": "GPL-3.0-only",
+        "version": "1.2339",
+        "versionCode": 2339,
+        "apkUrl": "https://f-droid.org/repo/eu.faircode.email_2339.apk",
+        "apkSha256": "3b93ab5b79c94861af994fe435591ddba819fb7eef5e6b963bf7bd66e98ace00",
+        "size": 29427308,
+        "signerSha256": [
+          "b9d041582af46ee39bba0f2f1829d948ae21ecf7ffa6ba120385d245ebb788ae"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/eu.faircode.email/en-US/icon_0a2E8tt03J6IsBb7HvvI88FYOaaWLuP1Ea73naLIvxg=.png",
+        "iconSha256": "d1ad84f2db74dc9e88b016fb1efbc8f3c15839a6962ee3f511aef79da2c8bf18",
+        "localIcon": "/media/eu.faircode.email/icon.png"
+      },
+      {
+        "id": "net.thunderbird.android",
+        "name": "Thunderbird: свободная почта",
+        "packagePage": "https://f-droid.org/packages/net.thunderbird.android/",
+        "sourceCode": "https://github.com/thunderbird/thunderbird-android",
+        "license": "Apache-2.0",
+        "version": "24.0",
+        "versionCode": 33,
+        "apkUrl": "https://f-droid.org/repo/net.thunderbird.android_33.apk",
+        "apkSha256": "473b33da5963d0a4261a834c845aaf8e3878309565e9f40e61f6e5def21565e5",
+        "size": 10965795,
+        "signerSha256": [
+          "b6524779b3dbbc5ac17a5ac271ddb29dcfbf723578c238e03c3c217811356dd1"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/net.thunderbird.android/en-US/icon_llBuXRxsJFITCCuDze-ENOPa1J_HFZLudN5K3gU-xiU=.png",
+        "iconSha256": "96506e5d1c6c245213082b83cdef8434e3dad49fc71592ee74de4ade053ec625",
+        "localIcon": "/media/net.thunderbird.android/icon.png"
+      },
+      {
+        "id": "org.fossify.calendar",
+        "name": "Fossify Calendar",
+        "packagePage": "https://f-droid.org/packages/org.fossify.calendar/",
+        "sourceCode": "https://github.com/FossifyOrg/Calendar",
+        "license": "GPL-3.0-only",
+        "version": "1.12.1",
+        "versionCode": 24,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.calendar_24.apk",
+        "apkSha256": "dae815ce83285facf9fd8648b8c4f039700d95126325db124521eba479b270ba",
+        "size": 8204153,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.calendar/en-US/icon_BAhUc7CcTB0Q-Lko-Vlp3ywXIZoeMf7r2gkDB8fIyRM=.png",
+        "iconSha256": "04085473b09c4c1d10f8b928f95969df2c17219a1e31feebda090307c7c8c913",
+        "localIcon": "/media/org.fossify.calendar/icon.png"
+      },
+      {
+        "id": "org.fossify.contacts",
+        "name": "Fossify Contacts",
+        "packagePage": "https://f-droid.org/packages/org.fossify.contacts/",
+        "sourceCode": "https://github.com/FossifyOrg/Contacts",
+        "license": "GPL-3.0-only",
+        "version": "1.6.0",
+        "versionCode": 13,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.contacts_13.apk",
+        "apkSha256": "6a89be96b5ec39f5e2b11bd61dc7031f4b88261b324ab13af5743fbc62f0cddb",
+        "size": 8602985,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.contacts/en-US/icon_KiGiEsSyQLlycwpDjVYUn0jCqGWzHURP4iJQwrFVLGM=.png",
+        "iconSha256": "2a21a212c4b240b972730a438d56149f48c2a865b31d444fe22250c2b1552c63",
+        "localIcon": "/media/org.fossify.contacts/icon.png"
+      },
+      {
+        "id": "org.fossify.filemanager",
+        "name": "Fossify File Manager",
+        "packagePage": "https://f-droid.org/packages/org.fossify.filemanager/",
+        "sourceCode": "https://github.com/FossifyOrg/File-Manager",
+        "license": "GPL-3.0-only",
+        "version": "1.6.3",
+        "versionCode": 15,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.filemanager_15.apk",
+        "apkSha256": "9ba65c2ab8ca612fd90d8eba5320572ed1e1f99f2c6139244c7e05ef9a377d36",
+        "size": 10030986,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.filemanager/en-US/icon_IjcgJgPCk3zYIJ99OnzDV7ERXk0Ghdq5aBNEeeZwrEU=.png",
+        "iconSha256": "2237202603c2937cd8209f7d3a7cc357b1115e4d0685dab968134479e670ac45",
+        "localIcon": "/media/org.fossify.filemanager/icon.png"
+      },
+      {
+        "id": "org.fossify.gallery",
+        "name": "Fossify Gallery",
+        "packagePage": "https://f-droid.org/packages/org.fossify.gallery/",
+        "sourceCode": "https://github.com/FossifyOrg/Gallery",
+        "license": "GPL-3.0-only",
+        "version": "1.14.1",
+        "versionCode": 30,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.gallery_30.apk",
+        "apkSha256": "9a9f2e06882abfdae6f4c86aeaa83ae8102b2e081591df0eb2134a6f629657c7",
+        "size": 38538587,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.gallery/en-US/icon_PacTnoui8YxLsg0xPUkfzomGKFZemSHSr4p2qqrTn1Q=.png",
+        "iconSha256": "3da7139e8ba2f18c4bb20d313d491fce898628565e9921d2af8a76aaaad39f54",
+        "localIcon": "/media/org.fossify.gallery/icon.png"
+      },
+      {
+        "id": "org.fossify.musicplayer",
+        "name": "Fossify Music Player",
+        "packagePage": "https://f-droid.org/packages/org.fossify.musicplayer/",
+        "sourceCode": "https://github.com/FossifyOrg/Music-Player",
+        "license": "GPL-3.0-only",
+        "version": "1.8.5",
+        "versionCode": 18,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.musicplayer_18.apk",
+        "apkSha256": "61fdf0bb71cb3a809960e59a5872030f16c799a0c0f285115a6f40f7fa5012c0",
+        "size": 11148309,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.musicplayer/en-US/icon_zzf2uvu5LZyKQfhABXa1teA7OM6nT8AP73RNxobt6xs=.png",
+        "iconSha256": "cf37f6bafbb92d9c8a41f8400576b5b5e03b38cea74fc00fef744dc686edeb1b",
+        "localIcon": "/media/org.fossify.musicplayer/icon.png"
+      },
+      {
+        "id": "org.fossify.messages",
+        "name": "Fossify Messages",
+        "packagePage": "https://f-droid.org/packages/org.fossify.messages/",
+        "sourceCode": "https://github.com/FossifyOrg/Messages",
+        "license": "GPL-3.0-only",
+        "version": "1.10.2",
+        "versionCode": 26,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.messages_26.apk",
+        "apkSha256": "7077dae6613d7a9d775841c4c10be16e255f8af8d5152bc84a5e6984740b56e1",
+        "size": 6766671,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.messages/en-US/icon_ITOiksSmkUfPw2V32yR_choHftbgUEYU3zjyfcHx6hM=.png",
+        "iconSha256": "2133a292c4a69147cfc36577db247f721a077ed6e0504614df38f27dc1f1ea13",
+        "localIcon": "/media/org.fossify.messages/icon.png"
+      },
+      {
+        "id": "org.fossify.phone",
+        "name": "Fossify Phone",
+        "packagePage": "https://f-droid.org/packages/org.fossify.phone/",
+        "sourceCode": "https://github.com/FossifyOrg/Phone",
+        "license": "GPL-3.0-only",
+        "version": "1.11.1",
+        "versionCode": 22,
+        "apkUrl": "https://f-droid.org/repo/org.fossify.phone_22.apk",
+        "apkSha256": "d1ad08467034e5138a6e68f03b6e150f0bb010dfcbf490ff3d2bd4822b755728",
+        "size": 9165050,
+        "signerSha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fossify.phone/en-US/icon_7ptqOLX7tzUPW1LaYEzR-OWLt9n9GM3y7jUy8zVv_nc=.png",
+        "iconSha256": "ee9b6a38b5fbb7350f5b52da604cd1f8e58bb7d9fd18cdf2ee3532f3356ffe77",
+        "localIcon": "/media/org.fossify.phone/icon.png"
+      },
+      {
+        "id": "org.kde.kdeconnect_tp",
+        "name": "KDE Connect",
+        "packagePage": "https://f-droid.org/packages/org.kde.kdeconnect_tp/",
+        "sourceCode": "https://invent.kde.org/network/kdeconnect-android",
+        "license": "GPL-3.0-only",
+        "version": "1.37.0",
+        "versionCode": 13700,
+        "apkUrl": "https://f-droid.org/repo/org.kde.kdeconnect_tp_13700.apk",
+        "apkSha256": "a51c6e85585748b44b42fb409229effb333f7758e5e7cbfff2f480a62530dd01",
+        "size": 7401390,
+        "signerSha256": [
+          "79b50031486746dffbc746f48fb0eb62fc7bb0ae7b976e7d6507b2c078840d92"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.kde.kdeconnect_tp/en-US/icon_XJXXjUP0BrUH-hGNaCgoKnwUsJ0c2QNgTdISfc_KivI=.png",
+        "iconSha256": "5c95d78d43f406b507fa118d6828282a7c14b09d1cd903604dd2127dcfca8af2",
+        "localIcon": "/media/org.kde.kdeconnect_tp/icon.png"
+      },
+      {
+        "id": "com.github.catfriend1.syncthingfork",
+        "name": "Syncthing-Fork",
+        "packagePage": "https://f-droid.org/packages/com.github.catfriend1.syncthingfork/",
+        "sourceCode": "https://github.com/researchxxl/syncthing-android",
+        "license": "MPL-2.0",
+        "version": "2.1.7.0",
+        "versionCode": 2010700,
+        "apkUrl": "https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010700.apk",
+        "apkSha256": "1ad568a373bd36c48100796e5fac3ebd0a0e0663ffdab1dc2baac355ab140063",
+        "size": 61975393,
+        "signerSha256": [
+          "d374b8de5057013143c7d1515a015598c2df403be8160cae01a58c227e6e86aa"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.github.catfriend1.syncthingfork/en-US/icon_egWOwTWZpQ_1CxmdrwP5wRta5EVmCCuzQWxjI5JTs0w=.png",
+        "iconSha256": "7a058ec13599a50ff50b199daf03f9c11b5ae44566082bb3416c63239253b34c",
+        "localIcon": "/media/com.github.catfriend1.syncthingfork/icon.png"
+      },
+      {
+        "id": "com.kunzisoft.keepass.libre",
+        "name": "KeePassDX - менеджер паролей",
+        "packagePage": "https://f-droid.org/packages/com.kunzisoft.keepass.libre/",
+        "sourceCode": "https://github.com/Kunzisoft/KeePassDX",
+        "license": "GPL-3.0-or-later",
+        "version": "4.5.8",
+        "versionCode": 45800,
+        "apkUrl": "https://f-droid.org/repo/com.kunzisoft.keepass.libre_45800.apk",
+        "apkSha256": "8b3c1818aebfb9196814eb2eea39da897b8f18e2404aa5b47f603fc56641c593",
+        "size": 16778665,
+        "signerSha256": [
+          "c810aab7efa4d5ad3fc2941fdf5f99b88a3b73f86219715627edb4dabac541a4"
+        ],
+        "minSdkVersion": 19,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.kunzisoft.keepass.libre/en-US/icon_eLwXEQD9l2URrUS3t8esDXnsKGBaH02E-ddEYhV_i7Q=.png",
+        "iconSha256": "78bc171100fd976511ad44b7b7c7ac0d79ec28605a1f4d84f9d74462157f8bb4",
+        "localIcon": "/media/com.kunzisoft.keepass.libre/icon.png"
+      },
+      {
+        "id": "com.beemdevelopment.aegis",
+        "name": "Aegis Authenticator",
+        "packagePage": "https://f-droid.org/packages/com.beemdevelopment.aegis/",
+        "sourceCode": "https://github.com/beemdevelopment/Aegis",
+        "license": "GPL-3.0-only",
+        "version": "3.4.3",
+        "versionCode": 82,
+        "apkUrl": "https://f-droid.org/repo/com.beemdevelopment.aegis_82.apk",
+        "apkSha256": "0eecec45de0da3ff1358004b51e2960d9178551643a6ed44f6496ea9ec999c19",
+        "size": 6869856,
+        "signerSha256": [
+          "09cfde62e2a81c8050d3be4c20e3f8d8ddd01531be1b47cb3b0eec213f641f89"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.beemdevelopment.aegis/en-US/icon_C951ZFTL5UuK5VK6KaIOnVy5NNb0Wqe8asl4v1fSXLI=.png",
+        "iconSha256": "0bde756454cbe54b8ae552ba29a20e9d5cb934d6f45aa7bc6ac978bf57d25cb2",
+        "localIcon": "/media/com.beemdevelopment.aegis/icon.png"
+      },
+      {
+        "id": "org.schabi.newpipe",
+        "name": "NewPipe",
+        "packagePage": "https://f-droid.org/packages/org.schabi.newpipe/",
+        "sourceCode": "https://github.com/TeamNewPipe/NewPipe",
+        "license": "GPL-3.0-or-later",
+        "version": "0.29.1",
+        "versionCode": 1015,
+        "apkUrl": "https://f-droid.org/repo/org.schabi.newpipe_1015_cb84069.apk",
+        "apkSha256": "18447bfb1e06d113edc88df93f471827280de06f6f3d4dc42f56f28b9c1bab79",
+        "size": 11507122,
+        "signerSha256": [
+          "cb84069bd68116bafae5ee4ee5b08a567aa6d898404e7cb12f9e756df5cf5cab"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "NonFreeNet"
+        ],
+        "iconUrl": "https://f-droid.org/repo/org.schabi.newpipe/en-US/icon_OHy4y1W-fJCNhHHOBCM9V_cxZNJJgbcNkB-x7UDTY9Q=.png",
+        "iconSha256": "387cb8cb55be7c908d8471ce04233d57f73164d24981b70d901fb1ed40d363d4",
+        "localIcon": "/media/org.schabi.newpipe/icon.png"
+      },
+      {
+        "id": "com.nononsenseapps.feeder",
+        "name": "Feeder",
+        "packagePage": "https://f-droid.org/packages/com.nononsenseapps.feeder/",
+        "sourceCode": "https://github.com/spacecowboy/Feeder",
+        "license": "GPL-3.0-only",
+        "version": "2.25.0",
+        "versionCode": 4191,
+        "apkUrl": "https://f-droid.org/repo/com.nononsenseapps.feeder_4191.apk",
+        "apkSha256": "6f52c11138b230d81ccaf2a73ffa1d8fcf036e6be90be8622dfa3ae2d8aee2f8",
+        "size": 61177127,
+        "signerSha256": [
+          "a80df8170d6c891ec9a055211df640a855d451052307bf29cdce3fef9afa94fd"
+        ],
+        "minSdkVersion": 29,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.nononsenseapps.feeder/en-US/icon_Ab31f6rFiG70NRqjyOH87znJd2y38yiEg2Tz_lY791w=.png",
+        "iconSha256": "01bdf57faac5886ef4351aa3c8e1fcef39c9776cb7f328848364f3fe563bf75c",
+        "localIcon": "/media/com.nononsenseapps.feeder/icon.png"
+      },
+      {
+        "id": "me.ash.reader",
+        "name": "Read You",
+        "packagePage": "https://f-droid.org/packages/me.ash.reader/",
+        "sourceCode": "https://github.com/Ashinch/ReadYou",
+        "license": "GPL-3.0-only",
+        "version": "0.16.2",
+        "versionCode": 47,
+        "apkUrl": "https://f-droid.org/repo/me.ash.reader_47.apk",
+        "apkSha256": "78b1b8b9b6f6d18baaba31427895f1f10e9ca6cc1e01b3ceeb96df26e8fca075",
+        "size": 11209694,
+        "signerSha256": [
+          "cef338a474523bdfcf3fb82cbee2d45f6fd9610e95902ba78c8c79a45e102ae9"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/me.ash.reader/en-US/icon_Bq9nQb_UzmI1DBSluSA8Q-d5tFo9dQWmyIyt69onHfo=.png",
+        "iconSha256": "06af6741bfd4ce62350c14a5b9203c43e779b45a3d7505a6c88cadebda271dfa",
+        "localIcon": "/media/me.ash.reader/icon.png"
+      },
+      {
+        "id": "net.sourceforge.opencamera",
+        "name": "Open Camera",
+        "packagePage": "https://f-droid.org/packages/net.sourceforge.opencamera/",
+        "sourceCode": "https://sourceforge.net/p/opencamera/code",
+        "license": "GPL-3.0-or-later",
+        "version": "1.56.2",
+        "versionCode": 96,
+        "apkUrl": "https://f-droid.org/repo/net.sourceforge.opencamera_96.apk",
+        "apkSha256": "ca5672ca8c7174554ca0b07b5b26e505817a05142f571cf2abe67e790c30249c",
+        "size": 4973923,
+        "signerSha256": [
+          "438991c968e8d308ca34078d37511c90c502d596baf9f0d0c5fbd1c9bf67df6d"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/net.sourceforge.opencamera/en-US/icon_9frkGlPo9C52FJi_DpMJOAc-8F_tSLxW2hNmHPLL2yw=.png",
+        "iconSha256": "f5fae41a53e8f42e761498bf0e930938073ef05fed48bc56da13661cf2cbdb2c",
+        "localIcon": "/media/net.sourceforge.opencamera/icon.png"
+      },
+      {
+        "id": "net.gsantner.markor",
+        "name": "Markor",
+        "packagePage": "https://f-droid.org/packages/net.gsantner.markor/",
+        "sourceCode": "https://github.com/gsantner/markor",
+        "license": "Apache-2.0",
+        "version": "2026.10.0",
+        "versionCode": 164,
+        "apkUrl": "https://f-droid.org/repo/net.gsantner.markor_164.apk",
+        "apkSha256": "c29412e02d03e4f0511746a1bcef48c6b73fc1f70c1024fbf04903b0b3f4c485",
+        "size": 11849016,
+        "signerSha256": [
+          "9c70033237dc46fe5052e420c665708de8b3105b89842843818981826b7eec9c"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/net.gsantner.markor/en-US/icon_jm7Yt2QTE4iuxQp_T98o-PSJ4m6GPzmawSrx99KYiE8=.png",
+        "iconSha256": "8e6ed8b764131388aec50a7f4fdf28f8f489e26e863f399ac12af1f7d298884f",
+        "localIcon": "/media/net.gsantner.markor/icon.png"
+      },
+      {
+        "id": "com.nextcloud.client",
+        "name": "Nextcloud",
+        "packagePage": "https://f-droid.org/packages/com.nextcloud.client/",
+        "sourceCode": "https://github.com/nextcloud/android",
+        "license": "GPL-2.0-only",
+        "version": "35.0.2",
+        "versionCode": 350000290,
+        "apkUrl": "https://f-droid.org/repo/com.nextcloud.client_350000290.apk",
+        "apkSha256": "c9ba2e85b13fee457238f959d367223834db44ec14531ec93abb2be97ab3fcff",
+        "size": 112503320,
+        "signerSha256": [
+          "5709576f9d6c6a7687dd5d56b269d1fa5e379702b91bc83f39fd7b7c597c1b83"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.nextcloud.client/en-US/icon_uMFXKXpFQnnVroYp_Oxtrb4w_rVoRJ4Zi85v0NPY1ZY=.png",
+        "iconSha256": "b8c157297a454279d5ae8629fcec6dadbe30feb568449e198bce6fd0d3d8d596",
+        "localIcon": "/media/com.nextcloud.client/icon.png"
+      },
+      {
+        "id": "com.keylesspalace.tusky",
+        "name": "Tusky",
+        "packagePage": "https://f-droid.org/packages/com.keylesspalace.tusky/",
+        "sourceCode": "https://codeberg.org/tusky/Tusky",
+        "license": "GPL-3.0-only",
+        "version": "33.1",
+        "versionCode": 145,
+        "apkUrl": "https://f-droid.org/repo/com.keylesspalace.tusky_145.apk",
+        "apkSha256": "8154cabe67374f2e1f477fc4de8a44bbefe3cafdfa1b05495a6a9f762c6efd7d",
+        "size": 22491280,
+        "signerSha256": [
+          "e946901f12bd49c64de702a532114e58c3ab2a6f18d1cd9b78632baad44454e3"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.keylesspalace.tusky/en-US/icon_Q5w_2GJZP6EeCLURH-mnuVkqLo5AUPDrUNAY2PFm220=.png",
+        "iconSha256": "439c3fd862593fa11e08b5111fe9a7b9592a2e8e4050f0eb50d018d8f166db6d",
+        "localIcon": "/media/com.keylesspalace.tusky/icon.png"
+      },
+      {
+        "id": "io.element.android.x",
+        "name": "Element X - Secure Chat & Call",
+        "packagePage": "https://f-droid.org/packages/io.element.android.x/",
+        "sourceCode": "https://github.com/element-hq/element-x-android",
+        "license": "AGPL-3.0-or-later",
+        "version": "26.09.1",
+        "versionCode": 202609012,
+        "apkUrl": "https://f-droid.org/repo/io.element.android.x_202609012.apk",
+        "apkSha256": "ceb076564298cd0aef4688ad79058b55638d196b9beb5ac47ab421d757335bf3",
+        "size": 117664325,
+        "signerSha256": [
+          "6a2fdc3148049ce0d5c6e85010723b83fb207d20c7477f5c22ac53c877e92d47"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/io.element.android.x/en-US/icon_YBz4_OnMHd7E2Bd_oEza9ImLSlHTpL_C-ovHcKljeFA=.png",
+        "iconSha256": "601cf8fce9cc1ddec4d8177fa04cdaf4898b4a51d3a4bfc2fa8bc770a9637850",
+        "localIcon": "/media/io.element.android.x/icon.png"
+      },
+      {
+        "id": "org.briarproject.briar.android",
+        "name": "Briar",
+        "packagePage": "https://f-droid.org/packages/org.briarproject.briar.android/",
+        "sourceCode": "https://code.briarproject.org/briar/briar",
+        "license": "GPL-3.0-or-later",
+        "version": "1.5.24",
+        "versionCode": 10524,
+        "apkUrl": "https://f-droid.org/repo/org.briarproject.briar.android_10524.apk",
+        "apkSha256": "fd01d439040c5964a3c986250cdcd4ff549405194f69ef8b972dc6aefd6f3ff7",
+        "size": 50686498,
+        "signerSha256": [
+          "501ddf14a6ecf904fb20285c56a565cb987a867f91572ee33c2d43771cca4e37"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/icons/org.briarproject.briar.android.10524.png",
+        "iconSha256": "9d1f3a94c4d382a6163faa5d6335678bb0a664bc814b5eed2f5418c24ccd5087",
+        "localIcon": "/media/org.briarproject.briar.android/icon.png"
+      },
+      {
+        "id": "eu.siacs.conversations",
+        "name": "Conversations",
+        "packagePage": "https://f-droid.org/packages/eu.siacs.conversations/",
+        "sourceCode": "https://codeberg.org/iNPUTmice/Conversations",
+        "license": "GPL-3.0-only",
+        "version": "2.21.0+free",
+        "versionCode": 4218299,
+        "apkUrl": "https://f-droid.org/repo/eu.siacs.conversations_4218299.apk",
+        "apkSha256": "c9121ef96ae6f57509935d289ffe2ed0eb7942b05b41dea7bc1b4ed2551a898a",
+        "size": 30749221,
+        "signerSha256": [
+          "c75abe78593643ae7cac527327cd2193482db067404a88b8c13f7a0701946187"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/eu.siacs.conversations/en-US/icon_hjL1SjuLrU9_UUIRtKM8JJocd8SF0plDL70VFGPUbGc=.png",
+        "iconSha256": "8632f54a3b8bad4f7f514211b4a33c249a1c77c485d299432fbd151463d46c67",
+        "localIcon": "/media/eu.siacs.conversations/icon.png"
+      },
+      {
+        "id": "cx.ring",
+        "name": "Jami",
+        "packagePage": "https://f-droid.org/packages/cx.ring/",
+        "sourceCode": "https://review.jami.net/plugins/gitiles/jami-client-android",
+        "license": "GPL-3.0-or-later",
+        "version": "20260807-01",
+        "versionCode": 503,
+        "apkUrl": "https://f-droid.org/repo/cx.ring_503.apk",
+        "apkSha256": "459c8826b1f8dba48fbf8869ba11b6d1438e592f8ff6dd541a06577efa25cee2",
+        "size": 100428373,
+        "signerSha256": [
+          "415682375ec0bfbd31731f21b8b98e35da633f1159fd59133baf061348781025"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/cx.ring/en-US/icon_xFgaT3MKO0Xk_SsFT5dezfiNa_c5_DQFgPiYihj2hqM=.png",
+        "iconSha256": "c4581a4f730a3b45e4fd2b054f975ecdf88d6bf739fc340580f8988a18f686a3",
+        "localIcon": "/media/cx.ring/icon.png"
+      },
+      {
+        "id": "org.mozilla.fennec_fdroid",
+        "name": "Fennec F-Droid",
+        "packagePage": "https://f-droid.org/packages/org.mozilla.fennec_fdroid/",
+        "sourceCode": "https://hg.mozilla.org/mozilla-central/file/tip/mobile/android",
+        "license": "MPL-2.0",
+        "version": "159.0.0",
+        "versionCode": 1590020,
+        "apkUrl": "https://f-droid.org/repo/org.mozilla.fennec_fdroid_1590020.apk",
+        "apkSha256": "a1bbb21a1330cd08e48e8bf1220a7412c968b1bf32fbd029c7d771728ba73a32",
+        "size": 128189228,
+        "signerSha256": [
+          "06665358efd8ba05be236a47a12cb0958d7d75dd939d77c2b31f5398537ebdc5"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [
+          "Tracking"
+        ],
+        "iconUrl": "https://f-droid.org/repo/org.mozilla.fennec_fdroid/en-US/icon_RCxqbONQXgoTeWvoYAQjC0nmDVTlBoCXvzZ1Rx27gRM=.png",
+        "iconSha256": "442c6a6ce3505e0a13796be86004230b49e60d54e5068097bf3675471dbb8113",
+        "localIcon": "/media/org.mozilla.fennec_fdroid/icon.png"
+      },
+      {
+        "id": "com.looker.droidify",
+        "name": "Droid-ify",
+        "packagePage": "https://f-droid.org/packages/com.looker.droidify/",
+        "sourceCode": "https://github.com/Droid-ify/client",
+        "license": "GPL-3.0-or-later",
+        "version": "0.7.8",
+        "versionCode": 780,
+        "apkUrl": "https://f-droid.org/repo/com.looker.droidify_780.apk",
+        "apkSha256": "bb23d12e8b82a5cba906e61def49dc39c11468d2333633a72e107ca422e8f879",
+        "size": 5997579,
+        "signerSha256": [
+          "b4f1c8a81e4b9f6e02638e93bead56656502c21fb95c8d3ec93d0cdd1f6e0d3f"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.looker.droidify/en-US/icon_lApsnfhrMqGkCaW-IdnYwx86CUjdTutncPvXPJythaM=.png",
+        "iconSha256": "940a6c9df86b32a1a409a5be21d9d8c31f3a0948dd4eeb6770fbd73c9cad85a3",
+        "localIcon": "/media/com.looker.droidify/icon.png"
+      },
+      {
+        "id": "com.machiav3lli.fdroid",
+        "name": "Neo Store",
+        "packagePage": "https://f-droid.org/packages/com.machiav3lli.fdroid/",
+        "sourceCode": "https://github.com/NeoApplications/Neo-Store",
+        "license": "GPL-3.0-or-later",
+        "version": "1.3.3",
+        "versionCode": 1304,
+        "apkUrl": "https://f-droid.org/repo/com.machiav3lli.fdroid_1304.apk",
+        "apkSha256": "185816d13dcb9f9fe399adaca15d98c7ea243065f83103628fb31a50d4bc1b46",
+        "size": 5911682,
+        "signerSha256": [
+          "6d8fa0e2d8f4c1d811b85cc733e87d5dac666740c5d73238e2375b81a11761b5"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.machiav3lli.fdroid/en-US/icon_MDlGcc6y5jvKKUH6GKQqhJdcbIZBwVXVBElBcoczxDg=.png",
+        "iconSha256": "30394671ceb2e63bca2941fa18a42a84975c6c8641c155d5044941728733c438",
+        "localIcon": "/media/com.machiav3lli.fdroid/icon.png"
+      },
+      {
+        "id": "org.documentfoundation.libreoffice",
+        "name": "LibreOffice Viewer",
+        "packagePage": "https://f-droid.org/packages/org.documentfoundation.libreoffice/",
+        "sourceCode": "https://git.libreoffice.org/core",
+        "license": "MPL-2.0",
+        "version": "26.2.6.3",
+        "versionCode": 131,
+        "apkUrl": "https://f-droid.org/repo/org.documentfoundation.libreoffice_131.apk",
+        "apkSha256": "751ac3836890b79a56801bf6d9a2788cda3761ab5131a4f0b6abfbad822bb475",
+        "size": 87682841,
+        "signerSha256": [
+          "af71ba344cab259fa625f079ff520f511d17a372bb2e8fa27532791bd5fea8cb"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.documentfoundation.libreoffice/en-US/icon_erWru3ZEzy7MkvEN8042srNPjd4IFFSXaonTuCGGevQ=.png",
+        "iconSha256": "7ab5abbb7644cf2ecc92f10df34e36b2b34f8dde081454976a89d3b821867af4",
+        "localIcon": "/media/org.documentfoundation.libreoffice/icon.png"
+      },
+      {
+        "id": "at.bitfire.davdroid",
+        "name": "DAVx⁵",
+        "packagePage": "https://f-droid.org/packages/at.bitfire.davdroid/",
+        "sourceCode": "https://github.com/bitfireAT/davx5-ose/",
+        "license": "GPL-3.0-only",
+        "version": "4.5.21-ose",
+        "versionCode": 405210002,
+        "apkUrl": "https://f-droid.org/repo/at.bitfire.davdroid_405210002.apk",
+        "apkSha256": "41cf9832d97c31e3fc694e5c66b38990dec3312936cc336141714db07259081b",
+        "size": 17917704,
+        "signerSha256": [
+          "8b48e676a6864967791783c1d8d0fc0dd6d2ce33e1fb36787793ecd086d44707"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/at.bitfire.davdroid/en-US/icon_NexNou7vmaD45rbdc8kjLj0Rv7FW128Mde9OQpHFXPE=.png",
+        "iconSha256": "35ec4da2eeef99a0f8e6b6dd73c9232e3d11bfb156d76f0c75ef4e4291c55cf1",
+        "localIcon": "/media/at.bitfire.davdroid/icon.png"
+      },
+      {
+        "id": "org.tasks",
+        "name": "Tasks.org: Open-source To-Do Lists & Reminders",
+        "packagePage": "https://f-droid.org/packages/org.tasks/",
+        "sourceCode": "https://github.com/tasks/tasks",
+        "license": "GPL-3.0-only",
+        "version": "15.12",
+        "versionCode": 151202,
+        "apkUrl": "https://f-droid.org/repo/org.tasks_151202.apk",
+        "apkSha256": "ed972cc1cec3456a11992435a3fcf132d1311f1e8dfd27758265122fbc206ce0",
+        "size": 28580639,
+        "signerSha256": [
+          "a038a055bf43b2659cbaf862808afd5e447d4d0e2749a10391910009cbd8dcfa"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.tasks/en-US/icon_hj4Uw7qW4b2sruhcSPVU6kuNoHV4QGWgIXjyUqJ36KA=.png",
+        "iconSha256": "863e14c3ba96e1bdacaee85c48f554ea4b8da075784065a02178f252a277e8a0",
+        "localIcon": "/media/org.tasks/icon.png"
+      },
+      {
+        "id": "ws.xsoh.etar",
+        "name": "Etar — FOSS-календарь",
+        "packagePage": "https://f-droid.org/packages/ws.xsoh.etar/",
+        "sourceCode": "https://github.com/Etar-Group/Etar-Calendar",
+        "license": "GPL-3.0-only",
+        "version": "1.0.57",
+        "versionCode": 57,
+        "apkUrl": "https://f-droid.org/repo/ws.xsoh.etar_57.apk",
+        "apkSha256": "dae01d93c8920aa63845868db2190bcc4aa6ff8410b1289de1ce27b1bb89c599",
+        "size": 9226697,
+        "signerSha256": [
+          "3f3176c3ce189c98054ff9e1d32daecf00a41572f4c7bd2b2f80607252ddb06e"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/ws.xsoh.etar/en-US/icon_MV5P0hb85YWVJIfobFH46J3yDwLvde2IRXbFLfH133s=.png",
+        "iconSha256": "315e4fd216fce585952487e86c51f8e89df20f02ef75ed884576c52df1f5df7b",
+        "localIcon": "/media/ws.xsoh.etar/icon.png"
+      },
+      {
+        "id": "net.cozic.joplin",
+        "name": "Joplin",
+        "packagePage": "https://f-droid.org/packages/net.cozic.joplin/",
+        "sourceCode": "https://github.com/laurent22/joplin",
+        "license": "MIT",
+        "version": "3.7.8",
+        "versionCode": 2097817,
+        "apkUrl": "https://f-droid.org/repo/net.cozic.joplin_2097817.apk",
+        "apkSha256": "79acd24866ef5c3f8779fcdf926dd6e0d6e242ccffda8581c556f2a80f4b2782",
+        "size": 154987817,
+        "signerSha256": [
+          "48a1cf9201b9079a6e0d5b33693e496db3c5cbec64a85afccd75e16d7a6cd54d"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/net.cozic.joplin/en-US/icon_4ZwOYOFQVDhqRaKMUYxpj6hJJLijV8EYZJ7gWBML6ZM=.png",
+        "iconSha256": "e19c0e60e15054386a45a28c518c698fa84924b8a357c118649ee058130be993",
+        "localIcon": "/media/net.cozic.joplin/icon.png"
+      },
+      {
+        "id": "com.termux",
+        "name": "Termux",
+        "packagePage": "https://f-droid.org/packages/com.termux/",
+        "sourceCode": "https://github.com/termux/termux-app",
+        "license": "GPL-3.0-only",
+        "version": "0.118.3",
+        "versionCode": 1002,
+        "apkUrl": "https://f-droid.org/repo/com.termux_1002.apk",
+        "apkSha256": "e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec",
+        "size": 113880067,
+        "signerSha256": [
+          "228fb2cfe90831c1499ec3ccaf61e96e8e1ce70766b9474672ce427334d41c42"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon_7jMZ7XD80oeucmGEaTwktIRZexLtGWvJfKdVD6Wu2SI=.png",
+        "iconSha256": "ee3319ed70fcd287ae726184693c24b484597b12ed196bc97ca7550fa5aed922",
+        "localIcon": "/media/com.termux/icon.png"
+      },
+      {
+        "id": "me.zhanghai.android.files",
+        "name": "Material Files",
+        "packagePage": "https://f-droid.org/packages/me.zhanghai.android.files/",
+        "sourceCode": "https://github.com/zhanghai/MaterialFiles",
+        "license": "GPL-3.0-or-later",
+        "version": "1.7.5",
+        "versionCode": 40,
+        "apkUrl": "https://f-droid.org/repo/me.zhanghai.android.files_40.apk",
+        "apkSha256": "2fe900bf43d725b655008d438f5ca46d0da0f301e3784403b5b96c3fc2df6e8a",
+        "size": 10944578,
+        "signerSha256": [
+          "9c22a742fa200c85bafbc9924a02ddc8f3a0b975d4d7b5a8da21d7cf34ce2b20"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/me.zhanghai.android.files/en-US/icon_BFY8kIAZkrB0kKwXt1uVDgghMociormUlcOIedEh2mA=.png",
+        "iconSha256": "04563c90801992b07490ac17b75b950e0821328722a2b99495c38879d121da60",
+        "localIcon": "/media/me.zhanghai.android.files/icon.png"
+      },
+      {
+        "id": "com.amaze.filemanager",
+        "name": "Amaze File Manager",
+        "packagePage": "https://f-droid.org/packages/com.amaze.filemanager/",
+        "sourceCode": "https://github.com/TeamAmaze/AmazeFileManager",
+        "license": "GPL-3.0-or-later",
+        "version": "3.11.4",
+        "versionCode": 126,
+        "apkUrl": "https://f-droid.org/repo/com.amaze.filemanager_126.apk",
+        "apkSha256": "627b8cd6a5f750dc8315ebb0fadeddfea8ff76700922049d4dbf0ca22f3397fd",
+        "size": 12743698,
+        "signerSha256": [
+          "4d86ad78c71d7d9ac2c64b93b548b8a6fa7fdf683ced023731782d8dcfa7d6bc"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.amaze.filemanager/en-US/icon_i3rTEKkXiH92mYX6P1GxarVBABrjy-ROmWeb5h0XEFQ=.png",
+        "iconSha256": "8b7ad310a917887f769985fa3f51b16ab541001ae3cbe44e99679be61d171054",
+        "localIcon": "/media/com.amaze.filemanager/icon.png"
+      },
+      {
+        "id": "de.dennisguse.opentracks",
+        "name": "OpenTracks (Non-reproducible)",
+        "packagePage": "https://f-droid.org/packages/de.dennisguse.opentracks/",
+        "sourceCode": "https://codeberg.org/OpenTracksApp/OpenTracks",
+        "license": "Apache-2.0",
+        "version": "v4.29.0irreproducible",
+        "versionCode": 6766,
+        "apkUrl": "https://f-droid.org/repo/de.dennisguse.opentracks_6766.apk",
+        "apkSha256": "f63ed60e2a4f1b3d878671bfde2150ceaa89e484618b91390500e1a583694cc1",
+        "size": 10934525,
+        "signerSha256": [
+          "4774e9917ce05a2071b5c339e8e6faa801bfc91b9dccc4804558cf8ae6555c74"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.dennisguse.opentracks/en-US/icon_HGyMXZwbEy3IfnpEQzJv4MP5ZxyXVqJ33sS3AtPWK4w=.png",
+        "iconSha256": "1c6c8c5d9c1b132dc87e7a4443326fe0c3f9671c9756a277dec4b702d3d62b8c",
+        "localIcon": "/media/de.dennisguse.opentracks/icon.png"
+      },
+      {
+        "id": "com.foobnix.pro.pdf.reader",
+        "name": "Librera Reader",
+        "packagePage": "https://f-droid.org/packages/com.foobnix.pro.pdf.reader/",
+        "sourceCode": "https://github.com/foobnix/LibreraReader",
+        "license": "GPL-3.0-or-later",
+        "version": "10.0.22-fdroid",
+        "versionCode": 7535,
+        "apkUrl": "https://f-droid.org/repo/com.foobnix.pro.pdf.reader_7535.apk",
+        "apkSha256": "e059aa272ee7425f4dcda867149ea88548a35f5bf71ce987642ff872b3f03958",
+        "size": 125423520,
+        "signerSha256": [
+          "ea0d90df4dde7b9a9e8eaebe2e8aa47ed13f4df9d77aa64bc99c7ed309d2a84d"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.foobnix.pro.pdf.reader/ru/icon_y15Jxhzp6YrmjLC-wtc27B6XLTcArf7yK-2WlpNaoe0=.png",
+        "iconSha256": "cb5e49c61ce9e98ae68cb0bec2d736ec1e972d3700adfef22bed9696935aa1ed",
+        "localIcon": "/media/com.foobnix.pro.pdf.reader/icon.png"
+      },
+      {
+        "id": "org.koreader.launcher.fdroid",
+        "name": "KOReader",
+        "packagePage": "https://f-droid.org/packages/org.koreader.launcher.fdroid/",
+        "sourceCode": "https://github.com/koreader/koreader",
+        "license": "AGPL-3.0-only",
+        "version": "v2026.07.1",
+        "versionCode": 119462,
+        "apkUrl": "https://f-droid.org/repo/org.koreader.launcher.fdroid_119462.apk",
+        "apkSha256": "1e740b6a964032f67bd8235f98a3f12d229f3427d23e2486d6a0ede6dd3dba7c",
+        "size": 30121616,
+        "signerSha256": [
+          "8c86266c9e9191b7d02329606a5ecea7460958515462642ffec8664bb919da4d"
+        ],
+        "minSdkVersion": 18,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.koreader.launcher.fdroid/en-US/icon_950Exj3O0279uwJDC5-JoCOH4m6toAw6lqyyhIv8LuA=.png",
+        "iconSha256": "f79d04c63dced36efdbb02430b9f89a02387e26eada00c3a96acb2848bfc2ee0",
+        "localIcon": "/media/org.koreader.launcher.fdroid/icon.png"
+      },
+      {
+        "id": "org.isoron.uhabits",
+        "name": "Loop Habit Tracker",
+        "packagePage": "https://f-droid.org/packages/org.isoron.uhabits/",
+        "sourceCode": "https://github.com/iSoron/uhabits",
+        "license": "GPL-3.0-only",
+        "version": "2.3.2",
+        "versionCode": 20302,
+        "apkUrl": "https://f-droid.org/repo/org.isoron.uhabits_20302.apk",
+        "apkSha256": "8a702f85afe83385d5fb61cbcf40536411376f64bbb1712910d4ed00182b8303",
+        "size": 10757869,
+        "signerSha256": [
+          "9f338a863b0152c881e04954d07ae67f62afd11e064fb3ac99a8bd1d2842a395"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.isoron.uhabits/en-US/icon_dhJtIjNYdwt-e9Ky5Xm91xiWo0HtQPSEiEHTCAigQeQ=.png",
+        "iconSha256": "76126d223358770b7e7bd2b2e579bdd71896a341ed40f4848841d30808a041e4",
+        "localIcon": "/media/org.isoron.uhabits/icon.png"
+      },
+      {
+        "id": "com.ichi2.anki",
+        "name": "AnkiDroid: Flashcards",
+        "packagePage": "https://f-droid.org/packages/com.ichi2.anki/",
+        "sourceCode": "https://github.com/ankidroid/Anki-Android",
+        "license": "AGPL-3.0-or-later",
+        "version": "2.25.3",
+        "versionCode": 225033003,
+        "apkUrl": "https://f-droid.org/repo/com.ichi2.anki_225033003.apk",
+        "apkSha256": "55410a07397a0e15e7096e61dde41ca03ab88ebf38754cff0cdf00ad91b7b258",
+        "size": 41336958,
+        "signerSha256": [
+          "24a3d4756c62dd69c86df69aa7fa327b2a6bf55f55c4a1749f99bd1da75906bb"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.ichi2.anki/en-US/icon_VE0ysf8rdK-8bnOG2EmdljR6CgRc0tru3v1tCFCTy0c=.png",
+        "iconSha256": "544d32b1ff2b74afbc6e7386d8499d96347a0a045cd2daeedefd6d085093cb47",
+        "localIcon": "/media/com.ichi2.anki/icon.png"
+      },
+      {
+        "id": "de.westnordost.streetcomplete",
+        "name": "Street­Complete",
+        "packagePage": "https://f-droid.org/packages/de.westnordost.streetcomplete/",
+        "sourceCode": "https://github.com/streetcomplete/StreetComplete",
+        "license": "GPL-3.0-only",
+        "version": "64.1",
+        "versionCode": 6406,
+        "apkUrl": "https://f-droid.org/repo/de.westnordost.streetcomplete_6406.apk",
+        "apkSha256": "806e96f7fa4f57fa4f413d37e52907262a79b626e7d48bb96231917066019bda",
+        "size": 90561451,
+        "signerSha256": [
+          "7bdab5770bdbdc7a38002430a0b56adf631f1445ba478ba2a8fb168d5c087513"
+        ],
+        "minSdkVersion": 25,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "NonFreeNet",
+          "TetheredNet"
+        ],
+        "iconUrl": "https://f-droid.org/repo/de.westnordost.streetcomplete/en/icon_c5kyb3mNYbAXLMH-TgXBTgn2BigTsobs06_a41nQuWQ=.png",
+        "iconSha256": "7399326f798d61b0172cc1fe4e05c14e09f6062813b286ecd3afdae359d0b964",
+        "localIcon": "/media/de.westnordost.streetcomplete/icon.png"
+      },
+      {
+        "id": "com.google.android.stardroid",
+        "name": "Sky Map: Карта неба",
+        "packagePage": "https://f-droid.org/packages/com.google.android.stardroid/",
+        "sourceCode": "https://github.com/sky-map-team/stardroid",
+        "license": "GPL-3.0-or-later",
+        "version": "2.2.1:Buran",
+        "versionCode": 1771,
+        "apkUrl": "https://f-droid.org/repo/com.google.android.stardroid_1771.apk",
+        "apkSha256": "78baab24a1e3a59e5cf2ba7061d6003e4c329f3de5729698556664961c674719",
+        "size": 23139744,
+        "signerSha256": [
+          "066b05d01ea5b4998074ceab1ccca5bf42711995edc6aedbfa311e5620f1e442"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "NonFreeAssets"
+        ],
+        "iconUrl": "https://f-droid.org/repo/com.google.android.stardroid/en-US/icon_sjDgvxgimqjLph9kXRyxjeSAy18B30TXnwSp1OPwYl8=.png",
+        "iconSha256": "b230e0bf18229aa8cba61f645d1cb18de480cb5f01df44d79f04a9d4e3f0625f",
+        "localIcon": "/media/com.google.android.stardroid/icon.png"
+      },
+      {
+        "id": "de.rwth_aachen.phyphox",
+        "name": "phyphox",
+        "packagePage": "https://f-droid.org/packages/de.rwth_aachen.phyphox/",
+        "sourceCode": "https://github.com/phyphox/phyphox-android",
+        "license": "GPL-3.0-only",
+        "version": "1.2.1",
+        "versionCode": 1020105,
+        "apkUrl": "https://f-droid.org/repo/de.rwth_aachen.phyphox_1020105.apk",
+        "apkSha256": "a73edd3c770a771889ec74bc8ee56d9795ef93504ec63a69964c850c36e16a33",
+        "size": 11496542,
+        "signerSha256": [
+          "de2141760030164a6e2b155f91843b91f060cb16644809542addbb04cac2f30c"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.rwth_aachen.phyphox/ru/icon_hvY5k90m7Ep9budZBIoMoESf1kpbW1pIhfpH0tFSPrE=.png",
+        "iconSha256": "86f63993dd26ec4a7d6ee759048a0ca0449fd64a5b5b5a4885fa47d2d1523eb1",
+        "localIcon": "/media/de.rwth_aachen.phyphox/icon.png"
+      },
+      {
+        "id": "de.tadris.fitness",
+        "name": "FitoTrack",
+        "packagePage": "https://f-droid.org/packages/de.tadris.fitness/",
+        "sourceCode": "https://codeberg.org/jannis/FitoTrack",
+        "license": "GPL-3.0-or-later",
+        "version": "16.3",
+        "versionCode": 1630,
+        "apkUrl": "https://f-droid.org/repo/de.tadris.fitness_1630.apk",
+        "apkSha256": "e1708c7c4256748a5825e3f898a6898dac8a0988f6499c78d63ea48bbf8f352b",
+        "size": 6772550,
+        "signerSha256": [
+          "d60bc3dc526365ea5883b421306aa0b50bade59aed5080f1070f118fe3b7f78e"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.tadris.fitness/en-US/icon_EsXo47Mqybe5xI8NynkI0fm00NypYBw4LBF506A6NkI=.png",
+        "iconSha256": "12c5e8e3b32ac9b7b9c48f0dca7908d1f9b4d0dca9601c382c1179d3a03a3642",
+        "localIcon": "/media/de.tadris.fitness/icon.png"
+      },
+      {
+        "id": "nodomain.freeyourgadget.gadgetbridge",
+        "name": "Gаdgetbridge",
+        "packagePage": "https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/",
+        "sourceCode": "https://codeberg.org/Freeyourgadget/Gadgetbridge",
+        "license": "AGPL-3.0-only",
+        "version": "0.95.1",
+        "versionCode": 255,
+        "apkUrl": "https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_255_01cce93.apk",
+        "apkSha256": "187ce6606ad5fc8372e3f6da14686f6b3500dbab81a503f7be5afbda876e4050",
+        "size": 22030483,
+        "signerSha256": [
+          "01cce9316fcb77ea02c6dea81fde9f3176469202c0cea0514c0e03cb969bc7be"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge/en-US/icon_X8EVBNWmEaTA1EERH5xgBoSpAan8BNTrrDa4Osj-Da8=.png",
+        "iconSha256": "5fc11504d5a611a4c0d441111f9c600684a901a9fc04d4ebac36b83ac8fe0daf",
+        "localIcon": "/media/nodomain.freeyourgadget.gadgetbridge/icon.png"
+      },
+      {
+        "id": "org.y20k.transistor",
+        "name": "Транзистор - радио приложение",
+        "packagePage": "https://f-droid.org/packages/org.y20k.transistor/",
+        "sourceCode": "https://codeberg.org/y20k/transistor",
+        "license": "MIT",
+        "version": "4.3.10",
+        "versionCode": 117,
+        "apkUrl": "https://f-droid.org/repo/org.y20k.transistor_117.apk",
+        "apkSha256": "ae2ac03bcda5a306c849f27c968fe2543dd58070794c9ad360a075c53367f86d",
+        "size": 3455207,
+        "signerSha256": [
+          "7f243da1293c36806e8cd37d1f61a0e317322d55dc49554a38b97eb2ccaec8dc"
+        ],
+        "minSdkVersion": 25,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.y20k.transistor/en-US/icon_XnM_HqswaEhC6q8FE0MZj_v9uWdubb9cv_3kbE4T25M=.png",
+        "iconSha256": "5e733f1eab30684842eaaf051343198ffbfdb9676e6dbf5cbffde46c4e13db93",
+        "localIcon": "/media/org.y20k.transistor/icon.png"
+      },
+      {
+        "id": "org.oxycblt.auxio",
+        "name": "Auxio",
+        "packagePage": "https://f-droid.org/packages/org.oxycblt.auxio/",
+        "sourceCode": "https://github.com/OxygenCobalt/Auxio",
+        "license": "GPL-3.0-only",
+        "version": "4.1.5",
+        "versionCode": 75,
+        "apkUrl": "https://f-droid.org/repo/org.oxycblt.auxio_75.apk",
+        "apkSha256": "c2053d36c28dbe74de40eadcd8978ec874c465ed3352bba655d4b2b364780b45",
+        "size": 11229630,
+        "signerSha256": [
+          "65b3e62a2b57bf73235be6d2d42ae546fcb02fd17f62cd14500d1c412a285972"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.oxycblt.auxio/en-US/icon_aInSctATMNrr9-2-cNSj0tVsio4GDJ_dzA4ItxWQ-Fs=.png",
+        "iconSha256": "6889d272d01330daebf7edbe70d4a3d2d56c8a8e060c9fddcc0e08b71590f85b",
+        "localIcon": "/media/org.oxycblt.auxio/icon.png"
+      },
+      {
+        "id": "de.ph1b.audiobook",
+        "name": "Voice проигрыватель аудиокниг",
+        "packagePage": "https://f-droid.org/packages/de.ph1b.audiobook/",
+        "sourceCode": "https://github.com/PaulWoitaschek/Voice",
+        "license": "GPL-3.0-or-later",
+        "version": "26.10.8",
+        "versionCode": 5410008,
+        "apkUrl": "https://f-droid.org/repo/de.ph1b.audiobook_5410008.apk",
+        "apkSha256": "f0ee4b972f5321e98ca4beab5f08a52590ae9c8c5fa0a0dd3137779e42de901e",
+        "size": 10506336,
+        "signerSha256": [
+          "2e69583ae90f795f33c10594cd83922e7324b5da9047769d5338b8dff383b897"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.ph1b.audiobook/en-US/icon_j4CDUSTa3OL4p_nTWV6ewlbjYIAtXeHMgW64UvW1iBw=.png",
+        "iconSha256": "8f80835124dadce2f8a7f9d3595e9ec256e360802d5de1cc816eb852f5b5881c",
+        "localIcon": "/media/de.ph1b.audiobook/icon.png"
+      },
+      {
+        "id": "me.blog.korn123.easydiary",
+        "name": "Easy Diary",
+        "packagePage": "https://f-droid.org/packages/me.blog.korn123.easydiary/",
+        "sourceCode": "https://github.com/hanjoongcho/aaf-easydiary",
+        "license": "GPL-3.0-only",
+        "version": "1.4.352.202610020",
+        "versionCode": 352,
+        "apkUrl": "https://f-droid.org/repo/me.blog.korn123.easydiary_352.apk",
+        "apkSha256": "bc0bed1afe2ebd20ad2482a7952dd79583b67eae09dffa05ae0ff39f3c088610",
+        "size": 47967391,
+        "signerSha256": [
+          "f91150019ba2afc599ca6e7ad44dd7f136404fbad3451c549235af13f7bee2ce"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/me.blog.korn123.easydiary/en-US/icon_JXRYBwdlVkKteQFiGR7t_48h_tq_FJOmaCdhyutkCjE=.png",
+        "iconSha256": "2574580707655642ad790162191eedff8f21fedabf1493a6682761caeb640a31",
+        "localIcon": "/media/me.blog.korn123.easydiary/icon.png"
+      },
+      {
+        "id": "org.breezyweather",
+        "name": "Breezy Weather",
+        "packagePage": "https://f-droid.org/packages/org.breezyweather/",
+        "sourceCode": "https://github.com/breezy-weather/breezy-weather",
+        "license": "LGPL-3.0-only",
+        "version": "6.2.2_freenet",
+        "versionCode": 60202,
+        "apkUrl": "https://f-droid.org/repo/org.breezyweather_60202.apk",
+        "apkSha256": "1369d817d426498715f8ccb6750baff19dadd78e85f707088e9bca43977570c0",
+        "size": 20779665,
+        "signerSha256": [
+          "29d435f70aa9aec3c1faff7f7ffa6e15785088d87f06ecfcab9c3cc62dc269d8"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.breezyweather/en-US/icon_e18rWq0tKc__3173BVXmiiasM_F7yrUbs6kh7lQffto=.png",
+        "iconSha256": "7b5f2b5aad2d29cfffdf5ef70555e68a26ac33f17bcab51bb3a921ee541f7eda",
+        "localIcon": "/media/org.breezyweather/icon.png"
+      },
+      {
+        "id": "de.markusfisch.android.binaryeye",
+        "name": "Binary Eye",
+        "packagePage": "https://f-droid.org/packages/de.markusfisch.android.binaryeye/",
+        "sourceCode": "https://github.com/markusfisch/BinaryEye",
+        "license": "MIT",
+        "version": "1.75.7",
+        "versionCode": 182,
+        "apkUrl": "https://f-droid.org/repo/de.markusfisch.android.binaryeye_182.apk",
+        "apkSha256": "6dd3737392fe2df47caa70a4df735fc7ea37c00e4fc328b7980aea428268cd3f",
+        "size": 7521272,
+        "signerSha256": [
+          "9ecdbf0677dd50609c76c2ba05dbe362232327b10a1c37cd58722993d9fe5d57"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/de.markusfisch.android.binaryeye/en-US/icon_JCQAH6daJAEg6038ZyKnweYEAYfbht0wrM_VejEpLxg=.png",
+        "iconSha256": "2424001fa75a240120eb4dfc6722a7c1e6040187db86dd30accfd57a31292f18",
+        "localIcon": "/media/de.markusfisch.android.binaryeye/icon.png"
+      },
+      {
+        "id": "eu.faircode.netguard",
+        "name": "NetGuard",
+        "packagePage": "https://f-droid.org/packages/eu.faircode.netguard/",
+        "sourceCode": "https://github.com/M66B/NetGuard",
+        "license": "GPL-3.0-only",
+        "version": "2.337",
+        "versionCode": 2026080101,
+        "apkUrl": "https://f-droid.org/repo/eu.faircode.netguard_2026080101.apk",
+        "apkSha256": "158b4308da0006298d22ed557adbff24b282fddeb1bc0b3468829a60f405a8c4",
+        "size": 2852296,
+        "signerSha256": [
+          "cd775f59ee5aebba18d9f20aa5d69c7b6952958224b7c93f597e174b57b4dd8f"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/eu.faircode.netguard/en-US/icon_oXzrL0L5zkVjbKLZLGDbHB9sH6lNsk4aOIE0yapHbTU=.png",
+        "iconSha256": "a17ceb2f42f9ce45636ca2d92c60db1c1f6c1fa94db24e1a388134c9aa476d35",
+        "localIcon": "/media/eu.faircode.netguard/icon.png"
+      },
+      {
+        "id": "net.kollnig.missioncontrol.fdroid",
+        "name": "TrackerControl",
+        "packagePage": "https://f-droid.org/packages/net.kollnig.missioncontrol.fdroid/",
+        "sourceCode": "https://github.com/TrackerControl/tracker-control-android",
+        "license": "GPL-3.0-only",
+        "version": "2026.11.01-fdroid",
+        "versionCode": 2026110101,
+        "apkUrl": "https://f-droid.org/repo/net.kollnig.missioncontrol.fdroid_2026110101.apk",
+        "apkSha256": "6765ca27889d91f41c05982151f47e284e831fd14124b9cd17e5031c435a2bf1",
+        "size": 15588465,
+        "signerSha256": [
+          "d54de792e8b68cb22d3dad7b5c9f37316489724ce6fb21572463ee5d4e074f01"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/net.kollnig.missioncontrol.fdroid/en-US/icon_kZAFyqHgQyTcEvB9N2Q6i8ejeNwBAoqVAG43qIEPOqE=.png",
+        "iconSha256": "919005caa1e04324dc12f07d37643a8bc7a378dc01028a95006e37a8810f3aa1",
+        "localIcon": "/media/net.kollnig.missioncontrol.fdroid/icon.png"
+      },
+      {
+        "id": "com.celzero.bravedns",
+        "name": "Rethink: DNS + Firewall + VPN",
+        "packagePage": "https://f-droid.org/packages/com.celzero.bravedns/",
+        "sourceCode": "https://github.com/celzero/rethink-app",
+        "license": "Apache-2.0",
+        "version": "v0.5.8",
+        "versionCode": 703,
+        "apkUrl": "https://f-droid.org/repo/com.celzero.bravedns_703.apk",
+        "apkSha256": "f2685bc66ba3b1537c8bb2e04644360f9a8b307ed6de618c393cade12a2651ae",
+        "size": 30930684,
+        "signerSha256": [
+          "abc6766ba34e027dc7dfa29b1c2b5b1d1dc14f7ba637895a81dfb68e40bc1579"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.celzero.bravedns/en-US/icon_1LYCbwQOGxYH9GDQZoFTraB2-nClFIEhkveS67mTONQ=.png",
+        "iconSha256": "d4b6026f040e1b1607f460d0668153ada076fa70a514812192f792ebb99338d4",
+        "localIcon": "/media/com.celzero.bravedns/icon.png"
+      },
+      {
+        "id": "org.sufficientlysecure.keychain",
+        "name": "OpenKeychain: Easy PGP",
+        "packagePage": "https://f-droid.org/packages/org.sufficientlysecure.keychain/",
+        "sourceCode": "https://github.com/open-keychain/open-keychain",
+        "license": "GPL-3.0-or-later",
+        "version": "6.0.4",
+        "versionCode": 60400,
+        "apkUrl": "https://f-droid.org/repo/org.sufficientlysecure.keychain_60400.apk",
+        "apkSha256": "f88374b9113aa9ddba865258bd989eb3ac2ca1577d92e59d6e84228e080674ce",
+        "size": 12043256,
+        "signerSha256": [
+          "2805a6f465acb923103a2ab3a145e1a97a74c44acf751250b588ebc3f88a0cc9"
+        ],
+        "minSdkVersion": 15,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.sufficientlysecure.keychain/en-US/icon_7CVWLf-lztDVEl2HY_TnF0d98nwq__xr05Yu8lLZoV4=.png",
+        "iconSha256": "ec25562dffa5ced0d5125d8763f4e717477df27c2afffc6bd3962ef252d9a15e",
+        "localIcon": "/media/org.sufficientlysecure.keychain/icon.png"
+      },
+      {
+        "id": "com.unicornsonlsd.finamp",
+        "name": "Finamp",
+        "packagePage": "https://f-droid.org/packages/com.unicornsonlsd.finamp/",
+        "sourceCode": "https://github.com/finamp-app/finamp",
+        "license": "MPL-2.0",
+        "version": "1.0.2",
+        "versionCode": 202,
+        "apkUrl": "https://f-droid.org/repo/com.unicornsonlsd.finamp_202.apk",
+        "apkSha256": "fb3f7864ba0438efa21628bd87fbd6f4f422af922c4dd6fec40717ccd54fc49c",
+        "size": 118258910,
+        "signerSha256": [
+          "73127dcbad76927ae0e11abb3bfad089a895f301c033c75fd798b9955f337759"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.unicornsonlsd.finamp/en-US/icon_PFIal3ACBIEE6uKUs1Beyuy50F4wr81ngVnNlHDJJ_U=.png",
+        "iconSha256": "3c521a977002048104eae294b3505ecaecb9d05e30afcd678159cd9470c927f5",
+        "localIcon": "/media/com.unicornsonlsd.finamp/icon.png"
+      },
+      {
+        "id": "com.vrem.wifianalyzer",
+        "name": "WiFiAnalyzer",
+        "packagePage": "https://f-droid.org/packages/com.vrem.wifianalyzer/",
+        "sourceCode": "https://github.com/VREMSoftwareDevelopment/WifiAnalyzer",
+        "license": "GPL-3.0-only",
+        "version": "3.3.1",
+        "versionCode": 72,
+        "apkUrl": "https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk",
+        "apkSha256": "282a06fcc5ce5d889799113a1c6edf5e408b0902acc542308ad21051a2a7cc2b",
+        "size": 2119103,
+        "signerSha256": [
+          "3a14f8bbead3d530ae0aa0b578b945bdd7667b6e2e27da30cd46349356998f3e"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.vrem.wifianalyzer/en-US/icon_B-8mijiFxN76HnwJkJfVB5gvwpb4fHmg12L0qW3Y030=.png",
+        "iconSha256": "07ef268a3885c4defa1e7c099097d507982fc296f87c79a0d762f4a96dd8d37d",
+        "localIcon": "/media/com.vrem.wifianalyzer/icon.png"
+      },
+      {
+        "id": "com.foxdebug.acode",
+        "name": "Acode IDE: Terminal & AI Code",
+        "packagePage": "https://f-droid.org/packages/com.foxdebug.acode/",
+        "sourceCode": "https://github.com/deadlyjack/Acode",
+        "license": "MIT",
+        "version": "1.13.2",
+        "versionCode": 1008,
+        "apkUrl": "https://f-droid.org/repo/com.foxdebug.acode_1008.apk",
+        "apkSha256": "a8ed4864da95493d84bcd430b47a8900815eced7fe7c763929ef7a38c3987c39",
+        "size": 16826562,
+        "signerSha256": [
+          "4ad655ec828b607be7a37dde5d41753e8f332778c21efab8845f44df72de5fff"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.foxdebug.acode/en-US/icon_ljuxslVt96jUyr6FANAPcSTfaLbw4C61GnouGefIK-Y=.png",
+        "iconSha256": "963bb1b2556df7a8d4cabe8500d00f7124df68b6f0e02eb51a7a2e19e7c82be6",
+        "localIcon": "/media/com.foxdebug.acode/icon.png"
+      },
+      {
+        "id": "org.connectbot",
+        "name": "ConnectBot",
+        "packagePage": "https://f-droid.org/packages/org.connectbot/",
+        "sourceCode": "https://github.com/connectbot/connectbot",
+        "license": "Apache-2.0",
+        "version": "1.11.1-oss",
+        "versionCode": 11101000,
+        "apkUrl": "https://f-droid.org/repo/org.connectbot_11101000.apk",
+        "apkSha256": "96cf501a83e89284ff3ec93ac06e7a6a6aa8a35c0c02486b865945fe59ac8223",
+        "size": 13092258,
+        "signerSha256": [
+          "08789bad18ce8ec7b6637b5e70245a763ae5024f4d49ac85324047fb06b5da8a"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.connectbot/en-US/icon_duduOFcd2opofLACri7YuvYRMastbmvdXXLhAHi87tg=.png",
+        "iconSha256": "76e76e38571dda8a687cb002ae2ed8baf61131ab2d6e6bdd5d72e10078bceed8",
+        "localIcon": "/media/org.connectbot/icon.png"
+      },
+      {
+        "id": "helium314.keyboard",
+        "name": "HeliBoard",
+        "packagePage": "https://f-droid.org/packages/helium314.keyboard/",
+        "sourceCode": "https://github.com/HeliBorg/HeliBoard",
+        "license": "GPL-3.0-only",
+        "version": "4.2",
+        "versionCode": 4201,
+        "apkUrl": "https://f-droid.org/repo/helium314.keyboard_4201.apk",
+        "apkSha256": "69b2b2fb349934371b1ed2d3569541cc0bda987f8aaf5eb5f5b157961f76de86",
+        "size": 22431797,
+        "signerSha256": [
+          "5ec0a5313aa43558ee75b20b58ccd8194cdbf066df94a43ba288d933d60b86ce"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/helium314.keyboard/en-US/icon_-nkf9NO4Zp7Y0YX1AOcQdZMf32R_bPt8AZC2Ycn2v1I=.png",
+        "iconSha256": "fa791ff4d3b8669ed8d185f500e71075931fdf647f6cfb7c0190b661c9f6bf52",
+        "localIcon": "/media/helium314.keyboard/icon.png"
+      },
+      {
+        "id": "com.menny.android.anysoftkeyboard",
+        "name": "AnySoftKeyboard",
+        "packagePage": "https://f-droid.org/packages/com.menny.android.anysoftkeyboard/",
+        "sourceCode": "https://github.com/AnySoftKeyboard/AnySoftKeyboard",
+        "license": "Apache-2.0",
+        "version": "1.13.8175",
+        "versionCode": 8175,
+        "apkUrl": "https://f-droid.org/repo/com.menny.android.anysoftkeyboard_8175.apk",
+        "apkSha256": "daa95017e673f8f533fbcfa6839673ad76d66f1ad17f288d2220f751fcc258a6",
+        "size": 24880061,
+        "signerSha256": [
+          "716be98a10a886045cc3c39a7abaf501b9434b9602b25d02a89c326b7c7b9d0a"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.menny.android.anysoftkeyboard/en-US/icon_b0e1nApQqv5tCfE6LcKIvFrAhuzbJ4kYkYsD2jho9J0=.png",
+        "iconSha256": "6f47b59c0a50aafe6d09f13a2dc288bc5ac086ecdb278918918b03da3868f49d",
+        "localIcon": "/media/com.menny.android.anysoftkeyboard/icon.png"
+      },
+      {
+        "id": "rkr.simplekeyboard.inputmethod",
+        "name": "Simple Keyboard",
+        "packagePage": "https://f-droid.org/packages/rkr.simplekeyboard.inputmethod/",
+        "sourceCode": "https://github.com/rkkr/simple-keyboard",
+        "license": "Apache-2.0",
+        "version": "6.8",
+        "versionCode": 149,
+        "apkUrl": "https://f-droid.org/repo/rkr.simplekeyboard.inputmethod_149.apk",
+        "apkSha256": "a6224924010bd4f169d2317064ccd0c307b9560bc7d8f500551d179d4f94918a",
+        "size": 666818,
+        "signerSha256": [
+          "9bf99d5cbac7ae0169c8aae03e2b0979464a0787842e3e14d2b5e1fdf6c4680c"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/rkr.simplekeyboard.inputmethod/en-US/icon_T5pp0k_s8W4dOKUnC7tidpw27SzS0186ruJ782IwcPc=.png",
+        "iconSha256": "4f9a69d24fecf16e1d38a5270bbb62769c36ed2cd2d35f3aaee27bf3623070f7",
+        "localIcon": "/media/rkr.simplekeyboard.inputmethod/icon.png"
+      },
+      {
+        "id": "com.adilhanney.saber",
+        "name": "Saber",
+        "packagePage": "https://f-droid.org/packages/com.adilhanney.saber/",
+        "sourceCode": "https://github.com/saber-notes/saber",
+        "license": "GPL-3.0-only",
+        "version": "1.37.1",
+        "versionCode": 1370102,
+        "apkUrl": "https://f-droid.org/repo/com.adilhanney.saber_1370102.apk",
+        "apkSha256": "1ffa80ce2a7adf8d7116a575778dce23c99ec64c0c11a34d9760e713b96b2410",
+        "size": 40228316,
+        "signerSha256": [
+          "07cbce38536206e629fecb4ef14fc66861ca0965556878ad6b636d77a6ab895a"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.adilhanney.saber/en-US/icon_UUwDbjN3ATfP5KaLCDsrxueCTUCp96iXB401Y-Qalog=.png",
+        "iconSha256": "514c036e33770137cfe4a68b083b2bc6e7824d40a9f7a897078d3563e41a9688",
+        "localIcon": "/media/com.adilhanney.saber/icon.png"
+      },
+      {
+        "id": "com.blacksquircle.ui",
+        "name": "Squircle CE - редактор кода",
+        "packagePage": "https://f-droid.org/packages/com.blacksquircle.ui/",
+        "sourceCode": "https://github.com/massivemadness/Squircle-CE",
+        "license": "Apache-2.0",
+        "version": "2025.1.3",
+        "versionCode": 10028,
+        "apkUrl": "https://f-droid.org/repo/com.blacksquircle.ui_10028.apk",
+        "apkSha256": "50f2912896b03f12d3a62f7f6532a718a566be8e04cc9046aec6d1f21e9b20bc",
+        "size": 19605334,
+        "signerSha256": [
+          "66d7487269731a390a9fa6bec7569098a5f5be8e971052709ee86196a476fc5a"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.blacksquircle.ui/en-US/icon_FtV5qpmuJJ3IqYz5WwTDUqsxFK3kUeIONL3_hbDFlLg=.png",
+        "iconSha256": "16d579aa99ae249dc8a98cf95b04c352ab3114ade451e20e34bdff85b0c594b8",
+        "localIcon": "/media/com.blacksquircle.ui/icon.png"
+      },
+      {
+        "id": "com.gitlab.mudlej.MjPdfReader",
+        "name": "MJ PDF",
+        "packagePage": "https://f-droid.org/packages/com.gitlab.mudlej.MjPdfReader/",
+        "sourceCode": "https://gitlab.com/mudlej_android/mj_pdf_reader",
+        "license": "GPL-3.0-only",
+        "version": "3.1.0",
+        "versionCode": 5802,
+        "apkUrl": "https://f-droid.org/repo/com.gitlab.mudlej.MjPdfReader_5802.apk",
+        "apkSha256": "adedbb5ad6617a6753dc78881ffae0b4a15bcf87229ac4d25dbf64d9cb547aa2",
+        "size": 8964936,
+        "signerSha256": [
+          "61f9981ba0d6f5d775758ec83231375ffdaefb59367984bf24b3dab5c864a9d1"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon_cCID2ggR3gL4Iomx5jjWTDwov_Rp7w5ktG3l6Dt83FM=.png",
+        "iconSha256": "702203da0811de02f82289b1e638d64c3c28bff469ef0e64b46de5e83b7cdc53",
+        "localIcon": "/media/com.gitlab.mudlej.MjPdfReader/icon.png"
+      },
+      {
+        "id": "ru.tech.imageresizershrinker",
+        "name": "Image Toolbox",
+        "packagePage": "https://f-droid.org/packages/ru.tech.imageresizershrinker/",
+        "sourceCode": "https://github.com/T8RIN/ImageResizer",
+        "license": "Apache-2.0",
+        "version": "4.1.0-foss",
+        "versionCode": 251,
+        "apkUrl": "https://f-droid.org/repo/ru.tech.imageresizershrinker_251.apk",
+        "apkSha256": "6643dd25827526221e92d2251fc5305b7350df8a66150fe1bd04231ca5d732f1",
+        "size": 192035791,
+        "signerSha256": [
+          "20d7689de0874f00015ea3e31fa067c15c03457d362d41d5e793db3a864fa534"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/ru.tech.imageresizershrinker/ru/icon_-9n8vowl_QLljJDENvZaSlNplpt8PF-LrCkGnGshnUg=.png",
+        "iconSha256": "fbd9fcbe8c25fd02e58c90c436f65a4a5369969b7c3c5f8bac29069c6b219d48",
+        "localIcon": "/media/ru.tech.imageresizershrinker/icon.png"
+      },
+      {
+        "id": "org.catrobat.paintroid",
+        "name": "Pocket Paint",
+        "packagePage": "https://f-droid.org/packages/org.catrobat.paintroid/",
+        "sourceCode": "https://github.com/Catrobat/Paintroid",
+        "license": "AGPL-3.0-or-later",
+        "version": "2.14.0",
+        "versionCode": 54,
+        "apkUrl": "https://f-droid.org/repo/org.catrobat.paintroid_54.apk",
+        "apkSha256": "79f75adbd84f6da3a6a9bed96e7af12ec5fe7f9209463f22f740f323c364c917",
+        "size": 3606321,
+        "signerSha256": [
+          "0c22b22aad8895dfc42eb993f4062b1c87933bf38b669ea33b1af405032b582b"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/icons/org.catrobat.paintroid.54.png",
+        "iconSha256": "999cc641668e5394f222917d9b074b4eab80124b1302b379b27b14e7dcfe8d44",
+        "localIcon": "/media/org.catrobat.paintroid/icon.png"
+      },
+      {
+        "id": "dev.leonlatsch.photok",
+        "name": "Photok - Сейф для фото",
+        "packagePage": "https://f-droid.org/packages/dev.leonlatsch.photok/",
+        "sourceCode": "https://github.com/leonlatsch/Photok",
+        "license": "Apache-2.0",
+        "version": "3.7.0",
+        "versionCode": 81,
+        "apkUrl": "https://f-droid.org/repo/dev.leonlatsch.photok_81.apk",
+        "apkSha256": "3f9e0b9ea5390e7f7a81bbbbf01b20448c092dacaec93c2347c50a0485aa10c0",
+        "size": 14322332,
+        "signerSha256": [
+          "8066f8e4d1c651d26ea60d4779e0ccce90b66bcd1b4795852a8efee232f0174a"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/dev.leonlatsch.photok/en-US/icon_z0ghH0i7JJPHFbfTCy9gsqT62-NlBB9yfPlAD1BK5cw=.png",
+        "iconSha256": "cf48211f48bb2493c715b7d30b2f60b2a4fadbe365041f727cf9400f504ae5cc",
+        "localIcon": "/media/dev.leonlatsch.photok/icon.png"
+      },
+      {
+        "id": "com.kylecorry.trail_sense",
+        "name": "Trail Sense",
+        "packagePage": "https://f-droid.org/packages/com.kylecorry.trail_sense/",
+        "sourceCode": "https://github.com/kylecorry31/Trail-Sense",
+        "license": "MIT",
+        "version": "8.2.0",
+        "versionCode": 148,
+        "apkUrl": "https://f-droid.org/repo/com.kylecorry.trail_sense_148.apk",
+        "apkSha256": "846249274a0e300622cc94815fd279d258738bfcaf60ee9e276edf74f5febc1c",
+        "size": 13271554,
+        "signerSha256": [
+          "afa319dce22c6a8fb3e4d852a2c0df6c07cf995dab2f78331e4bc5b5dd48bfaf"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.kylecorry.trail_sense/en-US/icon_6Kqd7Ei7LzwqEy0wE2cpFrpmvRD3_V6i1CrhmP4iyZU=.png",
+        "iconSha256": "e8aa9dec48bb2f3c2a132d3013672916ba66bd10f7fd5ea2d42ae198fe22c995",
+        "localIcon": "/media/com.kylecorry.trail_sense/icon.png"
+      },
+      {
+        "id": "org.wikipedia",
+        "name": "Википедия",
+        "packagePage": "https://f-droid.org/packages/org.wikipedia/",
+        "sourceCode": "https://github.com/wikimedia/apps-android-wikipedia",
+        "license": "Apache-2.0",
+        "version": "r/50614-r-2026-10-20",
+        "versionCode": 50614,
+        "apkUrl": "https://f-droid.org/repo/org.wikipedia_50614.apk",
+        "apkSha256": "076d19f4acf40562a06df7d7de2b9cf11b89cc7b79f6a6cf4dd0768a158289c3",
+        "size": 103387974,
+        "signerSha256": [
+          "1c3ddb0e8f3258b0ff3b7b6a608d19e7cdeed38a5897bbda23bac155923b1267"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "TetheredNet",
+          "Tracking"
+        ],
+        "iconUrl": "https://f-droid.org/repo/org.wikipedia/en-US/icon_Z9wprwa6ZGVuIVGDvXIrqKTMPNP-9xliVcQ9RN9eOvs=.png",
+        "iconSha256": "67dc29af06ba64656e215183bd722ba8a4cc3cd3fef7196255c43d44df5e3afb",
+        "localIcon": "/media/org.wikipedia/icon.png"
+      },
+      {
+        "id": "fr.gouv.etalab.mastodon",
+        "name": "Fedilab",
+        "packagePage": "https://f-droid.org/packages/fr.gouv.etalab.mastodon/",
+        "sourceCode": "https://codeberg.org/tom79/Fedilab",
+        "license": "GPL-3.0-only",
+        "version": "3.45.1",
+        "versionCode": 572,
+        "apkUrl": "https://f-droid.org/repo/fr.gouv.etalab.mastodon_572.apk",
+        "apkSha256": "dd67c834cb9946d30058855805ee80e44369b62dbc08c39f0e24909366ea1ae5",
+        "size": 40302210,
+        "signerSha256": [
+          "30600cc0d430a5bd1c66c121c75f7fb9e30de99d8597e7097fa5d7580116469a"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/fr.gouv.etalab.mastodon/en-US/icon_2Jq-Bi5vXhNbP7Gd4VO4p77Ws9PviSLtxIt4aKMrAL0=.png",
+        "iconSha256": "d89abe062e6f5e135b3fb19de153b8a7bed6b3d3ef8922edc48b7868a32b00bd",
+        "localIcon": "/media/fr.gouv.etalab.mastodon/icon.png"
+      },
+      {
+        "id": "com.jerboa",
+        "name": "Jerboa for Lemmy",
+        "packagePage": "https://f-droid.org/packages/com.jerboa/",
+        "sourceCode": "https://github.com/LemmyNet/jerboa",
+        "license": "AGPL-3.0-only",
+        "version": "0.0.88-fdroid",
+        "versionCode": 88,
+        "apkUrl": "https://f-droid.org/repo/com.jerboa_88.apk",
+        "apkSha256": "70c18bd6cc9eafdfbdad3973cb3f728eadaead5548318002c13929c58aaa5824",
+        "size": 6150206,
+        "signerSha256": [
+          "8bfa32c8a3f0da15ec2ba6c281cecff2093097ffe5892a67415c4a77c11850ee"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.jerboa/en-US/icon_Vluy54tdCZu3zaVXlM9pL-v82PCu8PGzQM3Na3okZMA=.png",
+        "iconSha256": "565bb2e78b5d099bb7cda55794cf692febfcd8f0aef0f1b340cdcd6b7a2464c0",
+        "localIcon": "/media/com.jerboa/icon.png"
+      },
+      {
+        "id": "com.capyreader.app",
+        "name": "Capy Reader",
+        "packagePage": "https://f-droid.org/packages/com.capyreader.app/",
+        "sourceCode": "https://github.com/jocmp/capyreader",
+        "license": "GPL-3.0-only",
+        "version": "2026.10.1215",
+        "versionCode": 1215,
+        "apkUrl": "https://f-droid.org/repo/com.capyreader.app_1215.apk",
+        "apkSha256": "82ce815d0809e9e399ff887a5be1e67e43dc95004b6d3b9b3a991299f0b61b6f",
+        "size": 14073237,
+        "signerSha256": [
+          "67437375a161f420219ddff1f281df292ccb5f057aa0caf56568a782b2816465"
+        ],
+        "minSdkVersion": 30,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.capyreader.app/en-US/icon_tQ3CVaQ8UOUmrdhIo_o8srR1mcj_7d7vDDNjcYnDBgw=.png",
+        "iconSha256": "b50dc255a43c50e526add848a3fa3cb2b47599c8ffeddeef0c33637189c3060c",
+        "localIcon": "/media/com.capyreader.app/icon.png"
+      },
+      {
+        "id": "com.github.libretube",
+        "name": "LibreTube",
+        "packagePage": "https://f-droid.org/packages/com.github.libretube/",
+        "sourceCode": "https://github.com/libre-tube/LibreTube",
+        "license": "GPL-3.0-or-later",
+        "version": "32.1",
+        "versionCode": 72,
+        "apkUrl": "https://f-droid.org/repo/com.github.libretube_72.apk",
+        "apkSha256": "792b1e37e7bd6a26d8da1c826a68677465c333633cb2198224cc96c84257d615",
+        "size": 9253519,
+        "signerSha256": [
+          "a86631e8cc555838e8dfc29019fb0f7dac333ef1cda1139c424d1a08d68a030b"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [
+          "NonFreeNet"
+        ],
+        "iconUrl": "https://f-droid.org/repo/com.github.libretube/en-US/icon_p6_cfoYk-2IlerJpH4rKIQmkI76zXtS3R9-RZp-3Ggk=.png",
+        "iconSha256": "a7afdc7e8624fb62257ab2691f8aca2109a423beb35ed4b747df91669fb71a09",
+        "localIcon": "/media/com.github.libretube/icon.png"
+      },
+      {
+        "id": "io.ente.auth",
+        "name": "Ente Auth - 2FA Authenticator",
+        "packagePage": "https://f-droid.org/packages/io.ente.auth/",
+        "sourceCode": "https://github.com/ente-io/ente/",
+        "license": "AGPL-3.0-only",
+        "version": "4.4.26",
+        "versionCode": 1118,
+        "apkUrl": "https://f-droid.org/repo/io.ente.auth_1118.apk",
+        "apkSha256": "b0d14c249d656371dba9456a9c88cccaba9c96802b1da67d6941ba12498469d9",
+        "size": 65404071,
+        "signerSha256": [
+          "bf5452863281d81bffcdf8550320ca2a300844541bef5c4859b066c2305c6352"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/io.ente.auth/en-US/icon_3cmPEcs1UUpIdp1eaCaDoLcfJKi87TAaHyYjJJ6hBj0=.png",
+        "iconSha256": "ddc98f11cb35514a48769d5e682683a0b71f24a8bced301a1f2623249ea1063d",
+        "localIcon": "/media/io.ente.auth/icon.png"
+      },
+      {
+        "id": "org.totschnig.myexpenses",
+        "name": "Мои расходы",
+        "packagePage": "https://f-droid.org/packages/org.totschnig.myexpenses/",
+        "sourceCode": "https://github.com/mtotschnig/MyExpenses",
+        "license": "GPL-3.0-only",
+        "version": "4.1.3.1",
+        "versionCode": 889,
+        "apkUrl": "https://f-droid.org/repo/org.totschnig.myexpenses_889.apk",
+        "apkSha256": "349f721b80a467f293fca487e6c210e2eb0ae8cc03f0a19c2a230335c934d47b",
+        "size": 36385847,
+        "signerSha256": [
+          "cc73d1af732cd02b84a9c7d56b7b64b9d69d47a265ec34b088d6857d9fbf97ce"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.totschnig.myexpenses/en-US/icon_zWawBtP0U6S03MdPDF6m-Zh9Tbt6MmuSM-w68Ug-58o=.png",
+        "iconSha256": "cd66b006d3f453a4b4dcc74f0c5ea6f9987d4dbb7a326b9233ec3af1483ee7ca",
+        "localIcon": "/media/org.totschnig.myexpenses/icon.png"
+      },
+      {
+        "id": "it.feio.android.omninotes.foss",
+        "name": "Omni Notes",
+        "packagePage": "https://f-droid.org/packages/it.feio.android.omninotes.foss/",
+        "sourceCode": "https://github.com/federicoiosue/Omni-Notes",
+        "license": "GPL-3.0-only",
+        "version": "6.5.1",
+        "versionCode": 336,
+        "apkUrl": "https://f-droid.org/repo/it.feio.android.omninotes.foss_336.apk",
+        "apkSha256": "394cb0dc5ea11d5913ffab9ed39a99fb76ed1c785610d044128bc7d7b14c5cda",
+        "size": 8233457,
+        "signerSha256": [
+          "1eee2ba979fb762329c998193df3705c325115c351aeb4caa5631bad7a6702a3"
+        ],
+        "minSdkVersion": 24,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [
+          "Tracking"
+        ],
+        "iconUrl": "https://f-droid.org/repo/it.feio.android.omninotes.foss/en-US/icon_8RGYERANsTi8txLbcCuV23MipPxticg9eotr1bH4yUw=.png",
+        "iconSha256": "f1119811100db138bcb712db702b95db7322a4fc6d89c83d7a8b6bd5b1f8c94c",
+        "localIcon": "/media/it.feio.android.omninotes.foss/icon.png"
+      },
+      {
+        "id": "it.niedermann.owncloud.notes",
+        "name": "Nextcloud Notes",
+        "packagePage": "https://f-droid.org/packages/it.niedermann.owncloud.notes/",
+        "sourceCode": "https://github.com/nextcloud/notes-android",
+        "license": "GPL-3.0-or-later",
+        "version": "35.0.0",
+        "versionCode": 350000090,
+        "apkUrl": "https://f-droid.org/repo/it.niedermann.owncloud.notes_350000090.apk",
+        "apkSha256": "8eddfbcb64c57616b09269f2369381ebf60324afb37af5429a62b23cd633573d",
+        "size": 61493606,
+        "signerSha256": [
+          "3e80f32df2c89e4cdd3a32f1002178d8d4f21b9da89f8add6abae29fd3c95c0b"
+        ],
+        "minSdkVersion": 28,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/it.niedermann.owncloud.notes/en-US/icon_Okzls893_WT2ukp-g54PfaiQGhN1ynOJqPucXfsiMOI=.png",
+        "iconSha256": "3a4ce5b3cf77fd64f6ba4a7e839e0f7da8901a1375ca7389a8fb9c5dfb2230e2",
+        "localIcon": "/media/it.niedermann.owncloud.notes/icon.png"
+      },
+      {
+        "id": "org.fairscan.app",
+        "name": "FairScan – Сканер в PDF",
+        "packagePage": "https://f-droid.org/packages/org.fairscan.app/",
+        "sourceCode": "https://github.com/pynicolas/FairScan",
+        "license": "GPL-3.0-only",
+        "version": "2.3.0",
+        "versionCode": 96,
+        "apkUrl": "https://f-droid.org/repo/org.fairscan.app_96.apk",
+        "apkSha256": "35300568c6f5882b42256f0e662b2790494c3be764b05f00bee82371d49dd798",
+        "size": 45938803,
+        "signerSha256": [
+          "446122fc28b644d30b73894134342d2f206b61d96998bd9aff5e881f8e9d96ba"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.fairscan.app/en-US/icon_jXreg-23j73Q35sj5mioXnOD8m6Y9V6kLjX037gxq00=.png",
+        "iconSha256": "8d7ade83edb78fbdd0df9b23e668a85e7383f26e98f55ea42e35f4dfb831ab4d",
+        "localIcon": "/media/org.fairscan.app/icon.png"
+      },
+      {
+        "id": "org.y20k.voxscribe",
+        "name": "Voxscribe - Offline Voice Input",
+        "packagePage": "https://f-droid.org/packages/org.y20k.voxscribe/",
+        "sourceCode": "https://codeberg.org/y20k/voxscribe",
+        "license": "MIT",
+        "version": "1.0.4",
+        "versionCode": 5,
+        "apkUrl": "https://f-droid.org/repo/org.y20k.voxscribe_5.apk",
+        "apkSha256": "c5c7a078f43c8e54be0555c328fbfed4180b7df6b27590ac988bf7ea4ee42504",
+        "size": 12240436,
+        "signerSha256": [
+          "8e8a8f36980b1082f1720431c992d43b1318ba10cc33ac74e7baae07ae59cf9d"
+        ],
+        "minSdkVersion": 29,
+        "abi": [
+          "arm64-v8a",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.y20k.voxscribe/en-US/icon__SHucbtS8Lcd9o94BAnClKcbpIOOwpo6gzleTqn4OxE=.png",
+        "iconSha256": "fd21ee71bb52f0b71df68f780409c294a71ba4838ec29a3a83395e4ea9f83b11",
+        "localIcon": "/media/org.y20k.voxscribe/icon.png"
+      },
+      {
+        "id": "dev.imranr.obtainium.fdroid",
+        "name": "Obtainium",
+        "packagePage": "https://f-droid.org/packages/dev.imranr.obtainium.fdroid/",
+        "sourceCode": "https://github.com/ImranR98/Obtainium",
+        "license": "GPL-3.0-only",
+        "version": "1.7.4",
+        "versionCode": 23623,
+        "apkUrl": "https://f-droid.org/repo/dev.imranr.obtainium.fdroid_23623.apk",
+        "apkSha256": "fe6fdfec826f50cd565e5480ae051cc5883fc65ab2ec89f3b6fd949f2e8d6e1f",
+        "size": 34609838,
+        "signerSha256": [
+          "b353601f6a1d5fd6603ae2f50be80cf301367b86b6ab8b1f66243da96cd57362"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/dev.imranr.obtainium.fdroid/en-US/icon_8o6Dm3kPEr-C-8U1QdRd9B6DrkXPqLJQ7or0KN7ut_4=.png",
+        "iconSha256": "f28e839b790f12bf82fbc53541d45df41e83ae45cfa8b250ee8af428deeeb7fe",
+        "localIcon": "/media/dev.imranr.obtainium.fdroid/icon.png"
+      },
+      {
+        "id": "proton.android.authenticator.fdroid",
+        "name": "Proton Authenticator",
+        "packagePage": "https://f-droid.org/packages/proton.android.authenticator.fdroid/",
+        "sourceCode": "https://github.com/protonpass/android-authenticator",
+        "license": "GPL-3.0-or-later",
+        "version": "1.3.9",
+        "versionCode": 10309000,
+        "apkUrl": "https://f-droid.org/repo/proton.android.authenticator.fdroid_10309000.apk",
+        "apkSha256": "0cb40f2618f7ee2bedbfdee0fbd048f9df99ce042a510f344b759e2fb32d1e3d",
+        "size": 93490403,
+        "signerSha256": [
+          "bc606789f8023cfa3a677157796048e0f58fadd4b1a0598c999b2980eab7919d"
+        ],
+        "minSdkVersion": 27,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86_64"
+        ],
+        "antiFeatures": [
+          "NonFreeNet",
+          "Tracking"
+        ],
+        "iconUrl": "https://f-droid.org/repo/proton.android.authenticator.fdroid/en-US/icon_Naprgg2FzFw84-l2qdiW0ELsv_B-eu2BqDUUX7hHU2A=.png",
+        "iconSha256": "35aa6b820d85cc5c3ce3e976a9d896d042ecbff07e7aed81a835145fb8475360",
+        "localIcon": "/media/proton.android.authenticator.fdroid/icon.png"
+      },
+      {
+        "id": "de.salomax.currencies",
+        "name": "Currencies: Курсы валют",
+        "packagePage": "https://f-droid.org/packages/de.salomax.currencies/",
+        "sourceCode": "https://github.com/sal0max/currencies",
+        "license": "GPL-3.0-or-later",
+        "version": "1.23.0",
+        "versionCode": 12300,
+        "apkUrl": "https://f-droid.org/repo/de.salomax.currencies_12300.apk",
+        "apkSha256": "6269fac8d01c85aaa3c99ce6467f908e817e3e209eb3dfe274dd305328b6f1c5",
+        "size": 4107033,
+        "signerSha256": [
+          "daca7a1e076403b2f0a5fefed01e329aa86ec7c25c6cbde578595f6f2c5ad57b"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [
+          "NonFreeNet"
+        ],
+        "iconUrl": "https://f-droid.org/repo/de.salomax.currencies/en-US/icon_Jf1fgXgA5uWjQHnzZFuTq6c2nfXOJtgPKbrV8ewNbk8=.png",
+        "iconSha256": "25fd5f817800e6e5a34079f3645b93aba7369df5ce26d80f29bad5f1ec0d6e4f",
+        "localIcon": "/media/de.salomax.currencies/icon.png"
+      },
+      {
+        "id": "com.artifex.mupdf.viewer.app",
+        "name": "MuPDF viewer",
+        "packagePage": "https://f-droid.org/packages/com.artifex.mupdf.viewer.app/",
+        "sourceCode": "https://github.com/ArtifexSoftware/mupdf-android-viewer",
+        "license": "AGPL-3.0-or-later",
+        "version": "1.28.5a",
+        "versionCode": 270,
+        "apkUrl": "https://f-droid.org/repo/com.artifex.mupdf.viewer.app_270.apk",
+        "apkSha256": "18c1f0b47d89870ddbf3b93d4f4d444e479c686377c696ef54dbe0e73a7b0a0e",
+        "size": 17128961,
+        "signerSha256": [
+          "f7de6763f66a3c6e7b0c8b78e528cb1c1f5dd3b3b0e2859e36e49988d7fadcce"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/icons/com.artifex.mupdf.viewer.app.270.png",
+        "iconSha256": "03b447c9dd10985dede88b7ba130fd0f51c5566081c27bea6401116f291aa59d",
+        "localIcon": "/media/com.artifex.mupdf.viewer.app/icon.png"
+      },
+      {
+        "id": "com.unciv.app",
+        "name": "Unciv",
+        "packagePage": "https://f-droid.org/packages/com.unciv.app/",
+        "sourceCode": "https://github.com/yairm210/Unciv",
+        "license": "MPL-2.0",
+        "version": "4.22.16",
+        "versionCode": 1280,
+        "apkUrl": "https://f-droid.org/repo/com.unciv.app_1280.apk",
+        "apkSha256": "9a2d3586bdb4d7ecafaa606824259221e44683474c3e0f40ed2db4ae639c5a3a",
+        "size": 27588897,
+        "signerSha256": [
+          "cd16e386469f23988fc9cdeca01bfefbd0deaed13a4907bce76e91acc9662c68"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.unciv.app/en-US/icon_sZApOXTOdudh1zFJUN27SZ-DHeo2Pf1WHAKLDWBB4oA=.png",
+        "iconSha256": "b190293974ce76e761d7314950ddbb499f831dea363dfd561c028b0d6041e280",
+        "localIcon": "/media/com.unciv.app/icon.png"
+      },
+      {
+        "id": "io.anuke.mindustry",
+        "name": "Mindustry",
+        "packagePage": "https://f-droid.org/packages/io.anuke.mindustry/",
+        "sourceCode": "https://github.com/Anuken/Mindustry",
+        "license": "GPL-3.0-or-later",
+        "version": "8-fdroid-160.7",
+        "versionCode": 1115,
+        "apkUrl": "https://f-droid.org/repo/io.anuke.mindustry_1115.apk",
+        "apkSha256": "64bf33842d8f5495656c44868ea3d11ca5998bf6e36bbb428064dcc58c2e9f44",
+        "size": 78182684,
+        "signerSha256": [
+          "fbd07935ef2e2ada5d918aea62ec25dd7dda7407492c6c3d1582b59b6cb84bed"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/io.anuke.mindustry/en-US/icon_Eno3XvqCZUcHRm3eMjiUleAxgzLopPe6-hkI7BHx1lU=.png",
+        "iconSha256": "127a375efa82654707466dde32389495e0318332e8a4f7bafa1908ec11f1d655",
+        "localIcon": "/media/io.anuke.mindustry/icon.png"
+      },
+      {
+        "id": "com.shatteredpixel.shatteredpixeldungeon",
+        "name": "Shattered Pixel Dungeon",
+        "packagePage": "https://f-droid.org/packages/com.shatteredpixel.shatteredpixeldungeon/",
+        "sourceCode": "https://github.com/00-Evan/shattered-pixel-dungeon",
+        "license": "GPL-3.0-only",
+        "version": "4.0.2",
+        "versionCode": 921,
+        "apkUrl": "https://f-droid.org/repo/com.shatteredpixel.shatteredpixeldungeon_921.apk",
+        "apkSha256": "dbd8205680e89758babf608212a1fb3f498f732118b1e3c0b9fd33bf67486a99",
+        "size": 30266868,
+        "signerSha256": [
+          "92a8d7a96447565aed749b12b03251842d65a7354ba67dc2443f4224d772f61c"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.shatteredpixel.shatteredpixeldungeon/en-US/icon_sGrA1aakL86yLytAeV0fds7P_nAq5FZvoABR78V9p0Y=.png",
+        "iconSha256": "b06ac0d5a6a42fceb22f2b40795d1f76cecffe702ae4566fa00051efc57da746",
+        "localIcon": "/media/com.shatteredpixel.shatteredpixeldungeon/icon.png"
+      },
+      {
+        "id": "org.secuso.privacyfriendlysudoku",
+        "name": "Sudoku (Privacy Friendly)",
+        "packagePage": "https://f-droid.org/packages/org.secuso.privacyfriendlysudoku/",
+        "sourceCode": "https://github.com/SecUSo/privacy-friendly-sudoku",
+        "license": "GPL-3.0-only",
+        "version": "3.2.6",
+        "versionCode": 101,
+        "apkUrl": "https://f-droid.org/repo/org.secuso.privacyfriendlysudoku_101.apk",
+        "apkSha256": "1aff917f4ac9952bd956f2b19589787b015decc23b4c13268d19f1437c68b5b3",
+        "size": 5192839,
+        "signerSha256": [
+          "2715af26961bf27383ac5efcd3aa7203c1004d189e9b2d7d5f6d7386cd8095d8"
+        ],
+        "minSdkVersion": 17,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.secuso.privacyfriendlysudoku/en-US/icon_oWx09GXf5s9FvhdDzVWZseAKTf-e7f-sn0MS7J-H4Ug=.png",
+        "iconSha256": "a16c74f465dfe6cf45be1743cd5599b1e00a4dff9eedffac9f4312ec9f87e148",
+        "localIcon": "/media/org.secuso.privacyfriendlysudoku/icon.png"
+      },
+      {
+        "id": "org.moire.opensudoku",
+        "name": "Open Sudoku — Судоку",
+        "packagePage": "https://f-droid.org/packages/org.moire.opensudoku/",
+        "sourceCode": "https://gitlab.com/opensudoku/opensudoku",
+        "license": "GPL-3.0-or-later",
+        "version": "4.11.3",
+        "versionCode": 20261008,
+        "apkUrl": "https://f-droid.org/repo/org.moire.opensudoku_20261008.apk",
+        "apkSha256": "ac4c6c8d0bc9058c1cc8d8f4570dc51977b3bc51577a82a12b94e6ec7714b9f0",
+        "size": 19398348,
+        "signerSha256": [
+          "a54ce29ebb02fcb9b478620572f7c4dd39b903736fe6199687471ba729f4613a"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.moire.opensudoku/en-US/icon_bsqk6CwD3zJMF59UMK0v4STUwLUbabQG2iWXX2ZF6ds=.png",
+        "iconSha256": "6ecaa4e82c03df324c179f5430ad2fe124d4c0b51b69b406da25975f6645e9db",
+        "localIcon": "/media/org.moire.opensudoku/icon.png"
+      },
+      {
+        "id": "org.secuso.privacyfriendly2048",
+        "name": "2048 (без слежки)",
+        "packagePage": "https://f-droid.org/packages/org.secuso.privacyfriendly2048/",
+        "sourceCode": "https://github.com/SecUSo/privacy-friendly-2048",
+        "license": "GPL-3.0-or-later",
+        "version": "1.4.2",
+        "versionCode": 100,
+        "apkUrl": "https://f-droid.org/repo/org.secuso.privacyfriendly2048_100.apk",
+        "apkSha256": "02c799d3d582669daf2acf920093c68d2933f60aa937bb72fa2a805557233fe8",
+        "size": 9294779,
+        "signerSha256": [
+          "917ce5bf72c61e0777513a6b18fbda957fa7712ac250e99854d598419b699585"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.secuso.privacyfriendly2048/en-US/icon__EtkwPp725lQQYnzjkzDUiOqD2X5nnY1CiZSIYN9TVU=.png",
+        "iconSha256": "fc4b64c0fa7bdb99504189f38e4cc35223aa0f65f99e76350a265221837d4d55",
+        "localIcon": "/media/org.secuso.privacyfriendly2048/icon.png"
+      },
+      {
+        "id": "org.lichess.mobileV2",
+        "name": "Lichess",
+        "packagePage": "https://f-droid.org/packages/org.lichess.mobileV2/",
+        "sourceCode": "https://github.com/lichess-org/mobile",
+        "license": "GPL-3.0-or-later",
+        "version": "0.30.3",
+        "versionCode": 300303,
+        "apkUrl": "https://f-droid.org/repo/org.lichess.mobileV2_300303.apk",
+        "apkSha256": "badf7b44c6c3600b1f81415b95ed9f42006498063a32ac8613dc9f755e2e2234",
+        "size": 101934599,
+        "signerSha256": [
+          "496ed2c1542892a094a2a6e26d59cd07fb7e8c711355876dad3859ea82f8af62"
+        ],
+        "minSdkVersion": 26,
+        "abi": [
+          "arm64-v8a"
+        ],
+        "antiFeatures": [
+          "NonFreeAssets",
+          "TetheredNet"
+        ],
+        "iconUrl": "https://f-droid.org/repo/org.lichess.mobileV2/en-US/icon_qi-nY8o1dCz5j6LrbGb_Ikh70SLOGbbOXyL7VakuXws=.png",
+        "iconSha256": "aa2fa763ca35742cf98fa2eb6c66ff22487bd122ce19b6ce5f22fb55a92e5f0b",
+        "localIcon": "/media/org.lichess.mobileV2/icon.png"
+      },
+      {
+        "id": "com.agateau.tinywheels.android",
+        "name": "Pixel Wheels - Пиксел Вилз",
+        "packagePage": "https://f-droid.org/packages/com.agateau.tinywheels.android/",
+        "sourceCode": "https://github.com/agateau/pixelwheels",
+        "license": "GPL-3.0-or-later",
+        "version": "1.0.1",
+        "versionCode": 33,
+        "apkUrl": "https://f-droid.org/repo/com.agateau.tinywheels.android_33.apk",
+        "apkSha256": "61a50936e728518ce90e7191f8454a98ff24a80b866fa58292a0b474d2dabcd1",
+        "size": 29443763,
+        "signerSha256": [
+          "d24912992e85d99daa175dbdc14561d2287b253dd656fbbb14bd8fd4a86138cc"
+        ],
+        "minSdkVersion": 19,
+        "abi": [
+          "arm64-v8a",
+          "armeabi",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/com.agateau.tinywheels.android/en-US/icon_tXyk1Nmlkxw9IFl-ExHp98cG0O0IEGx6I9FA_LvVfRU=.png",
+        "iconSha256": "b57ca4d4d9a5931c3d20597e1311e9f7c706d0ed08106c7a23d140fcbbd57d15",
+        "localIcon": "/media/com.agateau.tinywheels.android/icon.png"
+      },
+      {
+        "id": "org.afrikalan.tuxmath",
+        "name": "Tux Math",
+        "packagePage": "https://f-droid.org/packages/org.afrikalan.tuxmath/",
+        "sourceCode": "https://gitlab.com/Afrikalan/tuxmath-android",
+        "license": "AGPL-3.0-only",
+        "version": "2.10",
+        "versionCode": 4,
+        "apkUrl": "https://f-droid.org/repo/org.afrikalan.tuxmath_4.apk",
+        "apkSha256": "4527e6e33d89e242fbc22142252e3e9c9a5eeaf0ac327ad30f40ab4381e2149a",
+        "size": 20717561,
+        "signerSha256": [
+          "db0ddb1a8f0307e0dec8a5c7f4b04cfd7f05be9cc5b521a3272a54012ec60396"
+        ],
+        "minSdkVersion": 23,
+        "abi": [
+          "universal"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/org.afrikalan.tuxmath/en-US/icon_KzNoMms-MxW9PwB2I6x_bbToE0dAuNDZEm5lfMug28g=.png",
+        "iconSha256": "2b3368326b3e3315bd3f007623ac7f6db4e8134740b8d0d9126e657ccba0dbc8",
+        "localIcon": "/media/org.afrikalan.tuxmath/icon.png"
+      },
+      {
+        "id": "dev.lucanlm.antimine",
+        "name": "Сапер - Antimine",
+        "packagePage": "https://f-droid.org/packages/dev.lucanlm.antimine/",
+        "sourceCode": "https://github.com/lucasnlm/antimine-android",
+        "license": "GPL-3.0-only",
+        "version": "17.6.3 F",
+        "versionCode": 1706031,
+        "apkUrl": "https://f-droid.org/repo/dev.lucanlm.antimine_1706031.apk",
+        "apkSha256": "e7b635b6629bc5b0f59c2700a82079386a90f3a04b39e92e0cf0bb090979e974",
+        "size": 9417318,
+        "signerSha256": [
+          "5b7e1417bf2bbea68064a0a18df604d4712fd6be048ce66a6f7897376fc1699e"
+        ],
+        "minSdkVersion": 21,
+        "abi": [
+          "arm64-v8a",
+          "armeabi-v7a",
+          "x86",
+          "x86_64"
+        ],
+        "antiFeatures": [],
+        "iconUrl": "https://f-droid.org/repo/dev.lucanlm.antimine/ru-RU/icon_5fXuUqCZJbeKU25Cj7A6Yo2eKjkdR7br3Ry61YMxmYE=.png",
+        "iconSha256": "e5f5ee52a09925b78a536e428fb03a628d9e2a391d47b6ebdd1cbad583319981",
+        "localIcon": "/media/dev.lucanlm.antimine/icon.png"
+      }
+    ]
+  },
+  "publisherDownloads": [],
+  "linkVerification": {
+    "checkedOn": "2026-11-05",
+    "results": [
+      {
+        "id": "com.whatsapp",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.whatsapp",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.google.android.youtube",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.zhiliaoapp.musically",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.facebook.lite",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.facebook.lite",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.android.chrome",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.android.chrome",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.android.chrome",
+        "platform": "windows",
+        "url": "https://dl.google.com/chrome/install/ChromeStandaloneSetup64.exe",
+        "kind": "file",
+        "filename": "Chrome-Setup.exe",
+        "status": 200,
+        "contentType": "application/x-msdos-program",
+        "contentLength": 162976690
+      },
+      {
+        "id": "com.instagram.android",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.instagram.android",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.facebook.orca",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.facebook.orca",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.google.android.gm",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.google.android.gm",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "org.telegram.messenger",
+        "platform": "android",
+        "url": "https://telegram.org/dl/android/apk",
+        "kind": "file",
+        "filename": "Telegram.apk",
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "contentLength": 70874473
+      },
+      {
+        "id": "org.telegram.messenger",
+        "platform": "windows",
+        "url": "https://telegram.org/dl/desktop/win64",
+        "kind": "file",
+        "filename": "Telegram-Setup.exe",
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "contentLength": 63287944
+      },
+      {
+        "id": "com.lemon.lvoverseas",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.snapchat.android",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.snapchat.android",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.google.android.apps.messaging",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.messaging",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.microsoft.teams",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.microsoft.teams",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.discord",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.discord",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.discord",
+        "platform": "windows",
+        "url": "https://discord.com/api/download?platform=win",
+        "kind": "file",
+        "filename": "DiscordSetup.exe",
+        "status": 200,
+        "contentType": "application/x-msdownload",
+        "contentLength": 107226856
+      },
+      {
+        "id": "com.waze",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.waze",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.sofascore.results",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.sofascore.results",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.crunchyroll.crunchyroid",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.microsoft.office.outlook",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.microsoft.office.outlook",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.pubg.newstate",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.pubg.newstate",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "org.mozilla.firefox",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=org.mozilla.firefox",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "org.mozilla.firefox",
+        "platform": "windows",
+        "url": "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=ru",
+        "kind": "file",
+        "filename": "Firefox-Setup.exe",
+        "status": 200,
+        "contentType": "application/x-msdos-program",
+        "contentLength": 95102376
+      },
+      {
+        "id": "us.zoom.videomeetings",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=us.zoom.videomeetings",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "us.zoom.videomeetings",
+        "platform": "windows",
+        "url": "https://zoom.us/client/latest/ZoomInstallerFull.exe?archType=x64",
+        "kind": "file",
+        "filename": "ZoomInstallerFull.exe",
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "contentLength": 181955888
+      },
+      {
+        "id": "com.google.android.apps.tachyon",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.tachyon",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "kz.kaspi.mobile",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=kz.kaspi.mobile",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "kz.kkb.homebank",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=kz.kkb.homebank",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.spotify.music",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.spotify.music",
+        "platform": "windows",
+        "url": "https://download.scdn.co/SpotifySetup.exe",
+        "kind": "file",
+        "filename": "SpotifySetup.exe",
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "contentLength": 1075688
+      },
+      {
+        "id": "com.google.android.apps.photos",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.roblox.client",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.roblox.client",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "com.supercell.brawlstars",
+        "platform": "android",
+        "url": "https://play.google.com/store/apps/details?id=com.supercell.brawlstars",
+        "kind": "store",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": null
+      },
+      {
+        "id": "org.fdroid.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fdroid.fdroid_1023052.apk",
+        "kind": "file",
+        "filename": "org.fdroid.fdroid_1023052.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 12426276
+      },
+      {
+        "id": "org.videolan.vlc",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.videolan.vlc_13070206.apk",
+        "kind": "file",
+        "filename": "org.videolan.vlc_13070206.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 49645764
+      },
+      {
+        "id": "de.danoeh.antennapod",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.danoeh.antennapod_3120395.apk",
+        "kind": "file",
+        "filename": "de.danoeh.antennapod_3120395.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 17758020
+      },
+      {
+        "id": "app.organicmaps",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/app.organicmaps_26092932.apk",
+        "kind": "file",
+        "filename": "app.organicmaps_26092932.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 63797784
+      },
+      {
+        "id": "net.osmand.plus",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.osmand.plus_541003.apk",
+        "kind": "file",
+        "filename": "net.osmand.plus_541003.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 161855613
+      },
+      {
+        "id": "com.fsck.k9",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.fsck.k9_39046.apk",
+        "kind": "file",
+        "filename": "com.fsck.k9_39046.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10895265
+      },
+      {
+        "id": "eu.faircode.email",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/eu.faircode.email_2339.apk",
+        "kind": "file",
+        "filename": "eu.faircode.email_2339.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 29427308
+      },
+      {
+        "id": "net.thunderbird.android",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.thunderbird.android_33.apk",
+        "kind": "file",
+        "filename": "net.thunderbird.android_33.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10965795
+      },
+      {
+        "id": "org.fossify.calendar",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.calendar_24.apk",
+        "kind": "file",
+        "filename": "org.fossify.calendar_24.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 8204153
+      },
+      {
+        "id": "org.fossify.contacts",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.contacts_13.apk",
+        "kind": "file",
+        "filename": "org.fossify.contacts_13.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 8602985
+      },
+      {
+        "id": "org.fossify.filemanager",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.filemanager_15.apk",
+        "kind": "file",
+        "filename": "org.fossify.filemanager_15.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10030986
+      },
+      {
+        "id": "org.fossify.gallery",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.gallery_30.apk",
+        "kind": "file",
+        "filename": "org.fossify.gallery_30.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 38538587
+      },
+      {
+        "id": "org.fossify.musicplayer",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.musicplayer_18.apk",
+        "kind": "file",
+        "filename": "org.fossify.musicplayer_18.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11148309
+      },
+      {
+        "id": "org.fossify.messages",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.messages_26.apk",
+        "kind": "file",
+        "filename": "org.fossify.messages_26.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 6766671
+      },
+      {
+        "id": "org.fossify.phone",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fossify.phone_22.apk",
+        "kind": "file",
+        "filename": "org.fossify.phone_22.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 9165050
+      },
+      {
+        "id": "org.kde.kdeconnect_tp",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.kde.kdeconnect_tp_13700.apk",
+        "kind": "file",
+        "filename": "org.kde.kdeconnect_tp_13700.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 7401390
+      },
+      {
+        "id": "com.github.catfriend1.syncthingfork",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010700.apk",
+        "kind": "file",
+        "filename": "com.github.catfriend1.syncthingfork_2010700.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 61975393
+      },
+      {
+        "id": "com.kunzisoft.keepass.libre",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.kunzisoft.keepass.libre_45800.apk",
+        "kind": "file",
+        "filename": "com.kunzisoft.keepass.libre_45800.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 16778665
+      },
+      {
+        "id": "com.beemdevelopment.aegis",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.beemdevelopment.aegis_82.apk",
+        "kind": "file",
+        "filename": "com.beemdevelopment.aegis_82.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 6869856
+      },
+      {
+        "id": "org.schabi.newpipe",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.schabi.newpipe_1015_cb84069.apk",
+        "kind": "file",
+        "filename": "org.schabi.newpipe_1015_cb84069.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11507122
+      },
+      {
+        "id": "com.nononsenseapps.feeder",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.nononsenseapps.feeder_4191.apk",
+        "kind": "file",
+        "filename": "com.nononsenseapps.feeder_4191.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 61177127
+      },
+      {
+        "id": "me.ash.reader",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/me.ash.reader_47.apk",
+        "kind": "file",
+        "filename": "me.ash.reader_47.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11209694
+      },
+      {
+        "id": "net.sourceforge.opencamera",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.sourceforge.opencamera_96.apk",
+        "kind": "file",
+        "filename": "net.sourceforge.opencamera_96.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 4973923
+      },
+      {
+        "id": "net.gsantner.markor",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.gsantner.markor_164.apk",
+        "kind": "file",
+        "filename": "net.gsantner.markor_164.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11849016
+      },
+      {
+        "id": "com.nextcloud.client",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.nextcloud.client_350000290.apk",
+        "kind": "file",
+        "filename": "com.nextcloud.client_350000290.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 112503320
+      },
+      {
+        "id": "com.keylesspalace.tusky",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.keylesspalace.tusky_145.apk",
+        "kind": "file",
+        "filename": "com.keylesspalace.tusky_145.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 22491280
+      },
+      {
+        "id": "io.element.android.x",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/io.element.android.x_202609012.apk",
+        "kind": "file",
+        "filename": "io.element.android.x_202609012.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 117664325
+      },
+      {
+        "id": "org.briarproject.briar.android",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.briarproject.briar.android_10524.apk",
+        "kind": "file",
+        "filename": "org.briarproject.briar.android_10524.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 50686498
+      },
+      {
+        "id": "eu.siacs.conversations",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/eu.siacs.conversations_4218299.apk",
+        "kind": "file",
+        "filename": "eu.siacs.conversations_4218299.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 30749221
+      },
+      {
+        "id": "cx.ring",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/cx.ring_503.apk",
+        "kind": "file",
+        "filename": "cx.ring_503.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 100428373
+      },
+      {
+        "id": "org.mozilla.fennec_fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.mozilla.fennec_fdroid_1590020.apk",
+        "kind": "file",
+        "filename": "org.mozilla.fennec_fdroid_1590020.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 128189228
+      },
+      {
+        "id": "com.looker.droidify",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.looker.droidify_780.apk",
+        "kind": "file",
+        "filename": "com.looker.droidify_780.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 5997579
+      },
+      {
+        "id": "com.machiav3lli.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.machiav3lli.fdroid_1304.apk",
+        "kind": "file",
+        "filename": "com.machiav3lli.fdroid_1304.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 5911682
+      },
+      {
+        "id": "org.documentfoundation.libreoffice",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.documentfoundation.libreoffice_131.apk",
+        "kind": "file",
+        "filename": "org.documentfoundation.libreoffice_131.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 87682841
+      },
+      {
+        "id": "at.bitfire.davdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/at.bitfire.davdroid_405210002.apk",
+        "kind": "file",
+        "filename": "at.bitfire.davdroid_405210002.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 17917704
+      },
+      {
+        "id": "org.tasks",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.tasks_151202.apk",
+        "kind": "file",
+        "filename": "org.tasks_151202.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 28580639
+      },
+      {
+        "id": "ws.xsoh.etar",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/ws.xsoh.etar_57.apk",
+        "kind": "file",
+        "filename": "ws.xsoh.etar_57.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 9226697
+      },
+      {
+        "id": "net.cozic.joplin",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.cozic.joplin_2097817.apk",
+        "kind": "file",
+        "filename": "net.cozic.joplin_2097817.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 154987817
+      },
+      {
+        "id": "com.termux",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.termux_1002.apk",
+        "kind": "file",
+        "filename": "com.termux_1002.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 113880067
+      },
+      {
+        "id": "me.zhanghai.android.files",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/me.zhanghai.android.files_40.apk",
+        "kind": "file",
+        "filename": "me.zhanghai.android.files_40.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10944578
+      },
+      {
+        "id": "com.amaze.filemanager",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.amaze.filemanager_126.apk",
+        "kind": "file",
+        "filename": "com.amaze.filemanager_126.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 12743698
+      },
+      {
+        "id": "de.dennisguse.opentracks",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.dennisguse.opentracks_6766.apk",
+        "kind": "file",
+        "filename": "de.dennisguse.opentracks_6766.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10934525
+      },
+      {
+        "id": "com.foobnix.pro.pdf.reader",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.foobnix.pro.pdf.reader_7535.apk",
+        "kind": "file",
+        "filename": "com.foobnix.pro.pdf.reader_7535.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 125423520
+      },
+      {
+        "id": "org.koreader.launcher.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.koreader.launcher.fdroid_119462.apk",
+        "kind": "file",
+        "filename": "org.koreader.launcher.fdroid_119462.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 30121616
+      },
+      {
+        "id": "org.isoron.uhabits",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.isoron.uhabits_20302.apk",
+        "kind": "file",
+        "filename": "org.isoron.uhabits_20302.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10757869
+      },
+      {
+        "id": "com.ichi2.anki",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.ichi2.anki_225033003.apk",
+        "kind": "file",
+        "filename": "com.ichi2.anki_225033003.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 41336958
+      },
+      {
+        "id": "de.westnordost.streetcomplete",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.westnordost.streetcomplete_6406.apk",
+        "kind": "file",
+        "filename": "de.westnordost.streetcomplete_6406.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 90561451
+      },
+      {
+        "id": "com.google.android.stardroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.google.android.stardroid_1771.apk",
+        "kind": "file",
+        "filename": "com.google.android.stardroid_1771.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 23139744
+      },
+      {
+        "id": "de.rwth_aachen.phyphox",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.rwth_aachen.phyphox_1020105.apk",
+        "kind": "file",
+        "filename": "de.rwth_aachen.phyphox_1020105.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11496542
+      },
+      {
+        "id": "de.tadris.fitness",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.tadris.fitness_1630.apk",
+        "kind": "file",
+        "filename": "de.tadris.fitness_1630.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 6772550
+      },
+      {
+        "id": "nodomain.freeyourgadget.gadgetbridge",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_255_01cce93.apk",
+        "kind": "file",
+        "filename": "nodomain.freeyourgadget.gadgetbridge_255_01cce93.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 22030483
+      },
+      {
+        "id": "org.y20k.transistor",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.y20k.transistor_117.apk",
+        "kind": "file",
+        "filename": "org.y20k.transistor_117.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 3455207
+      },
+      {
+        "id": "org.oxycblt.auxio",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.oxycblt.auxio_75.apk",
+        "kind": "file",
+        "filename": "org.oxycblt.auxio_75.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 11229630
+      },
+      {
+        "id": "de.ph1b.audiobook",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.ph1b.audiobook_5410008.apk",
+        "kind": "file",
+        "filename": "de.ph1b.audiobook_5410008.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 10506336
+      },
+      {
+        "id": "me.blog.korn123.easydiary",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/me.blog.korn123.easydiary_352.apk",
+        "kind": "file",
+        "filename": "me.blog.korn123.easydiary_352.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 47967391
+      },
+      {
+        "id": "org.breezyweather",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.breezyweather_60202.apk",
+        "kind": "file",
+        "filename": "org.breezyweather_60202.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 20779665
+      },
+      {
+        "id": "de.markusfisch.android.binaryeye",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.markusfisch.android.binaryeye_182.apk",
+        "kind": "file",
+        "filename": "de.markusfisch.android.binaryeye_182.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 7521272
+      },
+      {
+        "id": "eu.faircode.netguard",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/eu.faircode.netguard_2026080101.apk",
+        "kind": "file",
+        "filename": "eu.faircode.netguard_2026080101.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 2852296
+      },
+      {
+        "id": "net.kollnig.missioncontrol.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/net.kollnig.missioncontrol.fdroid_2026110101.apk",
+        "kind": "file",
+        "filename": "net.kollnig.missioncontrol.fdroid_2026110101.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 15588465
+      },
+      {
+        "id": "com.celzero.bravedns",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.celzero.bravedns_703.apk",
+        "kind": "file",
+        "filename": "com.celzero.bravedns_703.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 30930684
+      },
+      {
+        "id": "org.sufficientlysecure.keychain",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.sufficientlysecure.keychain_60400.apk",
+        "kind": "file",
+        "filename": "org.sufficientlysecure.keychain_60400.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 12043256
+      },
+      {
+        "id": "com.unicornsonlsd.finamp",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.unicornsonlsd.finamp_202.apk",
+        "kind": "file",
+        "filename": "com.unicornsonlsd.finamp_202.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 118258910
+      },
+      {
+        "id": "com.vrem.wifianalyzer",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk",
+        "kind": "file",
+        "filename": "com.vrem.wifianalyzer_72.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 2119103
+      },
+      {
+        "id": "com.foxdebug.acode",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.foxdebug.acode_1008.apk",
+        "kind": "file",
+        "filename": "com.foxdebug.acode_1008.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 16826562
+      },
+      {
+        "id": "org.connectbot",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.connectbot_11101000.apk",
+        "kind": "file",
+        "filename": "org.connectbot_11101000.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 13092258
+      },
+      {
+        "id": "helium314.keyboard",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/helium314.keyboard_4201.apk",
+        "kind": "file",
+        "filename": "helium314.keyboard_4201.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 22431797
+      },
+      {
+        "id": "com.menny.android.anysoftkeyboard",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.menny.android.anysoftkeyboard_8175.apk",
+        "kind": "file",
+        "filename": "com.menny.android.anysoftkeyboard_8175.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 24880061
+      },
+      {
+        "id": "rkr.simplekeyboard.inputmethod",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/rkr.simplekeyboard.inputmethod_149.apk",
+        "kind": "file",
+        "filename": "rkr.simplekeyboard.inputmethod_149.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 666818
+      },
+      {
+        "id": "com.adilhanney.saber",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.adilhanney.saber_1370102.apk",
+        "kind": "file",
+        "filename": "com.adilhanney.saber_1370102.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 40228316
+      },
+      {
+        "id": "com.blacksquircle.ui",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.blacksquircle.ui_10028.apk",
+        "kind": "file",
+        "filename": "com.blacksquircle.ui_10028.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 19605334
+      },
+      {
+        "id": "com.gitlab.mudlej.MjPdfReader",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.gitlab.mudlej.MjPdfReader_5802.apk",
+        "kind": "file",
+        "filename": "com.gitlab.mudlej.MjPdfReader_5802.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 8964936
+      },
+      {
+        "id": "ru.tech.imageresizershrinker",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/ru.tech.imageresizershrinker_251.apk",
+        "kind": "file",
+        "filename": "ru.tech.imageresizershrinker_251.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 192035791
+      },
+      {
+        "id": "org.catrobat.paintroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.catrobat.paintroid_54.apk",
+        "kind": "file",
+        "filename": "org.catrobat.paintroid_54.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 3606321
+      },
+      {
+        "id": "dev.leonlatsch.photok",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/dev.leonlatsch.photok_81.apk",
+        "kind": "file",
+        "filename": "dev.leonlatsch.photok_81.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 14322332
+      },
+      {
+        "id": "com.kylecorry.trail_sense",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.kylecorry.trail_sense_148.apk",
+        "kind": "file",
+        "filename": "com.kylecorry.trail_sense_148.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 13271554
+      },
+      {
+        "id": "org.wikipedia",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.wikipedia_50614.apk",
+        "kind": "file",
+        "filename": "org.wikipedia_50614.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 103387974
+      },
+      {
+        "id": "fr.gouv.etalab.mastodon",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/fr.gouv.etalab.mastodon_572.apk",
+        "kind": "file",
+        "filename": "fr.gouv.etalab.mastodon_572.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 40302210
+      },
+      {
+        "id": "com.jerboa",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.jerboa_88.apk",
+        "kind": "file",
+        "filename": "com.jerboa_88.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 6150206
+      },
+      {
+        "id": "com.capyreader.app",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.capyreader.app_1215.apk",
+        "kind": "file",
+        "filename": "com.capyreader.app_1215.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 14073237
+      },
+      {
+        "id": "com.github.libretube",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.github.libretube_72.apk",
+        "kind": "file",
+        "filename": "com.github.libretube_72.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 9253519
+      },
+      {
+        "id": "io.ente.auth",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/io.ente.auth_1118.apk",
+        "kind": "file",
+        "filename": "io.ente.auth_1118.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 65404071
+      },
+      {
+        "id": "org.totschnig.myexpenses",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.totschnig.myexpenses_889.apk",
+        "kind": "file",
+        "filename": "org.totschnig.myexpenses_889.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 36385847
+      },
+      {
+        "id": "it.feio.android.omninotes.foss",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/it.feio.android.omninotes.foss_336.apk",
+        "kind": "file",
+        "filename": "it.feio.android.omninotes.foss_336.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 8233457
+      },
+      {
+        "id": "it.niedermann.owncloud.notes",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/it.niedermann.owncloud.notes_350000090.apk",
+        "kind": "file",
+        "filename": "it.niedermann.owncloud.notes_350000090.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 61493606
+      },
+      {
+        "id": "org.fairscan.app",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.fairscan.app_96.apk",
+        "kind": "file",
+        "filename": "org.fairscan.app_96.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 45938803
+      },
+      {
+        "id": "org.y20k.voxscribe",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.y20k.voxscribe_5.apk",
+        "kind": "file",
+        "filename": "org.y20k.voxscribe_5.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 12240436
+      },
+      {
+        "id": "dev.imranr.obtainium.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/dev.imranr.obtainium.fdroid_23623.apk",
+        "kind": "file",
+        "filename": "dev.imranr.obtainium.fdroid_23623.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 34609838
+      },
+      {
+        "id": "proton.android.authenticator.fdroid",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/proton.android.authenticator.fdroid_10309000.apk",
+        "kind": "file",
+        "filename": "proton.android.authenticator.fdroid_10309000.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 93490403
+      },
+      {
+        "id": "de.salomax.currencies",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/de.salomax.currencies_12300.apk",
+        "kind": "file",
+        "filename": "de.salomax.currencies_12300.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 4107033
+      },
+      {
+        "id": "com.artifex.mupdf.viewer.app",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.artifex.mupdf.viewer.app_270.apk",
+        "kind": "file",
+        "filename": "com.artifex.mupdf.viewer.app_270.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 17128961
+      },
+      {
+        "id": "com.unciv.app",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.unciv.app_1280.apk",
+        "kind": "file",
+        "filename": "com.unciv.app_1280.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 27588897
+      },
+      {
+        "id": "io.anuke.mindustry",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/io.anuke.mindustry_1115.apk",
+        "kind": "file",
+        "filename": "io.anuke.mindustry_1115.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 78182684
+      },
+      {
+        "id": "com.shatteredpixel.shatteredpixeldungeon",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.shatteredpixel.shatteredpixeldungeon_921.apk",
+        "kind": "file",
+        "filename": "com.shatteredpixel.shatteredpixeldungeon_921.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 30266868
+      },
+      {
+        "id": "org.secuso.privacyfriendlysudoku",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.secuso.privacyfriendlysudoku_101.apk",
+        "kind": "file",
+        "filename": "org.secuso.privacyfriendlysudoku_101.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 5192839
+      },
+      {
+        "id": "org.moire.opensudoku",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.moire.opensudoku_20261008.apk",
+        "kind": "file",
+        "filename": "org.moire.opensudoku_20261008.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 19398348
+      },
+      {
+        "id": "org.secuso.privacyfriendly2048",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.secuso.privacyfriendly2048_100.apk",
+        "kind": "file",
+        "filename": "org.secuso.privacyfriendly2048_100.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 9294779
+      },
+      {
+        "id": "org.lichess.mobileV2",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.lichess.mobileV2_300303.apk",
+        "kind": "file",
+        "filename": "org.lichess.mobileV2_300303.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 101934599
+      },
+      {
+        "id": "com.agateau.tinywheels.android",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/com.agateau.tinywheels.android_33.apk",
+        "kind": "file",
+        "filename": "com.agateau.tinywheels.android_33.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 29443763
+      },
+      {
+        "id": "org.afrikalan.tuxmath",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/org.afrikalan.tuxmath_4.apk",
+        "kind": "file",
+        "filename": "org.afrikalan.tuxmath_4.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 20717561
+      },
+      {
+        "id": "dev.lucanlm.antimine",
+        "platform": "android",
+        "url": "https://f-droid.org/repo/dev.lucanlm.antimine_1706031.apk",
+        "kind": "file",
+        "filename": "dev.lucanlm.antimine_1706031.apk",
+        "status": 200,
+        "contentType": "application/vnd.android.package-archive",
+        "contentLength": 9417318
+      }
+    ]
+  }
+}

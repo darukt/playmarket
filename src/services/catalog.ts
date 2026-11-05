@@ -1,4 +1,4 @@
-import type { CatalogApp, CategoryId } from "../data/apps";
+import type { CatalogApp, CategoryId, DownloadSource } from "../data/apps";
 
 const categories = new Set(["social", "video", "games", "finance", "productivity", "music", "photo", "tools", "sport"]);
 const record = (value: unknown): Record<string, unknown> => value !== null && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
@@ -7,6 +7,21 @@ const number = (value: unknown, fallback = 0) => typeof value === "number" && Nu
 function media(value: unknown): string | null {
   if (typeof value !== "string" || !/^\/(media|uploads|icons)\/[A-Za-z0-9._/-]+$/.test(value) || value.split("/").includes("..")) return null;
   return value;
+}
+
+function downloadSources(value: unknown): CatalogApp["downloadsByPlatform"] {
+  const result: Partial<Record<"android" | "windows", DownloadSource>> = {};
+  const sources = record(value);
+  for (const platform of ["android", "windows"] as const) {
+    const source = record(sources[platform]);
+    if (typeof source.url !== "string" || (source.kind !== "file" && source.kind !== "store")) continue;
+    try {
+      const url = new URL(source.url);
+      if (url.protocol !== "https:" || url.username || url.password) continue;
+      result[platform] = { url: source.url, kind: source.kind, filename: typeof source.filename === "string" ? source.filename : undefined };
+    } catch { /* Ignore malformed sources. */ }
+  }
+  return result;
 }
 
 /** Normalize nullable Go JSON fields once, at the public API boundary. */
@@ -23,6 +38,7 @@ export function normalizeApp(value: unknown): CatalogApp | undefined {
     color: /^#[0-9a-f]{6}$/i.test(text(row.color)) ? text(row.color) : "#4b67ad", ink: row.ink === "light" ? "light" : "dark",
     tag: typeof row.tag === "string" ? row.tag : undefined, kind: row.kind === "web" ? "web" : "app",
     game: typeof row.game === "string" ? row.game : undefined, custom: row.custom === true, icon: media(row.icon) ?? undefined,
+    downloadsByPlatform: downloadSources(row.downloadsByPlatform),
     detail: {
       description: text(detail.description), itempropDescription: text(detail.itempropDescription),
       screenshots: Array.isArray(detail.screenshots) ? detail.screenshots.map(media).filter((path): path is string => path !== null).slice(0, 20) : [],

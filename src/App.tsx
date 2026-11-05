@@ -14,16 +14,19 @@ import ChartList from "./components/ChartList";
 import CategoryTiles from "./components/CategoryTiles";
 import UpdatesStrip from "./components/UpdatesStrip";
 import WebGamesStrip from "./components/WebGamesStrip";
+import PortalHero from "./components/PortalHero";
 import GamesIndex from "./components/GamesIndex";
 import GamePage from "./components/GamePage";
 import AppIcon from "./components/AppIcon";
 import AppDetail from "./components/AppDetail";
 import { parsePath, pathFor, routeForApp, type Route } from "./nav";
 import { AppLink } from "./components/AppLink";
-import { useCatalog } from "./hooks/useCatalog";
+import PageLoading from "./components/PageLoading";
+import { useCatalogQuery } from "./hooks/useCatalog";
 import {
   categories,
   featuredId,
+  downloadLabel,
   formatSize,
   type CategoryId,
 } from "./data/apps";
@@ -61,11 +64,11 @@ const MOBILE_NAV: { id: View; label: string; icon: typeof Newspaper }[] = [
 ];
 
 const PAGE_TITLES: Record<string, { title: string; description: string }> = {
-  today: { title: "Play Market — приложения и игры", description: "Каталог приложений и игр с выпусками редакции, чартом и свежими обновлениями." },
-  chart: { title: "Чарт · бесплатные — Play Market", description: "Полный чарт бесплатных приложений и игр: по рейтингу, установкам или алфавиту." },
-  games: { title: "Мгновенные игры — Play Market", description: "Змейка, 2048 и Разлом: работают локально в браузере, ноль скачивания." },
-  installed: { title: "Мои загрузки — Play Market", description: "Локальная история загрузок из каталога приложений." },
-  wishlist: { title: "Список желаний — Play Market", description: "Приложения, которые хотите установить позже." },
+  today: { title: "Витрина — приложения и игры", description: "Каталог приложений и игр с выпусками редакции, чартом и свежими обновлениями." },
+  chart: { title: "Чарт · бесплатные — Витрина", description: "Полный чарт бесплатных приложений и игр: по рейтингу, установкам или алфавиту." },
+  games: { title: "Мгновенные игры — Витрина", description: "Аркады, головоломки и игры на реакцию прямо в браузере." },
+  installed: { title: "Мои загрузки — Витрина", description: "Локальная история загрузок из каталога приложений." },
+  wishlist: { title: "Список желаний — Витрина", description: "Приложения, которые хотите установить позже." },
 };
 
 export default function App() {
@@ -78,7 +81,8 @@ export default function App() {
   const [progress, setProgress] = useState<Record<string, number>>({});
   const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
 
-  const catalog = useCatalog();
+  const catalogQuery = useCatalogQuery();
+  const catalog = useMemo(() => catalogQuery.data ?? [], [catalogQuery.data]);
   const appById = useMemo(() => new Map(catalog.map((app) => [app.id, app])), [catalog]);
   const activeDownloads = useRef(new Map<string, AbortController>());
   useEffect(() => () => { activeDownloads.current.forEach((controller) => controller.abort()); activeDownloads.current.clear(); }, []);
@@ -136,18 +140,18 @@ export default function App() {
     const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (route.name === "app") {
       const app = appById.get(route.id);
-      document.title = app ? `${app.name} — ${app.developer} | Play Market` : "Play Market — приложения и игры";
+      document.title = app ? `${app.name} — ${app.developer} | Витрина` : "Витрина — приложения и игры";
       const desc = app?.detail.itempropDescription || app?.detail.description.slice(0, 160) || "Приложение для Android.";
       if (metaDesc) metaDesc.content = desc.slice(0, 200);
       return;
     }
     if (route.name === "game") {
       const g = Array.from(appById.values()).find((a) => a.kind === "web" && a.game === route.slug);
-      document.title = g ? `${g.name} — мгновенная игра | Play Market` : "Мгновенная игра — Play Market";
+      document.title = g ? `${g.name} — мгновенная игра | Витрина` : "Мгновенная игра — Витрина";
       if (metaDesc && g) metaDesc.content = g.detail.itempropDescription;
       return;
     }
-    document.title = info?.title ?? "Play Market — приложения и игры";
+    document.title = info?.title ?? "Витрина — приложения и игры";
     if (metaDesc) metaDesc.content = info?.description ?? PAGE_TITLES.today.description;
   }, [route, view, appById]);
 
@@ -164,10 +168,10 @@ export default function App() {
     activeDownloads.current.set(id, controller);
     setProgress((current) => ({ ...current, [id]: 0 }));
     try {
-      await requestDownload(id, controller.signal);
+      const download = await requestDownload(id, controller.signal);
       if (controller.signal.aborted) return;
-      setInstalled((list) => list.includes(id) ? list : [...list, id]);
-      setToast({ id: Date.now(), text: "Файл передан браузеру. Статус загрузки — в панели браузера." });
+      if (download.kind === "file") setInstalled((list) => list.includes(id) ? list : [...list, id]);
+      setToast({ id: Date.now(), text: download.kind === "store" ? "Открыта официальная страница приложения для установки." : download.platform === "android" ? "APK для Android передан браузеру. Статус — в панели загрузок браузера." : "Установщик передан браузеру. Статус — в панели загрузок браузера." });
     } catch (error) {
       if (!controller.signal.aborted) setToast({ id: Date.now(), text: error instanceof Error ? error.message : "Не удалось загрузить файл. Проверьте соединение." });
     } finally {
@@ -263,6 +267,7 @@ export default function App() {
 
   return (
     <div className="shell">
+      <PageLoading routeKey={pathFor(route)} />
       <Sidebar
         current={view}
         onNavigate={navigateView}
@@ -281,16 +286,22 @@ export default function App() {
         />
 
         <div className="content">
+          {catalogQuery.isPending && <div className="view-empty" role="status">Загружаем каталог…</div>}
+          {catalogQuery.isError && <div className="view-empty" role="alert">Не удалось обновить каталог. Проверьте подключение к серверу. <button className="btn btn-ghost" onClick={() => void catalogQuery.refetch()}>Повторить</button></div>}
           {view === "today" && (
             <>
-              <div className="standfirst">
-                <h1>
-                  Ваш следующий любимый запуск
-                </h1>
-                <div className="issue" aria-label="Выпуск">
-                  <b>Игры и приложения</b>{catalog.length} позиций в каталоге<br />Игры запускаются прямо здесь
+              <PortalHero />
+
+              <section className="section arcade-section" aria-labelledby="games-home-h">
+                <div className="section-head">
+                  <div>
+                    <h2 id="games-home-h">Выбирай свой ритм</h2>
+                    <p className="section-subtitle">На пару минут. Или до нового рекорда.</p>
+                  </div>
+                  <AppLink to={{ name: "games" }} className="section-link">Все игры <ArrowRight size={16} aria-hidden="true" /></AppLink>
                 </div>
-              </div>
+                <WebGamesStrip />
+              </section>
 
               {featured && <FeaturedPanel
                 app={featured}
@@ -304,9 +315,9 @@ export default function App() {
               <section className="section" aria-labelledby="chart-h">
                 <div className="section-head">
                   <h2 id="chart-h">
-                    <span className="no">02 ·&nbsp;</span>Топ-чарт
+                    Игры и приложения
                   </h2>
-                  <span className="section-note">бесплатные · {visible.length} позиций</span>
+                  <span className="section-note">{visible.length} находка в каталоге</span>
                 </div>
 
                 {categoryChips}
@@ -324,20 +335,10 @@ export default function App() {
                 <div className="catalog-more"><button className="btn btn-ghost" onClick={() => navigateView("chart")}>Весь каталог · {visible.length}</button></div>
               </section>
 
-              <section className="section" aria-labelledby="games-home-h">
-                <div className="section-head">
-                  <h2 id="games-home-h">
-                    <span className="no">03 ·&nbsp;</span>Мгновенные игры
-                  </h2>
-                  <span className="section-note">в браузере · 0 МБ на диске</span>
-                </div>
-                <WebGamesStrip />
-              </section>
-
               <section className="section" aria-labelledby="tiles-h">
                 <div className="section-head">
                   <h2 id="tiles-h">
-                    <span className="no">04 ·&nbsp;</span>Разделы
+                    Найди своё
                   </h2>
                   <span className="section-note">нажмите, чтобы отфильтровать чарт</span>
                 </div>
@@ -347,9 +348,9 @@ export default function App() {
               <section className="section" aria-labelledby="fresh-h">
                 <div className="section-head">
                   <h2 id="fresh-h">
-                    <span className="no">05 ·&nbsp;</span>Свежие обновления
+                    Свежие обновления
                   </h2>
-                  <span className="section-note">что прилетело на телефон за неделю</span>
+                  <span className="section-note">Последние версии в каталоге</span>
                 </div>
                 <UpdatesStrip />
               </section>
@@ -363,12 +364,12 @@ export default function App() {
           {view === "chart" && (
             <section className="section" style={{ marginTop: 12 }} aria-labelledby="chart-full-h">
               <div className="standfirst" style={{ paddingBottom: 18 }}>
-                <h1 id="chart-full-h">Чарт · бесплатные</h1>
+                <h1 id="chart-full-h">Игры и приложения</h1>
                 <div className="issue">
-                  <b>ПОЛНЫЙ ЧАРТ</b>
+                  <b>Весь каталог</b>
                   {visible.length} позиций
                   <br />
-                  оценки Play Store
+                  официальные источники
                 </div>
               </div>
               {categoryChips}
@@ -393,7 +394,7 @@ export default function App() {
                   <b>История на этом устройстве</b>
                   {installedApps.length} приложений
                   <br />
-                  {formatSize(usedMb)} — размеры файлов
+                  {formatSize(usedMb)} — оценка по каталогу
                 </div>
               </div>
 
@@ -438,7 +439,7 @@ export default function App() {
               <div className="standfirst" style={{ paddingBottom: 18 }}>
                 <h1 id="wishlist-h">Список желаний</h1>
                 <div className="issue">
-                  <b>ОТЛОЖЕНО</b>
+                  <b>На потом</b>
                   {wishlistApps.length} приложений
                 </div>
               </div>
@@ -472,7 +473,7 @@ export default function App() {
                         </AppLink>
                       ) : (
                         <button className="btn btn-ghost btn-sm" disabled={progress[app.id] !== undefined} onClick={() => install(app.id)}>
-                          {progress[app.id] !== undefined ? "Подготовка…" : "Скачать"}
+                          {progress[app.id] !== undefined ? "Подготовка…" : downloadLabel(app)}
                         </button>
                       )}
                       <button className="icon-btn on" onClick={() => toggleWish(app.id)} aria-label={`Убрать ${app.name} из списка желаний`}>
@@ -498,7 +499,7 @@ export default function App() {
             />
           )}
 
-          {route.name === "app" && !appDetail && (
+          {route.name === "app" && !appDetail && !catalogQuery.isPending && !catalogQuery.isError && (
             <section className="section" style={{ marginTop: 12 }} aria-labelledby="app-404-h">
               <div className="view-empty">
                 <b id="app-404-h">Приложение не найдено</b>
@@ -530,11 +531,11 @@ export default function App() {
 
           <footer className="colophon">
             <div>
-              <strong>PLAY MARKET</strong>
+              <strong>ВИТРИНА</strong>
               Приложения для устройства.<br />Игры для короткого перерыва.
             </div>
             <ul>
-              <li>Оценки и версии взяты из каталога Play Store</li>
+              <li>Источники приложений — Google Play, F-Droid и издатели</li>
               <li>Установка файлов выполняется на вашем устройстве</li>
               <li>Не является магазином Google и не связан с ним</li>
             </ul>

@@ -14,7 +14,7 @@ import {
 import AppIcon from "./AppIcon";
 import { AppLink } from "./AppLink";
 import { Description } from "./Description";
-import { formatRating, formatSize, type CatalogApp } from "../data/apps";
+import { downloadLabel, preferredDownload, formatRating, formatSize, type CatalogApp } from "../data/apps";
 import { useCatalog } from "../hooks/useCatalog";
 
 export default function AppDetail({
@@ -131,16 +131,18 @@ export default function AppDetail({
             ) : (
               <button className="btn" onClick={() => onInstall(app.id)}>
                 <Download size={14} aria-hidden="true" />
-                Скачать
+                {downloadLabel(app)}
               </button>
             )}
             <a
               className="btn btn-ghost"
               href={`/api/download/${encodeURIComponent(app.id)}`}
-              download
+              download={preferredDownload(app)?.kind !== "store"}
+              target={preferredDownload(app)?.kind === "store" ? "_blank" : undefined}
+              rel="noopener noreferrer"
             >
               <Download size={14} aria-hidden="true" />
-              Пакет
+              {preferredDownload(app)?.kind === "store" ? "Магазин" : "Пакет"}
             </a>
             <button
               className={`icon-btn${wishlisted ? " on" : ""}`}

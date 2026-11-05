@@ -17,7 +17,6 @@ type server struct {
 	store   *catalog.Service
 	users   *usersRegistry
 	scores  *scores.Service
-	stub    []byte
 	auth    *auth.Manager
 	tcpKey  string
 	started time.Time

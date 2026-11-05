@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .runtime/
+.vercel/
 .env
 .env.*
 !.env.example
@@ -32,3 +33,8 @@ backend/*.exe
 *.njsproj
 *.sln
 *.sw?
+
+# Persistent catalog databases and SQLite sidecars
+*.db
+*.db-wal
+*.db-shm

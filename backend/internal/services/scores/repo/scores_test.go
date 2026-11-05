@@ -71,6 +71,9 @@ func TestSubmitOrderingAndPersistence(t *testing.T) {
 
 func TestSubmitValidation(t *testing.T) {
 	b, _ := Open(filepath.Join(t.TempDir(), "s.json"))
+	if _, _, err := b.Submit("unknown", "u", "ok", 5); !errors.Is(err, ErrUnknownGame) {
+		t.Fatalf("unknown game: %v", err)
+	}
 	if _, _, err := b.Submit("snake", "u", "ok", 2701); !errors.Is(err, ErrBadScore) {
 		t.Fatalf("snake cap: %v", err)
 	}

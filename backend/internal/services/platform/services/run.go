@@ -34,7 +34,6 @@ func Run() {
 		log.Fatalf("data dir: %v", err)
 	}
 	seedPath := getenv("PM_SEED", filepath.Join("data", "seed.json"))
-	stubPath := getenv("PM_STUB", filepath.Join("assets", "PlayMarket-Setup.exe"))
 	addr := getenv("PM_ADDR", "127.0.0.1:8080")
 	tcpAddr := os.Getenv("PM_TCP_ADDR")
 
@@ -43,10 +42,6 @@ func Run() {
 		log.Fatalf("catalog: %v", err)
 	}
 	defer store.Close()
-	stub, err := os.ReadFile(stubPath)
-	if err != nil {
-		log.Fatalf("demo installer: %v", err)
-	}
 	us, err := visitors.Open(filepath.Join(dataDir, "users.json"))
 	if err != nil {
 		log.Fatalf("users: %v", err)
@@ -60,7 +55,7 @@ func Run() {
 	if err != nil {
 		log.Fatalf("auth: %v", err)
 	}
-	srv := controller.New(controller.Config{Catalog: store, Visitors: us, Scores: board, Installer: stub, Auth: authManager, TCPKey: os.Getenv("PM_TCP_KEY")})
+	srv := controller.New(controller.Config{Catalog: store, Visitors: us, Scores: board, Auth: authManager, TCPKey: os.Getenv("PM_TCP_KEY")})
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
