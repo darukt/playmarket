@@ -1,15 +1,26 @@
-/** «Витрина»: полка с тремя приложениями — знак каталога, а не кнопка Play. */
+/** KWINI MARKET: пиксельная лиса в квадрате. Только чёрный и бумажный. */
 export default function BrandMark({ className = "brand-mark" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
-      <rect width="64" height="64" rx="12" fill="#ffe000" />
-      <rect x="10" y="46" width="44" height="5" rx="2.5" fill="#141414" />
-      <rect x="13.5" y="24" width="10.5" height="22" rx="2.5" fill="#141414" />
-      <rect x="26.75" y="16" width="10.5" height="30" rx="2.5" fill="#ff3a44" />
-      <rect x="40" y="21" width="10.5" height="25" rx="2.5" fill="#00d2ff" />
-      <circle cx="18.75" cy="29.5" r="1.7" fill="#ffe000" />
-      <circle cx="32" cy="21.5" r="1.7" fill="#ffe000" />
-      <circle cx="45.25" cy="26.5" r="1.7" fill="#141414" />
+      <rect width="64" height="64" rx="12" fill="#f4f1e8" />
+      <g fill="#141414">
+        <rect x="12" y="12" width="10" height="16" />
+        <rect x="42" y="12" width="10" height="16" />
+        <rect x="8" y="24" width="48" height="24" />
+        <rect x="12" y="20" width="40" height="6" />
+        <rect x="20" y="48" width="24" height="6" />
+        <rect x="26" y="54" width="12" height="4" />
+        <rect x="6" y="34" width="4" height="8" />
+        <rect x="54" y="34" width="4" height="8" />
+      </g>
+      <g fill="#f4f1e8">
+        <rect x="15" y="16" width="4" height="7" />
+        <rect x="45" y="16" width="4" height="7" />
+        <rect x="16" y="30" width="8" height="6" />
+        <rect x="40" y="30" width="8" height="6" />
+        <rect x="22" y="40" width="20" height="8" />
+      </g>
+      <rect x="28" y="42" width="8" height="4" fill="#141414" />
     </svg>
   );
 }

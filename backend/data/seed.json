@@ -1249,7 +1249,7 @@
   {
     "id": "web.snake",
     "name": "Змейка",
-    "developer": "Витрина Studio",
+    "developer": "Kwini Studio",
     "genre": "Аркада",
     "category": "games",
     "rating": 4.8,
@@ -1278,7 +1278,7 @@
   {
     "id": "web.2048",
     "name": "2048",
-    "developer": "Витрина Studio",
+    "developer": "Kwini Studio",
     "genre": "Головоломка",
     "category": "games",
     "rating": 4.7,
@@ -1307,7 +1307,7 @@
   {
     "id": "web.razlom",
     "name": "Разлом",
-    "developer": "Витрина Studio",
+    "developer": "Kwini Studio",
     "genre": "Аркада",
     "category": "games",
     "rating": 4.6,
@@ -1336,7 +1336,7 @@
   {
     "id": "web.memory",
     "name": "Мемори",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Память",
     "category": "games",
     "rating": 0,
@@ -1365,7 +1365,7 @@
   {
     "id": "web.pong",
     "name": "Пинг-понг",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Спорт",
     "category": "games",
     "rating": 0,
@@ -1394,7 +1394,7 @@
   {
     "id": "web.reaction",
     "name": "Реакция",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Точность",
     "category": "games",
     "rating": 0,
@@ -1423,7 +1423,7 @@
   {
     "id": "web.minesweeper",
     "name": "Сапёр",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Головоломка",
     "category": "games",
     "rating": 0,
@@ -1452,7 +1452,7 @@
   {
     "id": "web.tic-tac-toe",
     "name": "Крестики-нолики",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Логика",
     "category": "games",
     "rating": 0,
@@ -1481,7 +1481,7 @@
   {
     "id": "web.connect-four",
     "name": "Четыре в ряд",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Логика",
     "category": "games",
     "rating": 0,
@@ -1510,7 +1510,7 @@
   {
     "id": "web.simon",
     "name": "Повтори мелодию",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Память",
     "category": "games",
     "rating": 0,
@@ -1539,7 +1539,7 @@
   {
     "id": "web.whack-a-mole",
     "name": "Поймай крота",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Аркада",
     "category": "games",
     "rating": 0,
@@ -1568,7 +1568,7 @@
   {
     "id": "web.lights-out",
     "name": "Погаси свет",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Головоломка",
     "category": "games",
     "rating": 0,
@@ -1597,7 +1597,7 @@
   {
     "id": "web.sliding-puzzle",
     "name": "Пятнашки",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Головоломка",
     "category": "games",
     "rating": 0,
@@ -1626,7 +1626,7 @@
   {
     "id": "web.sudoku",
     "name": "Мини-судоку",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Логика",
     "category": "games",
     "rating": 0,
@@ -1655,7 +1655,7 @@
   {
     "id": "web.word-scramble",
     "name": "Собери слово",
-    "developer": "Play Market",
+    "developer": "Kwini Studio",
     "genre": "Слова",
     "category": "games",
     "rating": 0,

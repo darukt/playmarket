@@ -22,9 +22,9 @@ export const TopBar = memo(function TopBar({
 
   return (
     <header className="topbar">
-      <button className="brand-inline" onClick={() => onNavigate("today")} aria-label="На главную «Витрины»">
+      <button className="brand-inline" onClick={() => onNavigate("today")} aria-label="На главную «KWINI MARKET»">
         <BrandMark />
-        <span>Витрина</span>
+        <span>Kwini Market</span>
       </button>
       <SearchBox onCommit={onCommit} />
       <div className="top-actions">

@@ -33,6 +33,8 @@ export default function Game2048({ onGameOver }: { onGameOver?: (score: number) 
   const [won, setWon] = useState(false);
   const [over, setOver] = useState(false);
   const [best, setBest] = useState(() => readBest(BEST_KEY));
+  const [slide, setSlide] = useState<"left" | "right" | "up" | "down" | null>(null);
+  const [moveSeq, setMoveSeq] = useState(0);
   useEffect(() => { persistBest(BEST_KEY, best); }, [best]);
 
   const maxTile = board.reduce<number>((m, v) => (v && v > m ? v : m), 2);
@@ -49,6 +51,8 @@ export default function Game2048({ onGameOver }: { onGameOver?: (score: number) 
     const withTile = addTile(result.next);
     boardRef.current = withTile;
     setBoard(withTile);
+    setSlide(dir);
+    setMoveSeq((n) => n + 1);
     if (result.gained > 0) clatter();
     else blip(320, 0.03, "sine", 0.03);
 
@@ -82,6 +86,7 @@ export default function Game2048({ onGameOver }: { onGameOver?: (score: number) 
     setWon(false);
     setOver(false);
     setHistory(null);
+    setSlide(null);
     blip(480, 0.04, "triangle", 0.04);
   }, [history]);
 
@@ -96,6 +101,7 @@ export default function Game2048({ onGameOver }: { onGameOver?: (score: number) 
     setHistory(null);
     setWon(false);
     setOver(false);
+    setSlide(null);
   }, []);
 
   useEffect(() => {
@@ -157,7 +163,7 @@ export default function Game2048({ onGameOver }: { onGameOver?: (score: number) 
       </div>
 
       <div className="g2048-stage" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} onTouchCancel={() => { touchRef.current = null; }}>
-        <div className="g2048-board" role="grid" aria-label="Игровое поле 2048" aria-rowcount={4} aria-colcount={4}>
+        <div key={moveSeq} className={`g2048-board${slide ? ` slide-${slide}` : ""}`} role="grid" aria-label="Игровое поле 2048" aria-rowcount={4} aria-colcount={4}>
           {Array.from({ length: SIZE }, (_, row) => <div className="g2048-row" role="row" key={row}>
           {Array.from({ length: SIZE }, (_, column) => {
             const i = row * SIZE + column;

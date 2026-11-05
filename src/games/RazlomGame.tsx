@@ -22,6 +22,16 @@ const BRICKS_TOP = 48;
 
 const ROW_COLORS = ["#ffe000", "#ff7a1f", "#ff3a44", "#ece8dc", "#00d2ff"];
 const ROW_POINTS = [50, 40, 30, 20, 10];
+const LEVEL_NAMES = [
+  "Разминка",
+  "Плотный ряд",
+  "Шахматы",
+  "Крепость",
+  "Башни",
+  "Решётка",
+  "Стена",
+  "Финал",
+];
 
 type Overlay = "ready" | "over" | "cleared" | null;
 type Ball = { x: number; y: number; vx: number; vy: number; stuck: boolean };
@@ -494,6 +504,11 @@ export default function RazlomGame({ onGameOver }: { onGameOver?: (score: number
         </button>
       </div>
 
+      <div className="level-banner">
+        <span>Уровень {level}</span>
+        <b>{LEVEL_NAMES[(level - 1) % LEVEL_NAMES.length]}</b>
+      </div>
+
       <div className="game-stage game-stage-wide">
         <canvas
           ref={canvasRef}
@@ -521,7 +536,7 @@ export default function RazlomGame({ onGameOver }: { onGameOver?: (score: number
             <span className="overlay-title">УРОВЕНЬ {level} ПРОЙДЕН</span>
             <span className="overlay-sub">Счёт {score} · бонус +{150 * level}</span>
             <button className="overlay-cta overlay-btn" onClick={nextLevel}>
-              <Play size={16} aria-hidden="true" /> УРОВЕНЬ {level + 1} · ПРОБЕЛ
+              <Play size={16} aria-hidden="true" /> УРОВЕНЬ {level + 1} · {LEVEL_NAMES[level % LEVEL_NAMES.length].toUpperCase()}
             </button>
           </div>
         )}

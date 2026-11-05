@@ -81,7 +81,7 @@ for (const game of WEB_GAMES) {
   const fullHtml = descBlocks(fullDesc)
     .map((b) => (b.startsWith("## ") ? `<h3>${escape(b.slice(3).trim())}</h3>` : `<p>${escape(b)}</p>`))
     .join("\n");
-  const title = `${game.name} — мгновенная игра | Витрина`;
+  const title = `${game.name} — мгновенная игра | KWINI MARKET`;
   const description = desc || `${game.name} — игра, которая работает прямо в браузере.`;
   const mediaDir = `/media/${game.id}`;
   const html = `<!doctype html>
@@ -105,7 +105,7 @@ for (const game of WEB_GAMES) {
       description,
       gamePlatform: ["Web browser"],
       applicationCategory: "GameApplication",
-      author: { "@type": "Organization", name: "Витрина Studio" },
+      author: { "@type": "Organization", name: "Kwini Studio" },
       offers: { "@type": "Offer", price: "0", priceCurrency: "KZT" },
     }).replace(/</g, "\\u003c")}</script>
     <link rel="stylesheet" href="${cssHref}" />
@@ -128,7 +128,7 @@ for (const game of WEB_GAMES) {
                 <div class="detail-hero-main">
                   <div class="feature-kicker" style="color: var(--accent)">МГНОВЕННАЯ ИГРА · 0 МБ</div>
                   <h1>${escape(game.name)}</h1>
-                  <p class="detail-dev">ВИТРИНА STUDIO · ${escape(game.genre.toUpperCase())}</p>
+                  <p class="detail-dev">KWINI STUDIO · ${escape(game.genre.toUpperCase())}</p>
                   <p class="detail-lead">${escape(description)}</p>
                   <div class="detail-actions">
                     <a class="btn" href="/games/${game.slug}">Играть в браузере</a>
@@ -145,7 +145,7 @@ for (const game of WEB_GAMES) {
               </section>
             </div>
             <footer class="colophon">
-              <div><strong>ВИТРИНА</strong>Каталог приложений и игр,<br />сделанный вручную</div>
+              <div><strong>KWINI MARKET</strong>Каталог приложений и игр,<br />сделанный вручную</div>
               <ul>
                 <li>Игра работает локально, загрузка — один раз</li>
                 <li>Предмет: ${escape(game.name)} · веб-игра</li>
@@ -185,9 +185,9 @@ for (const game of WEB_GAMES) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#f4f1e8" />
-    <title>Мгновенные игры — Витрина</title>
+    <title>Мгновенные игры — KWINI MARKET</title>
     <meta name="description" content="Аркады, головоломки и игры на реакцию прямо в браузере. Ноль скачивания, ноль мегабайт." />
-    <meta property="og:title" content="Мгновенные игры — Витрина" />
+    <meta property="og:title" content="Мгновенные игры — KWINI MARKET" />
     <meta property="og:description" content="Аркады, головоломки и игры на реакцию прямо в браузере." />
     <meta property="og:image" content="${BASE_URL}/media/web.snake/icon.webp" />
     <meta property="og:type" content="website" />
@@ -259,7 +259,7 @@ ${videoBlock ? videoBlock + "\n" : ""}${screens}
 </section>`
     : "";
 
-  const title = `${app.name} — ${app.developer} | Витрина`;
+  const title = `${app.name} — ${app.developer} | KWINI MARKET`;
   const desc = String(d.itempropDescription || d.description || `${app.name} для Android.`)
     .replace(/\s+/g, " ")
     .trim()
@@ -361,7 +361,7 @@ ${descHtml}                </div>
               ${moreDevHtml}
             </div>
             <footer class="colophon">
-              <div><strong>ВИТРИНА</strong>Каталог приложений и игр,<br />сделанный вручную</div>
+              <div><strong>KWINI MARKET</strong>Каталог приложений и игр,<br />сделанный вручную</div>
               <ul>
                 <li>Оценки и версии сверены с Play Store</li>
                 <li>Предмет: ${esc(app.name)} · ${esc(app.genre)}</li>

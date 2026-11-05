@@ -118,7 +118,7 @@ function GameContent({ slug }: { slug: string }) {
         <div>
           <div className="feature-kicker" style={{ color: "var(--accent)" }}>Игра в браузере</div>
           <h1 className="game-title">{game.name}</h1>
-          <p className="game-dev">ВИТРИНА STUDIO · {game.genre.toUpperCase()}</p>
+          <p className="game-dev">KWINI STUDIO · {game.genre.toUpperCase()}</p>
           <div className="game-facts" aria-label="Ключевые цифры">
             <span>РЕЙТИНГ {formatRating(game.rating)}</span>
             <span>Без установки</span>

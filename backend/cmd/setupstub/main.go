@@ -1,4 +1,4 @@
-// Витрина Setup — честно демонстрирует, что произошло бы при установке.
+// KWINI MARKET Setup — честно демонстрирует, что произошло бы при установке.
 // Имя приложения берётся из имени исполняемого файла: "WhatsApp-Setup.exe" → "WhatsApp".
 // Настоящие APK/EXE для сторонних приложений добавляются через Студию.
 package main
@@ -15,14 +15,14 @@ import (
 func appNameFromExe() string {
 	exe, err := os.Executable()
 	if err != nil {
-		return "Приложение Витрины"
+		return "Приложение KWINI MARKET"
 	}
 	name := strings.TrimSuffix(filepath.Base(exe), filepath.Ext(exe))
 	name = strings.TrimSuffix(name, "-Setup")
 	name = strings.ReplaceAll(name, "_", " ")
 	name = strings.TrimSpace(name)
 	if name == "" {
-		name = "Приложение Витрины"
+		name = "Приложение KWINI MARKET"
 	}
 	return name
 }
@@ -46,7 +46,7 @@ func main() {
 	fmt.Println("  ╔══════════════════════════════════════════╗")
 	fmt.Printf("  ║  %s — установка (демо)\n", padRight(name, 30))
 	fmt.Println("  ╠══════════════════════════════════════════╣")
-	fmt.Println("  ║  Установщик Витрина, сборка 1.0      ║")
+	fmt.Println("  ║  Установщик KWINI MARKET, сборка 1.0      ║")
 	fmt.Println("  ║  Это демонстрационный пакет, реальный    ║")
 	fmt.Println("  ║  APK/EXE добавляется через Студию.       ║")
 	fmt.Println("  ╚══════════════════════════════════════════╝")

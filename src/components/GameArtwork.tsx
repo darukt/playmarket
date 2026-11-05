@@ -16,11 +16,35 @@ export default function GameArtwork({ slug }: { slug: string }) {
           <rect x="103" y="99" width="65" height="65" rx="13" fill="#ff3a44" /><text x="135.5" y="141" textAnchor="middle" fill="#fff6ef" fontSize="26" fontFamily="Archivo Black, Arial" fontWeight="700">4</text>
           <rect x="179" y="90" width="77" height="77" rx="16" fill="#ff7a1f" /><text x="217.5" y="139" textAnchor="middle" fill="#141414" fontSize="30" fontFamily="Archivo Black, Arial" fontWeight="700">32</text>
         </g>
-      </> : <>
+      </> : slug === "razlom" ? <>
         {[0, 1, 2].map(row => [0, 1, 2, 3, 4].map(col => <rect key={`${row}-${col}`} x={47 + col * 47} y={25 + row * 24} width="39" height="16" rx="4" fill={row === 0 ? "#ff3a44" : row === 1 ? "#ffe000" : "#00d2ff"} opacity={row === 2 && col === 2 ? 0 : 1} />))}
         <path d="M126 145L185 107L166 79" stroke="#141414" strokeWidth="2" strokeDasharray="4 5" opacity=".55" />
         <circle cx="185" cy="107" r="8" fill="#ece8dc" />
         <rect x="96" y="145" width="72" height="9" rx="4.5" fill="#00f076" />
+      </> : slug === "memory" ? <>
+        <g transform="rotate(-7 120 84)">
+          <rect x="72" y="30" width="58" height="84" rx="8" fill="#ece8dc" stroke="#141414" strokeWidth="4" />
+          <path d="M88 62h26M88 76h26M88 90h16" stroke="#141414" strokeWidth="6" strokeLinecap="round" />
+        </g>
+        <g transform="rotate(8 196 84)">
+          <rect x="168" y="28" width="58" height="84" rx="8" fill="#ff3a44" stroke="#141414" strokeWidth="4" />
+          <circle cx="197" cy="66" r="13" fill="none" stroke="#141414" strokeWidth="5" />
+          <path d="M182 96h30" stroke="#141414" strokeWidth="6" strokeLinecap="round" />
+        </g>
+        <circle cx="155" cy="143" r="12" fill="#ffe000" stroke="#141414" strokeWidth="3" />
+      </> : slug === "pong" ? <>
+        <rect x="42" y="36" width="10" height="92" rx="5" fill="#141414" />
+        <rect x="268" y="52" width="10" height="76" rx="5" fill="#ff3a44" />
+        <rect x="170" y="56" width="14" height="14" fill="#00d2ff" />
+        <path d="M70 82H150M250 118H180" stroke="#141414" strokeWidth="2" strokeDasharray="5 7" opacity=".5" />
+        <path d="M52 152H268" stroke="#141414" strokeWidth="5" strokeLinecap="round" />
+        <path d="M52 152H268" stroke="#ffe000" strokeWidth="2" strokeDasharray="8 6" />
+      </> : <>
+        <circle cx="158" cy="84" r="54" fill="none" stroke="#141414" strokeWidth="4" />
+        <circle cx="158" cy="84" r="30" fill="none" stroke="#ff3a44" strokeWidth="5" />
+        <circle cx="158" cy="84" r="9" fill="#ffe000" stroke="#141414" strokeWidth="3" />
+        <path d="M158 12v32M158 124v32M86 84h32M198 84h32" stroke="#141414" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="252" cy="132" r="7" fill="#00f076" />
       </>}
     </svg>
   );

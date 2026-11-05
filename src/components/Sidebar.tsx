@@ -40,10 +40,10 @@ export default function Sidebar({
 
   return (
     <aside className="sidebar">
-      <button className="brand brand-btn" onClick={() => onNavigate("today")} aria-label="На главную «Витрины»">
+      <button className="brand brand-btn" onClick={() => onNavigate("today")} aria-label="На главную «KWINI MARKET»">
         <BrandMark />
         <div className="brand-text">
-          <strong>ВИТРИНА</strong>
+          <strong>KWINI<br />MARKET</strong>
           <span>каталог приложений</span>
         </div>
       </button>

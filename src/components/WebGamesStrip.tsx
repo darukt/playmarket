@@ -6,7 +6,7 @@ import { useCatalog } from "../hooks/useCatalog";
 /** Полоса мгновенных веб-игр: работают прямо в браузере, 0 МБ. */
 export default function WebGamesStrip() {
   const catalog = useCatalog();
-  const webGames = catalog.filter((a) => a.kind === "web" && a.game);
+  const webGames = catalog.filter((a) => a.kind === "web" && a.game).slice(0, 6);
 
   return (
     <div className="web-games">

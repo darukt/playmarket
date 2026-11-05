@@ -64,11 +64,11 @@ const MOBILE_NAV: { id: View; label: string; icon: typeof Newspaper }[] = [
 ];
 
 const PAGE_TITLES: Record<string, { title: string; description: string }> = {
-  today: { title: "Витрина — приложения и игры", description: "Каталог приложений и игр с выпусками редакции, чартом и свежими обновлениями." },
-  chart: { title: "Чарт · бесплатные — Витрина", description: "Полный чарт бесплатных приложений и игр: по рейтингу, установкам или алфавиту." },
-  games: { title: "Мгновенные игры — Витрина", description: "Аркады, головоломки и игры на реакцию прямо в браузере." },
-  installed: { title: "Мои загрузки — Витрина", description: "Локальная история загрузок из каталога приложений." },
-  wishlist: { title: "Список желаний — Витрина", description: "Приложения, которые хотите установить позже." },
+  today: { title: "KWINI MARKET — приложения и игры", description: "Каталог приложений и игр с выпусками редакции, чартом и свежими обновлениями." },
+  chart: { title: "Чарт · бесплатные — KWINI MARKET", description: "Полный чарт бесплатных приложений и игр: по рейтингу, установкам или алфавиту." },
+  games: { title: "Мгновенные игры — KWINI MARKET", description: "Аркады, головоломки и игры на реакцию прямо в браузере." },
+  installed: { title: "Мои загрузки — KWINI MARKET", description: "Локальная история загрузок из каталога приложений." },
+  wishlist: { title: "Список желаний — KWINI MARKET", description: "Приложения, которые хотите установить позже." },
 };
 
 export default function App() {
@@ -140,18 +140,18 @@ export default function App() {
     const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (route.name === "app") {
       const app = appById.get(route.id);
-      document.title = app ? `${app.name} — ${app.developer} | Витрина` : "Витрина — приложения и игры";
+      document.title = app ? `${app.name} — ${app.developer} | KWINI MARKET` : "KWINI MARKET — приложения и игры";
       const desc = app?.detail.itempropDescription || app?.detail.description.slice(0, 160) || "Приложение для Android.";
       if (metaDesc) metaDesc.content = desc.slice(0, 200);
       return;
     }
     if (route.name === "game") {
       const g = Array.from(appById.values()).find((a) => a.kind === "web" && a.game === route.slug);
-      document.title = g ? `${g.name} — мгновенная игра | Витрина` : "Мгновенная игра — Витрина";
+      document.title = g ? `${g.name} — мгновенная игра | KWINI MARKET` : "Мгновенная игра — KWINI MARKET";
       if (metaDesc && g) metaDesc.content = g.detail.itempropDescription;
       return;
     }
-    document.title = info?.title ?? "Витрина — приложения и игры";
+    document.title = info?.title ?? "KWINI MARKET — приложения и игры";
     if (metaDesc) metaDesc.content = info?.description ?? PAGE_TITLES.today.description;
   }, [route, view, appById]);
 
@@ -531,7 +531,7 @@ export default function App() {
 
           <footer className="colophon">
             <div>
-              <strong>ВИТРИНА</strong>
+              <strong>KWINI MARKET</strong>
               Приложения для устройства.<br />Игры для короткого перерыва.
             </div>
             <ul>
