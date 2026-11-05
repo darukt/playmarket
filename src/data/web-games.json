@@ -1,0 +1,5 @@
+[
+  { "id": "web.snake", "name": "Змейка", "developer": "Play Market Studio", "genre": "Аркада", "category": "games", "rating": 4.8, "ratings": "локально", "downloads": "в браузере", "downloadsM": 9, "mb": 0, "version": "1.0", "updated": "4 ноября 2026", "fresh": "2026-11-04", "color": "#141414", "ink": "light", "tag": "Web", "kind": "web", "game": "snake" },
+  { "id": "web.2048", "name": "2048", "developer": "Play Market Studio", "genre": "Головоломка", "category": "games", "rating": 4.7, "ratings": "локально", "downloads": "в браузере", "downloadsM": 8, "mb": 0, "version": "1.0", "updated": "4 ноября 2026", "fresh": "2026-11-04", "color": "#141414", "ink": "light", "tag": "Web", "kind": "web", "game": "2048" },
+  { "id": "web.razlom", "name": "Разлом", "developer": "Play Market Studio", "genre": "Аркада", "category": "games", "rating": 4.6, "ratings": "локально", "downloads": "в браузере", "downloadsM": 7, "mb": 0, "version": "1.0", "updated": "4 ноября 2026", "fresh": "2026-11-04", "color": "#141414", "ink": "light", "tag": "Web", "kind": "web", "game": "razlom" }
+]

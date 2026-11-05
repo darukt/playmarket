@@ -1,0 +1,16 @@
+FROM golang:1.25-alpine AS build
+WORKDIR /src
+COPY backend/go.mod backend/go.sum ./
+RUN go mod download
+COPY backend/ ./
+RUN CGO_ENABLED=0 go build -trimpath -o /out/server ./cmd/server
+
+FROM alpine:3.22
+RUN apk add --no-cache ca-certificates && addgroup -S app && adduser -S -G app app && mkdir /data && chown app:app /data
+WORKDIR /app
+COPY --from=build /out/server /app/server
+COPY backend/data/seed.json /app/seed.json
+COPY backend/assets/ /app/assets/
+USER app
+EXPOSE 8080
+ENTRYPOINT ["/app/server"]

@@ -1,0 +1,49 @@
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+      args:
+        PUBLIC_URL: ${PM_PUBLIC_URL:-http://localhost:8088}
+    ports:
+      - '127.0.0.1:8088:8080'
+    depends_on:
+      - api
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+    security_opt:
+      - no-new-privileges:true
+    networks: [private]
+  api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+    environment:
+      PM_ADDR: ':8080'
+      PM_DATA_DIR: /data
+      PM_SEED: /app/seed.json
+      PM_STUB: /app/assets/PlayMarket-Setup.exe
+      PM_PUBLIC_URL: ${PM_PUBLIC_URL:-http://localhost:8088}
+      PM_TRUST_PROXY: 'true'
+      PM_GOOGLE_CLIENT_ID: ${PM_GOOGLE_CLIENT_ID:-}
+      PM_GOOGLE_CLIENT_SECRET: ${PM_GOOGLE_CLIENT_SECRET:-}
+      PM_ADMIN_USER_IDS: ${PM_ADMIN_USER_IDS:-}
+      PM_ADMIN_GOOGLE_EMAILS: ${PM_ADMIN_GOOGLE_EMAILS:-}
+      PM_ADMIN_DEVICE_KEY: ${PM_ADMIN_DEVICE_KEY:-}
+    volumes:
+      - catalog-data:/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt:
+      - no-new-privileges:true
+    networks: [private]
+networks:
+  private:
+    driver: bridge
+volumes:
+  catalog-data:

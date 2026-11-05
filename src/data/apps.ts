@@ -1,0 +1,126 @@
+import details from "./details.json";
+import webGamesJson from "./web-games.json";
+
+export type CategoryId =
+  | "all"
+  | "social"
+  | "video"
+  | "games"
+  | "finance"
+  | "productivity"
+  | "music"
+  | "photo"
+  | "tools"
+  | "sport";
+
+export interface AppDetail {
+  description: string;
+  itempropDescription: string;
+  screenshots: string[];
+  video: string | null;
+  poster: string | null;
+  updatedRaw: string | null;
+}
+
+export interface CatalogApp {
+  id: string;
+  name: string;
+  developer: string;
+  genre: string;
+  category: Exclude<CategoryId, "all">;
+  rating: number;
+  ratings: string;
+  downloads: string;
+  downloadsM: number;
+  mb: number;
+  version: string;
+  updated: string;
+  fresh: string;
+  color: string;
+  ink: "light" | "dark";
+  tag?: string;
+  /** "web" — мгновенная веб-игра, работает локально в браузере, без скачивания */
+  kind?: "app" | "web";
+  /** slug игры для маршрута /games/:slug */
+  game?: string;
+  /** признак позиции, добавленной через Студию (/api/admin/games) */
+  custom?: boolean;
+  /** путь к пользовательской иконке (/uploads/<id>/icon.webp) */
+  icon?: string;
+  detail: AppDetail;
+}
+
+export const categories: { id: CategoryId; label: string }[] = [
+  { id: "all", label: "Всё" },
+  { id: "social", label: "Общение" },
+  { id: "video", label: "Видео" },
+  { id: "games", label: "Игры" },
+  { id: "finance", label: "Финансы" },
+  { id: "productivity", label: "Работа" },
+  { id: "music", label: "Музыка" },
+  { id: "photo", label: "Фото и видео" },
+  { id: "tools", label: "Инструменты" },
+  { id: "sport", label: "Спорт" },
+];
+
+const catalog: Array<Omit<CatalogApp, "detail">> = [
+  { id: "com.whatsapp", name: "WhatsApp", developer: "WhatsApp LLC", genre: "Коммуникации", category: "social", rating: 4.7, ratings: "41,8 млн", downloads: "5 млрд+", downloadsM: 5000, mb: 78, version: "2.26.38.11", updated: "3 ноября 2026", fresh: "2026-11-03", color: "#25d366", ink: "dark", tag: "Выбор редакции" },
+  { id: "com.google.android.youtube", name: "YouTube", developer: "Google LLC", genre: "Видео", category: "video", rating: 4.0, ratings: "318 млн", downloads: "5 млрд+", downloadsM: 5000, mb: 120, version: "21.27.389", updated: "1 ноября 2026", fresh: "2026-11-01", color: "#ff0000", ink: "light" },
+  { id: "com.zhiliaoapp.musically", name: "TikTok", developer: "TikTok Pte. Ltd.", genre: "Короткие видео", category: "video", rating: 4.2, ratings: "298 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 140, version: "45.2.0", updated: "4 ноября 2026", fresh: "2026-11-04", color: "#111116", ink: "light", tag: "Сейчас слушают" },
+  { id: "com.facebook.lite", name: "Facebook Lite", developer: "Meta Platforms, Inc.", genre: "Социальная сеть", category: "social", rating: 4.6, ratings: "82 млн", downloads: "500 млн+", downloadsM: 500, mb: 2, version: "541.0.0.60.62", updated: "20 октября 2026", fresh: "2026-10-20", color: "#1877f2", ink: "light" },
+  { id: "com.android.chrome", name: "Chrome", developer: "Google LLC", genre: "Браузер", category: "tools", rating: 4.2, ratings: "316 млн", downloads: "10 млрд+", downloadsM: 10000, mb: 168, version: "142.0.7444.42", updated: "31 октября 2026", fresh: "2026-10-31", color: "#1a73e8", ink: "light" },
+  { id: "com.instagram.android", name: "Instagram", developer: "Instagram", genre: "Фото и Reels", category: "social", rating: 4.5, ratings: "289 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 90, version: "404.0.0.42.66", updated: "30 октября 2026", fresh: "2026-10-30", color: "#e1306c", ink: "light" },
+  { id: "com.facebook.orca", name: "Messenger", developer: "Meta Platforms, Inc.", genre: "Коммуникации", category: "social", rating: 4.9, ratings: "96 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 110, version: "541.0.0.60.63", updated: "27 октября 2026", fresh: "2026-10-27", color: "#0084ff", ink: "light" },
+  { id: "com.google.android.gm", name: "Gmail", developer: "Google LLC", genre: "Почта", category: "productivity", rating: 4.4, ratings: "198 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 70, version: "2025.11.01.726353868", updated: "1 ноября 2026", fresh: "2026-11-01", color: "#ea4335", ink: "light" },
+  { id: "org.telegram.messenger", name: "Telegram", developer: "Telegram FZ-LLC", genre: "Коммуникации", category: "social", rating: 3.9, ratings: "18,2 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 65, version: "12.2.0", updated: "2 ноября 2026", fresh: "2026-11-02", color: "#2aabee", ink: "light" },
+  { id: "com.lemon.lvoverseas", name: "CapCut", developer: "ByteDance Pte. Ltd.", genre: "Видеомонтаж", category: "photo", rating: 3.1, ratings: "12,6 млн", downloads: "500 млн+", downloadsM: 500, mb: 180, version: "16.3.0", updated: "20 октября 2026", fresh: "2026-10-20", color: "#08e0c8", ink: "dark", tag: "Приложение дня" },
+  { id: "com.snapchat.android", name: "Snapchat", developer: "Snap Inc.", genre: "Фото и видео", category: "social", rating: 4.3, ratings: "155 млн", downloads: "500 млн+", downloadsM: 500, mb: 80, version: "14.10.0.48", updated: "22 октября 2026", fresh: "2026-10-22", color: "#f4cc0b", ink: "dark" },
+  { id: "com.google.android.apps.messaging", name: "Google Сообщения", developer: "Google LLC", genre: "Коммуникации", category: "social", rating: 4.8, ratings: "8,9 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 48, version: "2026.10.14", updated: "3 ноября 2026", fresh: "2026-11-03", color: "#1a73e8", ink: "light" },
+  { id: "com.microsoft.teams", name: "Microsoft Teams", developer: "Microsoft Corporation", genre: "Видеоконференции", category: "productivity", rating: 4.7, ratings: "6,1 млн", downloads: "500 млн+", downloadsM: 500, mb: 220, version: "26423.401.12", updated: "29 октября 2026", fresh: "2026-10-29", color: "#4b53bc", ink: "light" },
+  { id: "com.discord", name: "Discord", developer: "Discord Inc.", genre: "Сообщества", category: "social", rating: 4.4, ratings: "21,4 млн", downloads: "500 млн+", downloadsM: 500, mb: 110, version: "368.13", updated: "1 ноября 2026", fresh: "2026-11-01", color: "#5865f2", ink: "light" },
+  { id: "com.waze", name: "Waze", developer: "Google LLC", genre: "Навигация", category: "tools", rating: 3.9, ratings: "19,3 млн", downloads: "100 млн+", downloadsM: 100, mb: 138, version: "5.14.90", updated: "18 октября 2026", fresh: "2026-10-18", color: "#33ccff", ink: "dark" },
+  { id: "com.sofascore.results", name: "Sofascore", developer: "Sofascore", genre: "Спортивная статистика", category: "sport", rating: 4.6, ratings: "7,2 млн", downloads: "50 млн+", downloadsM: 50, mb: 96, version: "10.9.0", updated: "4 ноября 2026", fresh: "2026-11-04", color: "#a3e635", ink: "dark", tag: "Обновлено" },
+  { id: "com.crunchyroll.crunchyroid", name: "Crunchyroll", developer: "Crunchyroll, LLC", genre: "Аниме", category: "video", rating: 4.4, ratings: "9,4 млн", downloads: "50 млн+", downloadsM: 50, mb: 88, version: "4.3.0.63290", updated: "2 ноября 2026", fresh: "2026-11-02", color: "#f47521", ink: "light" },
+  { id: "com.microsoft.office.outlook", name: "Outlook", developer: "Microsoft Corporation", genre: "Почта и календарь", category: "productivity", rating: 4.7, ratings: "15,7 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 95, version: "4.2570.0", updated: "26 октября 2026", fresh: "2026-10-26", color: "#0078d4", ink: "light" },
+  { id: "com.pubg.newstate", name: "PUBG Mobile", developer: "Tencent Games", genre: "Боевая зона", category: "games", rating: 4.1, ratings: "56,4 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 2100, version: "3.6.0.77100", updated: "18 октября 2026", fresh: "2026-10-18", color: "#f2a900", ink: "dark" },
+  { id: "org.mozilla.firefox", name: "Firefox", developer: "Mozilla", genre: "Браузер", category: "tools", rating: 4.8, ratings: "22,1 млн", downloads: "100 млн+", downloadsM: 100, mb: 74, version: "144.0.3", updated: "2 ноября 2026", fresh: "2026-11-02", color: "#ff7139", ink: "light" },
+  { id: "us.zoom.videomeetings", name: "Zoom Workplace", developer: "Zoom Video Communications", genre: "Видеоконференции", category: "productivity", rating: 3.6, ratings: "31,8 млн", downloads: "500 млн+", downloadsM: 500, mb: 150, version: "6.16.5.47200", updated: "25 октября 2026", fresh: "2026-10-25", color: "#2d8cff", ink: "light" },
+  { id: "com.google.android.apps.tachyon", name: "Google Meet", developer: "Google LLC", genre: "Видеоконференции", category: "productivity", rating: 4.2, ratings: "10,2 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 92, version: "304.700224.12", updated: "28 октября 2026", fresh: "2026-10-28", color: "#00897b", ink: "light" },
+  { id: "kz.kaspi.mobile", name: "Kaspi.kz", developer: "Kaspi Bank", genre: "Банк и платежи", category: "finance", rating: 4.9, ratings: "5,6 млн", downloads: "10 млн+", downloadsM: 10, mb: 210, version: "11.4.0", updated: "3 ноября 2026", fresh: "2026-11-03", color: "#f14635", ink: "light" },
+  { id: "kz.kkb.homebank", name: "Halyk Казахстан", developer: "Halyk Bank", genre: "Банк и платежи", category: "finance", rating: 4.7, ratings: "2,1 млн", downloads: "10 млн+", downloadsM: 10, mb: 160, version: "4.26.1", updated: "31 октября 2026", fresh: "2026-10-31", color: "#7ee01e", ink: "dark" },
+  { id: "com.spotify.music", name: "Spotify: музыка", developer: "Spotify AB", genre: "Музыка", category: "music", rating: 4.4, ratings: "34,7 млн", downloads: "500 млн+", downloadsM: 500, mb: 95, version: "9.1.14.1210", updated: "3 ноября 2026", fresh: "2026-11-03", color: "#1db954", ink: "dark", tag: "Хит" },
+  { id: "com.google.android.apps.photos", name: "Google Фото", developer: "Google LLC", genre: "Облако для фото", category: "photo", rating: 4.7, ratings: "26,8 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 104, version: "7.90.0.742323326", updated: "29 октября 2026", fresh: "2026-10-29", color: "#ffffff", ink: "dark" },
+  { id: "com.roblox.client", name: "Roblox", developer: "Roblox Corporation", genre: "Игровая платформа", category: "games", rating: 4.5, ratings: "85,3 млн", downloads: "1 млрд+", downloadsM: 1000, mb: 120, version: "2.701.816", updated: "2 ноября 2026", fresh: "2026-11-02", color: "#e2231a", ink: "light" },
+  { id: "com.supercell.brawlstars", name: "Brawl Stars", developer: "Supercell", genre: "Экшен", category: "games", rating: 4.6, ratings: "32,1 млн", downloads: "500 млн+", downloadsM: 500, mb: 350, version: "64.450.1", updated: "24 октября 2026", fresh: "2026-10-24", color: "#ffc800", ink: "dark" },
+  ...(webGamesJson as unknown as Array<Omit<CatalogApp, "detail">>),
+];
+
+export const apps: CatalogApp[] = catalog.map((a) => {
+  const detail = (details as Record<string, AppDetail | undefined>)[a.id];
+  return { ...a, detail: detail ?? { description: "", itempropDescription: "", screenshots: [], video: null, poster: null, updatedRaw: null } } as CatalogApp;
+});
+
+export const appById = new Map(apps.map((a) => [a.id, a]));
+
+export const webGames = apps.filter((a) => a.kind === "web");
+
+/** Синхронизирует рантайм-карту с ответом /api/catalog (включая позиции из Студии). */
+export function syncCatalog(remote: CatalogApp[]): CatalogApp[] {
+  for (const entry of remote) {
+    appById.set(entry.id, entry);
+  }
+  return remote;
+}
+
+export const featuredId = "com.lemon.lvoverseas";
+
+export function formatSize(mb: number): string {
+  if (mb >= 1024) return `${(mb / 1024).toFixed(1).replace(".", ",")} ГБ`;
+  return `${mb} МБ`;
+}
+
+export function formatRating(rating: number): string {
+  return rating.toFixed(1).replace(".", ",");
+}
+
+export const categoryById = new Map(categories.map((c) => [c.id, c.label]));
