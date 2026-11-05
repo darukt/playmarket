@@ -1,6 +1,6 @@
 import { ArrowRight, Wifi, HardDriveDownload, Monitor } from "lucide-react";
 import { AppLink } from "./AppLink";
-import AppIcon from "./AppIcon";
+import GameArtwork from "./GameArtwork";
 import { formatRating } from "../data/apps";
 import { useCatalog } from "../hooks/useCatalog";
 
@@ -13,23 +13,22 @@ export default function GamesIndex() {
       <div className="standfirst" style={{ paddingBottom: 18 }}>
         <h1 id="games-h">Мгновенные игры</h1>
         <div className="issue">
-          <b>БЕЗ СКАЧИВАНИЯ</b>
-          {webGames.length} игры в браузере
+          <b>Твой следующий рекорд</b>
+          {webGames.length} игр в браузере
           <br />
           без установки приложения
         </div>
       </div>
 
       <div className="games-index">
-        {webGames.map((game, i) => (
+        {webGames.map((game) => (
           <AppLink
             key={game.id}
             to={{ name: "game", slug: game.game! }}
             className="game-card"
             ariaLabel={`Играть в ${game.name}`}
           >
-            <span className="game-card-no">{String(i + 1).padStart(2, "0")}</span>
-            <AppIcon app={game} size="lg" />
+            <div className={`index-game-art arcade-card-${game.game}`}><GameArtwork slug={game.game!} /></div>
             <span className="game-card-body">
               <span className="game-card-name">{game.name}</span>
               <span className="game-card-cap">{game.genre} · рейтинг {formatRating(game.rating)}</span>

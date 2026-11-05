@@ -1,6 +1,6 @@
 import { Download, Check, Bookmark, BookmarkCheck } from "lucide-react";
 import AppIcon from "./AppIcon";
-import { formatRating, formatSize, type CatalogApp } from "../data/apps";
+import { downloadLabel, formatRating, formatSize, type CatalogApp } from "../data/apps";
 
 export default function FeaturedPanel({
   app,
@@ -51,7 +51,7 @@ export default function FeaturedPanel({
           ) : (
             <button className="btn btn-paper" onClick={() => onInstall(app.id)}>
               <Download size={14} aria-hidden="true" />
-              Скачать · {formatSize(app.mb)}
+              {downloadLabel(app)}
             </button>
           )}
           <button

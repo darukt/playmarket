@@ -152,6 +152,57 @@ func TestCSRFOriginAndForgedCookies(t *testing.T) {
 	}
 }
 
+func TestCSRFAllowsOnlyConfiguredProxyOriginsAndStillRequiresToken(t *testing.T) {
+	m, c := setup(t, func(config *auth.Config) {
+		config.PublicURL = "https://playmarket.example"
+		config.AllowedOrigins = []string{" https://preview.example ", ""}
+	})
+	handler := m.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !m.CheckCSRF(r) {
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		w.WriteHeader(http.StatusNoContent)
+	}))
+	for _, test := range []struct {
+		origin string
+		token  string
+		status int
+	}{
+		{"https://playmarket.example", c.csrf, 204},
+		{"https://preview.example", c.csrf, 204},
+		{"https://attacker.example", c.csrf, 403},
+		{"https://preview.example.attacker.example", c.csrf, 403},
+		{"http://preview.example", c.csrf, 403},
+		{"null", c.csrf, 403},
+		{"https://preview.example", "", 403},
+		{"https://preview.example", "forged-token", 403},
+	} {
+		r := httptest.NewRequest("POST", "/api/auth/logout", nil)
+		r.AddCookie(c.cookie)
+		r.Header.Set("Origin", test.origin)
+		r.Header.Set("X-CSRF-Token", test.token)
+		w := httptest.NewRecorder()
+		handler.ServeHTTP(w, r)
+		if w.Code != test.status {
+			t.Errorf("origin %q: want %d, got %d", test.origin, test.status, w.Code)
+		}
+	}
+}
+
+func TestConfigRejectsUnsafeAdditionalOrigins(t *testing.T) {
+	for _, origin := range []string{"*", "https://*.example.com", "http://public.example", "https://safe.example/path", "https://user:password@safe.example", "https://safe.example?query=value", "null"} {
+		_, err := auth.New(auth.Config{AccountsPath: filepath.Join(t.TempDir(), "accounts.json"), PublicURL: "https://playmarket.example", AllowedOrigins: []string{origin}})
+		if err == nil {
+			t.Errorf("unsafe additional origin accepted: %q", origin)
+		}
+	}
+	_, err := auth.New(auth.Config{AccountsPath: filepath.Join(t.TempDir(), "accounts.json"), PublicURL: "http://localhost:8088", AllowedOrigins: []string{"https://playmarket.example"}})
+	if err == nil {
+		t.Fatal("remote origin accepted with insecure session cookies")
+	}
+}
+
 func TestOnlyExplicitAuthBootstrapIssuesAnonymousCookie(t *testing.T) {
 	_, c := setup(t, nil)
 	for _, path := range []string{"/api/catalog", "/api/games/snake/scores", "/api/me", "/ws/download"} {

@@ -1,19 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
-import { apps, type CatalogApp } from "../data/apps";
+import { type CatalogApp } from "../data/apps";
 import { api, ApiError } from "../services/api";
 import { normalizeApp, normalizeCatalog } from "../services/catalog";
 
-/** Render the bundled snapshot immediately, then refresh through the public gateway. */
-export function useCatalog(): CatalogApp[] {
-  const { data } = useQuery({
+const emptyCatalog: CatalogApp[] = [];
+
+/** Read the persistent catalog database through the API. */
+export function useCatalogQuery() {
+  return useQuery({
     queryKey: ["catalog"],
     queryFn: async ({ signal }) => normalizeCatalog(await api<unknown>("/api/catalog", { signal })),
-    initialData: apps,
-    initialDataUpdatedAt: 0,
     staleTime: 60_000,
   });
-  // Query errors retain the last successful data instead of discarding custom apps.
-  return data;
+}
+
+export function useCatalog(): CatalogApp[] {
+  return useCatalogQuery().data ?? emptyCatalog;
 }
 
 export function useApp(id: string): CatalogApp | undefined {

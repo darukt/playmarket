@@ -1,8 +1,6 @@
 package controller
 
 import (
-	"archive/zip"
-	"bytes"
 	"fmt"
 	"io"
 	"net/http"
@@ -18,32 +16,31 @@ const platformHeader = "X-Platform"
 // maxArtifact — верхняя граница загружаемого через Студию артефакта.
 const maxArtifact = 512 << 20
 
-// artifact — то, что отдаётся клиенту: либо файл на диске (загруженный
-// через Студию .exe/.apk — стримится, в память не читается), либо байты
-// в памяти (демо-установщик / сгенерированный demo-zip).
+// Uploaded packages are streamed from disk. Official packages are redirected
+// to their publisher without proxying or buffering third-party executables.
 type artifact struct {
 	name        string
 	contentType string
 	size        int64
 	modTime     time.Time
 	path        string
-	data        []byte
 }
-
-type nopReadSeekCloser struct{ *bytes.Reader }
-
-func (nopReadSeekCloser) Close() error { return nil }
 
 func (a *artifact) open() (io.ReadSeekCloser, error) {
-	if a.path != "" {
-		return os.Open(a.path)
+	f, err := os.Open(a.path)
+	if err != nil {
+		return nil, err
 	}
-	return nopReadSeekCloser{bytes.NewReader(a.data)}, nil
+	st, err := f.Stat()
+	if err != nil || !st.Mode().IsRegular() || st.Size() <= 0 || st.Size() > maxArtifact {
+		f.Close()
+		return nil, fmt.Errorf("artifact unavailable")
+	}
+	a.size, a.modTime = st.Size(), st.ModTime()
+	return f, nil
 }
 
-// resolveArtifact выбирает, что отдать для платформы. Windows без
-// загруженного .exe получает встроенный демо-установщик; Android без .apk —
-// сгенерированный demo-zip (README + тот же .exe). Веб-игры не скачиваются.
+// resolveArtifact only returns genuine uploaded artifacts, never a demo fallback.
 func (s *server) resolveArtifact(e catalog.Entry, platform string) (*artifact, error) {
 	if e.Kind == catalog.KindWeb {
 		return nil, fmt.Errorf("%s — веб-игра, её можно запустить на /games/%s без скачивания", e.Name, valueOrEmpty(e.Game))
@@ -53,8 +50,8 @@ func (s *server) resolveArtifact(e catalog.Entry, platform string) (*artifact, e
 		if err != nil {
 			return nil, err
 		}
-		if st.Size() > maxArtifact {
-			return nil, fmt.Errorf("артефакт больше %d байт", maxArtifact)
+		if !st.Mode().IsRegular() || st.Size() <= 0 || st.Size() > maxArtifact {
+			return nil, fmt.Errorf("artifact unavailable")
 		}
 		a := &artifact{
 			name:        s.store.FilenameFor(e, platform),
@@ -64,61 +61,13 @@ func (s *server) resolveArtifact(e catalog.Entry, platform string) (*artifact, e
 			path:        uploaded,
 		}
 		if platform == "android" {
-			a.name = strings.TrimSuffix(a.name, "-demo.zip") + ".apk"
 			a.contentType = "application/vnd.android.package-archive"
 		}
 		return a, nil
 	}
 
-	switch platform {
-	case "windows":
-		return &artifact{
-			name:        s.store.FilenameFor(e, "windows"),
-			contentType: "application/x-msdownload",
-			size:        int64(len(s.stub)),
-			modTime:     s.started,
-			data:        s.stub,
-		}, nil
-	default: // android и всё остальное — честный демо-zip
-		var buf bytes.Buffer
-		zw := zip.NewWriter(&buf)
-		readme, err := zw.Create("КАК-ЭТО-РАБОТАЕТ.txt")
-		if err != nil {
-			return nil, err
-		}
-		if _, err := fmt.Fprintf(readme, readmeTemplate, e.Name, e.Developer, e.Version); err != nil {
-			return nil, err
-		}
-		exe, err := zw.Create(s.store.FilenameFor(e, "windows"))
-		if err != nil {
-			return nil, err
-		}
-		if _, err := exe.Write(s.stub); err != nil {
-			return nil, err
-		}
-		if err := zw.Close(); err != nil {
-			return nil, err
-		}
-		return &artifact{
-			name:        s.store.FilenameFor(e, "android"),
-			contentType: "application/zip",
-			size:        int64(buf.Len()),
-			modTime:     s.started,
-			data:        buf.Bytes(),
-		}, nil
-	}
+	return nil, fmt.Errorf("artifact unavailable")
 }
-
-const readmeTemplate = `%s (%s), версия %s
-
-Это демонстрационный пакет Play Market.
-Настоящий APK для этого приложения добавляет разработчик через Студию.
-
-Внутри архива — настоящий демонстрационный PlayMarket-Setup.exe
-(запускайте его, если вам нужна установка-симуляция для Windows).
-
-Каталог не связан с Google и не распространяет оригинальные APK.
-`
 
 func valueOrEmpty(s *string) string {
 	if s == nil {
@@ -172,7 +121,7 @@ func detectPlatform(r *http.Request) string {
 	if strings.Contains(ua, "windows") {
 		return "windows"
 	}
-	// android, iOS и всё неизвестное — demo-zip / apk
+	// Android is the default package platform.
 	return "android"
 }
 
@@ -189,6 +138,36 @@ func (s *server) download(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	platform := detectPlatform(r)
+	if e.Kind == catalog.KindWeb {
+		writeError(w, http.StatusConflict, "web games run in the browser")
+		return
+	}
+	source, external := e.DownloadsByPlatform[platform]
+	_, uploaded := s.store.Artifact(e, platform)
+	if !uploaded && !external && platform != "android" {
+		platform = "android"
+		source, external = e.DownloadsByPlatform[platform]
+		_, uploaded = s.store.Artifact(e, platform)
+	}
+	if !uploaded && !external {
+		writeError(w, http.StatusNotFound, "official package unavailable for this platform")
+		return
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	w.Header().Set("X-Platform", platform)
+	if external && !uploaded {
+		if err := catalog.ValidateDownloads(map[string]catalog.DownloadSource{platform: source}); err != nil {
+			writeError(w, http.StatusConflict, "invalid download source")
+			return
+		}
+		if r.URL.Query().Get("resolve") == "1" {
+			writeJSON(w, http.StatusOK, map[string]string{"kind": source.Kind, "platform": platform, "url": source.URL, "filename": source.Filename})
+			return
+		}
+		// A redirect requests a publisher download; it cannot prove completion.
+		http.Redirect(w, r, source.URL, http.StatusFound)
+		return
+	}
 	a, err := s.resolveArtifact(e, platform)
 	if err != nil {
 		writeError(w, http.StatusConflict, "artifact unavailable")
@@ -200,16 +179,20 @@ func (s *server) download(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer f.Close()
-
-	// Журналируем только реальные загрузки целиком, без HEAD и докачек.
-	if r.Method == http.MethodGet && r.Header.Get("Range") == "" {
-		uuid := uuidFrom(r.Context())
-		s.users.RecordDownload(uuid, platform)
-		s.store.LogDownload(uuid, e.ID, platform, a.size)
+	if r.URL.Query().Get("resolve") == "1" {
+		writeJSON(w, http.StatusOK, map[string]string{"kind": "file", "platform": platform, "url": "/api/download/" + e.ID + "?platform=" + platform, "filename": a.name})
+		return
 	}
 
 	w.Header().Set("Content-Type", a.contentType)
 	w.Header().Set("Content-Disposition", contentDisposition(a.name))
-	w.Header().Set("X-Platform", platform)
-	http.ServeContent(w, r, a.name, a.modTime, f)
+	response := &statusRecorder{ResponseWriter: w}
+	http.ServeContent(response, r, a.name, a.modTime, f)
+	// Count complete HTTP responses only. Metadata, HEAD, 304, partial ranges,
+	// and interrupted transfers do not establish that a full package was served.
+	if r.Method == http.MethodGet && r.Header.Get("Range") == "" && response.status == http.StatusOK && response.bytes == a.size {
+		uuid := uuidFrom(r.Context())
+		s.users.RecordDownload(uuid, platform)
+		s.store.LogDownload(uuid, e.ID, platform, a.size)
+	}
 }

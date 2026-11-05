@@ -7,7 +7,7 @@ import { Search, X } from "lucide-react";
  * каталога не заставляют перерендериваться само поле.
  */
 export const SearchBox = memo(function SearchBox({
-  placeholder = "найти приложение, игру, разработчика…",
+  placeholder = "Игры, приложения, новые открытия",
   ariaLabel = "Поиск по каталогу",
   onCommit,
 }: {

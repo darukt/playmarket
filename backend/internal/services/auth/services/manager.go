@@ -22,8 +22,10 @@ import (
 )
 
 type Config struct {
-	AccountsPath       string
-	PublicURL          string
+	AccountsPath string
+	PublicURL    string
+	// Additional exact browser origins served by a trusted reverse proxy.
+	AllowedOrigins     []string
 	GoogleClientID     string
 	GoogleClientSecret string
 	AdminUserIDs       []string
@@ -74,6 +76,7 @@ type Manager struct {
 	cookieName string
 	secure     bool
 	origin     string
+	origins    map[string]struct{}
 	jwtKeys    map[string]*rsa.PublicKey
 	jwtExpires time.Time
 }
@@ -81,16 +84,36 @@ type Manager struct {
 var ErrCredentials = errors.New("invalid email or password")
 var ErrRegistration = errors.New("unable to create account with these credentials")
 
+func parseOrigin(value string) (*url.URL, error) {
+	u, err := url.Parse(value)
+	if err != nil || u.Host == "" || u.User != nil || strings.ContainsAny(u.Host, "*\\") || (u.Scheme != "https" && u.Scheme != "http") || (u.Path != "" && u.Path != "/") || u.RawQuery != "" || u.Fragment != "" {
+		return nil, errors.New("authentication URL must be an absolute origin without wildcards")
+	}
+	if u.Scheme != "https" && u.Hostname() != "localhost" && !net.ParseIP(u.Hostname()).IsLoopback() {
+		return nil, errors.New("public authentication requires HTTPS")
+	}
+	return u, nil
+}
+
 func New(c Config) (*Manager, error) {
 	if c.PublicURL == "" {
 		c.PublicURL = "http://localhost:8088"
 	}
-	u, err := url.Parse(c.PublicURL)
-	if err != nil || u.Host == "" || u.User != nil || (u.Scheme != "https" && u.Scheme != "http") || (u.Path != "" && u.Path != "/") || u.RawQuery != "" || u.Fragment != "" {
+	u, err := parseOrigin(c.PublicURL)
+	if err != nil {
 		return nil, errors.New("PM_PUBLIC_URL must be an absolute origin")
 	}
-	if u.Scheme != "https" && u.Hostname() != "localhost" && !net.ParseIP(u.Hostname()).IsLoopback() {
-		return nil, errors.New("public authentication requires HTTPS")
+	origins := map[string]struct{}{u.Scheme + "://" + u.Host: {}}
+	for _, value := range c.AllowedOrigins {
+		value = strings.TrimSpace(value)
+		if value == "" {
+			continue
+		}
+		extra, err := parseOrigin(value)
+		if err != nil || (u.Scheme != "https" && extra.Scheme == "https") {
+			return nil, errors.New("PM_ALLOWED_ORIGINS requires exact secure origins and an HTTPS PM_PUBLIC_URL")
+		}
+		origins[extra.Scheme+"://"+extra.Host] = struct{}{}
 	}
 	if (c.GoogleClientID == "") != (c.GoogleClientSecret == "") {
 		return nil, errors.New("configure both Google OAuth credentials")
@@ -113,6 +136,7 @@ func New(c Config) (*Manager, error) {
 		c.HTTPClient = &http.Client{Timeout: 10 * time.Second}
 	}
 	m := &Manager{Config: c, Accounts: accounts, sessions: map[string]session{}, rates: map[string]rateBucket{}, dummyHash: dummy, hashSlots: make(chan struct{}, 4), secure: u.Scheme == "https", origin: u.Scheme + "://" + u.Host, cookieName: "pm_session"}
+	m.origins = origins
 	if m.secure {
 		m.cookieName = "__Host-pm_session"
 	}
@@ -242,8 +266,10 @@ func (m *Manager) CheckCSRF(r *http.Request) bool {
 		return false
 	}
 	origin := r.Header.Get("Origin")
-	if origin != "" && origin != m.origin {
-		return false
+	if origin != "" {
+		if _, allowed := m.origins[origin]; !allowed {
+			return false
+		}
 	}
 	got := r.Header.Get("X-CSRF-Token")
 	return got != "" && subtle.ConstantTimeCompare([]byte(got), []byte(s.CSRF)) == 1

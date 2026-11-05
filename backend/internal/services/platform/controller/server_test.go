@@ -8,6 +8,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"io"
 	"mime/multipart"
 	"net"
@@ -35,7 +36,7 @@ type scoresResponse = scorescontroller.Response
 
 const testUID = "0123456789abcdef0123456789abcdef"
 
-var testStub = []byte("MZ-demo-installer")
+var testWindowsPackage = []byte("MZ-uploaded-package-fixture")
 
 func newTestServer(t *testing.T) *server {
 	t.Helper()
@@ -54,6 +55,16 @@ func newTestServer(t *testing.T) *server {
 		t.Fatal(err)
 	}
 	t.Cleanup(func() { _ = store.Close() })
+	// A real uploaded fixture exercises disk streaming; no demo package fallback.
+	if err := os.MkdirAll(store.UploadsDir("com.example.chat"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(store.UploadsDir("com.example.chat"), "artifact-windows.exe"), testWindowsPackage, 0o600); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(store.UploadsDir("com.example.chat"), "artifact-android.apk"), []byte("PK-real-apk-fixture"), 0o600); err != nil {
+		t.Fatal(err)
+	}
 	us, err := openUsers(filepath.Join(dir, "users.json"))
 	if err != nil {
 		t.Fatal(err)
@@ -67,7 +78,7 @@ func newTestServer(t *testing.T) *server {
 		t.Fatal(err)
 	}
 	t.Cleanup(func() { testSessions.Delete(t) })
-	return &server{store: store, users: us, scores: board, stub: testStub, auth: manager, tcpKey: strings.Repeat("t", 32), started: time.Now()}
+	return &server{store: store, users: us, scores: board, auth: manager, tcpKey: strings.Repeat("t", 32), started: time.Now()}
 }
 
 type testClient struct {
@@ -235,15 +246,15 @@ func TestScores(t *testing.T) {
 func TestDownloads(t *testing.T) {
 	h := newTestServer(t).routes(true)
 	rec := do(t, h, "GET", "/api/download/com.example.chat?platform=windows", nil, nil)
-	if rec.Code != 200 || !bytes.Equal(rec.Body.Bytes(), testStub) {
+	if rec.Code != 200 || !bytes.Equal(rec.Body.Bytes(), testWindowsPackage) {
 		t.Fatalf("windows: %d %q", rec.Code, rec.Body.String())
 	}
 	if cd := rec.Header().Get("Content-Disposition"); !strings.Contains(cd, "Example-Chat-Setup.exe") {
 		t.Fatalf("content-disposition: %q", cd)
 	}
 	rec = do(t, h, "GET", "/api/download/com.example.chat?platform=android", nil, nil)
-	if rec.Code != 200 || rec.Header().Get("Content-Type") != "application/zip" || !bytes.HasPrefix(rec.Body.Bytes(), []byte("PK")) {
-		t.Fatalf("android zip: %d %s", rec.Code, rec.Header().Get("Content-Type"))
+	if rec.Code != 200 || rec.Header().Get("Content-Type") != "application/vnd.android.package-archive" || !bytes.HasPrefix(rec.Body.Bytes(), []byte("PK")) {
+		t.Fatalf("android apk: %d %s", rec.Code, rec.Header().Get("Content-Type"))
 	}
 	if rec := do(t, h, "GET", "/api/download/web.snake", nil, nil); rec.Code != http.StatusConflict {
 		t.Fatalf("web game download: %d", rec.Code)
@@ -374,7 +385,7 @@ func TestWebSocketDownload(t *testing.T) {
 	defer conn.Close()
 
 	var start wsMessage
-	if err := conn.ReadJSON(&start); err != nil || start.Type != "start" || start.Size != int64(len(testStub)) {
+	if err := conn.ReadJSON(&start); err != nil || start.Type != "start" || start.Size != int64(len(testWindowsPackage)) {
 		t.Fatalf("start: %+v %v", start, err)
 	}
 	var got []byte
@@ -389,12 +400,12 @@ func TestWebSocketDownload(t *testing.T) {
 		}
 		var done wsMessage
 		_ = json.Unmarshal(data, &done)
-		if done.Type != "done" || done.Bytes != int64(len(testStub)) {
+		if done.Type != "done" || done.Bytes != int64(len(testWindowsPackage)) {
 			t.Fatalf("done: %+v", done)
 		}
 		break
 	}
-	if !bytes.Equal(got, testStub) {
+	if !bytes.Equal(got, testWindowsPackage) {
 		t.Fatalf("payload: %q", got)
 	}
 }
@@ -425,11 +436,11 @@ func TestTCPProtocol(t *testing.T) {
 	proof := transfer.Proof(s.tcpKey, nonce, "com.example.chat", "windows")
 	_, _ = io.WriteString(client, "PM2-GET com.example.chat windows "+proof+"\n")
 	header, err := r.ReadString('\n')
-	if err != nil || !strings.HasPrefix(header, "PM2-OK 17 Example-Chat-Setup.exe") {
+	if err != nil || header != fmt.Sprintf("PM2-OK %d Example-Chat-Setup.exe\n", len(testWindowsPackage)) {
 		t.Fatalf("header: %q %v", header, err)
 	}
-	body := make([]byte, len(testStub))
-	if _, err := io.ReadFull(r, body); err != nil || !bytes.Equal(body, testStub) {
+	body := make([]byte, len(testWindowsPackage))
+	if _, err := io.ReadFull(r, body); err != nil || !bytes.Equal(body, testWindowsPackage) {
 		t.Fatalf("body: %q %v", body, err)
 	}
 	for _, request := range []string{"PM1-GET com.example.chat windows\n", "PM2-GET com.example.chat windows " + proof + "\n"} {

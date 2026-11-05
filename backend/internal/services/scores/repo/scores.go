@@ -32,15 +32,25 @@ var (
 	ErrUnknownGame = errors.New("неизвестная игра")
 )
 
-// MaxScore — санитарный потолок результата для известных игр. Игра без
-// записи в этой таблице принимает до DefaultMaxScore.
+// MaxScore is the common game allowlist and score ceiling. Finite games use
+// their scoring formula's upper bound; Simon has an operational safety cap.
 var MaxScore = map[string]int64{
-	"snake":  30 * 30 * 3, // bonus apples award three points per occupied cell
-	"2048":   4_000_000,   // теоретический максимум ~3,9 млн
-	"razlom": 10_000_000,  // уровни бесконечны, но не настолько
+	"snake":          30 * 30 * 3, // bonus apples award three points per occupied cell
+	"2048":           4_000_000,   // theoretical maximum approximately 3.9 million
+	"razlom":         10_000_000,  // levels continue indefinitely
+	"memory":         2_000,       // 2400 minus at least eight moves of 50
+	"pong":           1_200,       // seven points of 100 plus a 500-point win bonus
+	"reaction":       2_000,       // 2000 minus twice the average response time
+	"minesweeper":    1_000,       // clearing all 71 safe cells wins 1000
+	"tic-tac-toe":    1_000,       // win 1000, draw 300, loss 0
+	"connect-four":   1_000,       // win 1000, draw 300, loss 0
+	"simon":          1_000_000,   // 100 per completed level, no final level
+	"whack-a-mole":   1_075,       // at most ceil(30 / 0.7) targets, 25 points each
+	"lights-out":     2_500,       // 2500 minus 30 per move
+	"sliding-puzzle": 4_000,       // 4000 minus 10 per move
+	"sudoku":         1_500,       // 1500 minus 10 per entry
+	"word-scramble":  2_400,       // 2400 minus 100 per mistake
 }
-
-const DefaultMaxScore = 10_000_000
 
 type Entry struct {
 	Name  string `json:"name"`
@@ -149,7 +159,7 @@ func (b *Board) Submit(slug, uuid, name string, score int64) (rank int, improved
 	}
 	max, ok := MaxScore[slug]
 	if !ok {
-		max = DefaultMaxScore
+		return 0, false, ErrUnknownGame
 	}
 	if score <= 0 || score > max {
 		return 0, false, ErrBadScore

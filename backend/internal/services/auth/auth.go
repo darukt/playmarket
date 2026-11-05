@@ -22,7 +22,7 @@ func New(c Config) (*Manager, error) {
 	return &Manager{m}, nil
 }
 func NewFromEnv(dataDir string) (*Manager, error) {
-	return New(Config{AccountsPath: filepath.Join(dataDir, "accounts.json"), PublicURL: os.Getenv("PM_PUBLIC_URL"), GoogleClientID: os.Getenv("PM_GOOGLE_CLIENT_ID"), GoogleClientSecret: os.Getenv("PM_GOOGLE_CLIENT_SECRET"), AdminUserIDs: strings.Split(os.Getenv("PM_ADMIN_USER_IDS"), ","), AdminGoogleEmails: strings.Split(os.Getenv("PM_ADMIN_GOOGLE_EMAILS"), ","), AdminDeviceKey: os.Getenv("PM_ADMIN_DEVICE_KEY"), TrustProxy: os.Getenv("PM_TRUST_PROXY") == "true"})
+	return New(Config{AccountsPath: filepath.Join(dataDir, "accounts.json"), PublicURL: os.Getenv("PM_PUBLIC_URL"), AllowedOrigins: strings.Split(os.Getenv("PM_ALLOWED_ORIGINS"), ","), GoogleClientID: os.Getenv("PM_GOOGLE_CLIENT_ID"), GoogleClientSecret: os.Getenv("PM_GOOGLE_CLIENT_SECRET"), AdminUserIDs: strings.Split(os.Getenv("PM_ADMIN_USER_IDS"), ","), AdminGoogleEmails: strings.Split(os.Getenv("PM_ADMIN_GOOGLE_EMAILS"), ","), AdminDeviceKey: os.Getenv("PM_ADMIN_DEVICE_KEY"), TrustProxy: os.Getenv("PM_TRUST_PROXY") == "true"})
 }
 func (m *Manager) RegisterRoutes(mux *http.ServeMux) {
 	controller.Controller{Manager: m.Manager}.RegisterRoutes(mux)

@@ -3,7 +3,7 @@ import { Download, Check, Gamepad2, Bookmark, BookmarkCheck } from "lucide-react
 import AppIcon from "./AppIcon";
 import { AppLink } from "./AppLink";
 import { routeForApp } from "../nav";
-import { formatRating, formatSize, type CatalogApp } from "../data/apps";
+import { downloadLabel, formatRating, formatSize, type CatalogApp } from "../data/apps";
 
 const ChartRow = memo(
   function ChartRow({
@@ -75,7 +75,7 @@ const ChartRow = memo(
           ) : (
             <button className="btn btn-ghost btn-sm" onClick={() => onInstall(app.id)}>
               <Download size={12} aria-hidden="true" />
-              Скачать
+              {downloadLabel(app)}
             </button>
           )}
         </div>

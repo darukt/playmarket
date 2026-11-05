@@ -103,6 +103,9 @@ func (c Controller) Handler(w http.ResponseWriter, r *http.Request) {
 		}
 		rank, improved, err := c.Scores.Submit(slug, identity, body.Name, body.Score)
 		switch {
+		case errors.Is(err, scores.ErrUnknownGame):
+			httpx.WriteError(w, http.StatusNotFound, "unknown game")
+			return
 		case errors.Is(err, scores.ErrBadName), errors.Is(err, scores.ErrBadScore):
 			httpx.WriteError(w, http.StatusBadRequest, err.Error())
 			return
